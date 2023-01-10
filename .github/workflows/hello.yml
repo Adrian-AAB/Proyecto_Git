@@ -9,6 +9,6 @@ jobs:
 hello_world:
   runs-on: windows-latest
   steps:
-    -name: Echo the message
+  - name: Echo the message
     run: 
       echo "hola"
