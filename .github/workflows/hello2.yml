@@ -9,12 +9,6 @@ jobs:
 hello_world:
   runs-on: windows-latest
   steps:
-<<<<<<< HEAD
   - name: Echo the message
     run: 
       echo "hola"
-=======
-    -name: Echo the message
-    run: 
-      echo "hola"
->>>>>>> 199f7f01d2f908946afe597798de262a553b99a7
