@@ -1,0 +1,19 @@
+name: Asignar 
+
+on:
+  push:
+
+  jobs:
+    build:
+      strategy:
+        matrix:
+          os: [linux-latest, macos-latest, windows-latest]
+        runs-on: ${{ matrix.os }}
+        
+
+  add-reviews:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: kentaro-m/auto-assign-action@v1.2.4
+        with:
+          configuration-path: '.github/some_name_for_configs.yml'
