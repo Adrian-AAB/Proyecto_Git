@@ -30,13 +30,13 @@ jobs:
                 name: webapp-artifact
                 path: ${{ env.DOTNET_ROOT }}/webapp
             
-    deploy:
-        runs-on: windows-latest
-        needs: [build] #Hay que esperar a que termine el job llamado build
+  deploy:
+      runs-on: windows-latest
+      needs: [build] #Hay que esperar a que termine el job llamado build
         
-        steps:
-          - name: Download artifact
-            uses: actions/download-artifact@v1
+      steps:
+     -name: Download artifact
+      uses: actions/download-artifact@v1
             with:
                 name: webapp-artifact
                 path: ${{ env.DOTNET_ROOT }}/webapp
