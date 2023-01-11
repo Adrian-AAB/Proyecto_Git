@@ -7,6 +7,6 @@ jobs:
   add-reviews:
     runs-on: ubuntu-latest
     steps:
-      - uses: Adrian-AAB/auto-assign
+      - uses: Adrian-AAB/auto-assign-action
         with:
           configuration-path: ".github/auto_assign.yml"
