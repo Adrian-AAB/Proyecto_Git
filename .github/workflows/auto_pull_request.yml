@@ -15,8 +15,7 @@ jobs:
           branch_prefix: hotfix
           base_branch: develop
           labels: hotfix,develop
-          assignees: Adrian-AAB
-          reviewers: Adrian-AAB
+
       - uses: quangvo09/pull-request-action@v1
         name: Create PR to integration
         with:
@@ -24,5 +23,3 @@ jobs:
           branch_prefix: hotfix
           base_branch: integration
           labels: hotfix,integration
-          assignees: Adrian-AAB
-          reviewers: Adrian-AAB
