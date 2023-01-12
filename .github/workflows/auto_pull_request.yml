@@ -1,8 +1,7 @@
 name: Hotfix Action
 on:
   pull_request:
-    branches:
-      - master
+
 jobs:
   Create-Pull-Request-Action:
     runs-on: ubuntu-latest
