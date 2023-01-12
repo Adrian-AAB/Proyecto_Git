@@ -1,18 +1,28 @@
-name: Pull Request Automation
+name: Hotfix Action
 on:
-  pull_request_target:
-    types: [labelled, unlabelled, opened, edited, reopened, synchronize, converted_to_draft, ready_for_review, review_requested]
-  pull_request_review:
-    types: [submitted, edited, dismissed]
-  issue_comment:
-    types: [created]
-
+  pull_request:
+    branches:
+      - master
 jobs:
-  process:
-    name: Process
+  Create-Pull-Request-Action:
     runs-on: ubuntu-latest
     steps:
-    - uses: DrBarnabus/pullrequest-automation@v3 # latest matching major version 'v3' or specific version 'v2.4.1' or branch 'main'
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        config-ref: master
+      - uses: actions/checkout@v1
+      - uses: quangvo09/pull-request-action@v1
+        name: Create PR to develop
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch_prefix: hotfix
+          base_branch: develop
+          labels: hotfix,develop
+          assignees: quangvo09
+          reviewers: quangvo09
+      - uses: quangvo09/pull-request-action@v1
+        name: Create PR to integration
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch_prefix: hotfix
+          base_branch: integration
+          labels: hotfix,integration
+          assignees: quangvo09
+          reviewers: quangvo09
