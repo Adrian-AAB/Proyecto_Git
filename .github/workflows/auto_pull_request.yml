@@ -1,8 +1,6 @@
 name: Hotfix Action
-on:
-  pull_request:
-    branches:
-      - master
+on: [push]
+
 jobs:
   Create-Pull-Request-Action:
     runs-on: ubuntu-latest
@@ -12,17 +10,9 @@ jobs:
         name: Create PR to develop
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch_prefix: hotfix
-          base_branch: develop
+          branch_prefix: prueba
+          base_branch: master
           labels: hotfix,develop
-          assignees: quangvo09
-          reviewers: quangvo09
-      - uses: quangvo09/pull-request-action@v1
-        name: Create PR to integration
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch_prefix: hotfix
-          base_branch: integration
-          labels: hotfix,integration
-          assignees: quangvo09
-          reviewers: quangvo09
+          assignees: Adrian-AAB
+          reviewers: Adrian-AAB
+      
