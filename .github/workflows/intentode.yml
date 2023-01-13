@@ -1,6 +1,5 @@
 name: Create production promotion pull request
-on:
-  push:
+on: [push]
  
 jobs:
   productionPromotion:
