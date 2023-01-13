@@ -15,7 +15,7 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{secrets.github_token}}
           author: ${{ github.actor }} 
           signoff: false
           branch: example-patches
