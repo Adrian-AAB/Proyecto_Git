@@ -8,5 +8,5 @@ jobs:
     steps:
       - uses: peter-evans/enable-pull-request-automerge@v2
         with:
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-number: 1
