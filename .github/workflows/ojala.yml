@@ -18,7 +18,7 @@ jobs:
           token: ${{ secrets.PAT }}
           commit-message: Update report
           committer: GitHub <noreply@github.com>
-          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          author: ${{ github.actor }} 
           signoff: false
           branch: example-patches
           delete-branch: true
@@ -32,8 +32,7 @@ jobs:
           labels: |
             report
             automated pr
-          assignees: peter-evans
-          reviewers: peter-evans
+          assignees: Adrian-AAB
           team-reviewers: |
             owners
             maintainers
