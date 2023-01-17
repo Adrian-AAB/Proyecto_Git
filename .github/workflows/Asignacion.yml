@@ -7,7 +7,7 @@ jobs:
   add-reviews:
     runs-on: ubuntu-latest
     steps:
-      - uses: Adrian-AAB/Proyecto_Git
+      - uses: kentaro-m/auto-assign-action@v1.2.4
         with:
           configuration-path: '.github/auto_assign.yml'
 
