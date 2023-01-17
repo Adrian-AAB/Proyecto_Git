@@ -4,7 +4,7 @@ on:
     types: [opened, ready_for_review]
 
     paths:
-          - '.github/workflows/pull_request.yml'
+          - '.github/workflows/pull_request'
 jobs:
   add-reviews:
     runs-on: ubuntu-latest
