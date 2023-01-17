@@ -1,7 +1,8 @@
 name: 'Auto Assign'
-on:
+on: 
   pull_request:
-    types: [opened, ready_for_review]
+    paths:
+      - 'ojala.yml'
 
 jobs:
   add-reviews:
