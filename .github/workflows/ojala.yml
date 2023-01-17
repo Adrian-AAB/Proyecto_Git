@@ -18,6 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: create-pr-on-push
     steps:
-      - uses: Adrian-AAB/auto-assign-action
+      - uses: kentaro-m/auto-assign-action@v1.2.4
         with:
           configuration-path: '.github/auto_assign.yml'
