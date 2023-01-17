@@ -7,6 +7,8 @@ jobs:
   add-reviews:
     runs-on: ubuntu-latest
     steps:
-      - uses: Adrian-AAB/Proyecto_Git@
+      - uses: Adrian-AAB/Proyecto_Git
         with:
           configuration-path: '.github/auto_assign.yml'
+
+
