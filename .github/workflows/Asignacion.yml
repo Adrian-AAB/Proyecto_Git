@@ -1,6 +1,6 @@
 name: 'Auto Assign'
 on: 
-  pull_request:
+  push:
     paths:
       - 'ojala.yml'
 
