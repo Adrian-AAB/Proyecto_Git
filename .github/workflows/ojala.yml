@@ -14,9 +14,9 @@ jobs:
         head: ${{ github.ref }}
         base: master
         title: "An automatically created PR!"
+
   add-reviews:
     runs-on: ubuntu-latest
-    needs: create-pr-on-push
     steps:
       - uses: kentaro-m/auto-assign-action@v1.2.4
         with:
