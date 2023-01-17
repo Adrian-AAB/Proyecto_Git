@@ -7,7 +7,7 @@ jobs:
   add-reviews:
     runs-on: ubuntu-latest
     steps:
-      - uses: Adrian-AAB/auto-pull-request
+      - uses: Adrian-AAB/auto-pull-request@
         with:
           configuration-path: '.github/auto_assign.yml'
 
