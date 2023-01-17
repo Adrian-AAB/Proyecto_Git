@@ -14,7 +14,3 @@ jobs:
         head: ${{ github.ref }}
         base: master
         title: "An automatically created PR!"
-
-    - uses: kentaro-m/auto-assign-action@v1.2.4
-      with:
-        configuration-path: '.github/auto_assign.yml'
