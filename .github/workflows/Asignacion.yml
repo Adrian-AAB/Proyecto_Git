@@ -1,7 +1,10 @@
 name: 'Auto Assign'
 on:
-  pull_request
+  pull_request:
+    types: [opened, ready_for_review]
 
+    paths:
+          - '.github/workflows/pull_request.yml'
 jobs:
   add-reviews:
     runs-on: ubuntu-latest
