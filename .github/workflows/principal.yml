@@ -5,5 +5,5 @@ on:
     
 jobs: 
   call-workflow:
-    uses: Adrian-AAB/Proyectp_Git/.github/workflows/pull_request.yml
+    uses: Adrian-AAB/Proyectp_Git/.github/workflows/pull_request.yml@v1
     secrets: inherit
