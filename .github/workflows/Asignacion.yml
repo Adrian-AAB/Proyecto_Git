@@ -1,8 +1,7 @@
 name: 'Auto Assign'
 on:
-  workflow_run:
-    workflows: ["Create PR"]
-
+  pull_request
+    
 jobs:
   add-reviews:
     runs-on: ubuntu-latest
