@@ -1,24 +1,26 @@
-name: dotnet package
 
-on: [push]
+name: .NET
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  build:
+  CI:
 
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        dotnet-version: ['3.0', '3.1.x' ]
 
     steps:
     - uses: actions/checkout@v3
-    - name: Setup dotnet
-      uses: actions/setup-dotnet@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '3.1.x'
-    - name: Install dependencies
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build
-    - name: Test with the dotnet CLI
-      run: dotnet test
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
