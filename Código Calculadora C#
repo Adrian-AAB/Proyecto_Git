@@ -1,0 +1,11 @@
+private void Btn_Somar(object sender, EventArgs e)
+ {
+ int V1, V2, resultado;
+ 
+ V1 = Convert.ToInt32(txtValor1.Text);
+ V2 = Convert.ToInt32(txtValor2.Text);
+ 
+ resultado =V1 + V2;
+ 
+ lblResultado.Text = resultado.ToString();
+ }
