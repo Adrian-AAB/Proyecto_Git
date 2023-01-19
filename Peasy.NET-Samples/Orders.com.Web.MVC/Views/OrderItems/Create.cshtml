@@ -1,0 +1,69 @@
+﻿@model Orders.com.Web.MVC.ViewModels.OrderItemViewModel
+
+@{
+    ViewBag.Title = "Add Order Item";
+}
+
+<h2>Add Order Item</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Amount)
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.OrderID)
+        @Html.HiddenFor(model => model.Price)
+
+        <div class="form-group">
+            <label class="control-label col-md-1" for="CategoryID">Category</label>
+            <div class="col-md-10">
+                @Html.DropDownList("CategoryID", new SelectList(Model.Categories, "CategoryID", "Name"), "-- select one --", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-1" for="ProductID">Product</label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.ProductID, new SelectList(Model.Products, "ProductID", "Name", Model.AssociatedProduct), "-- select one --", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ProductID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.InStock, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-10" id="inStock">@Model.InStock</div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-10" id="price">@Model.Price</div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-10" id="amount">@Model.Amount</div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Edit", "Orders", new { id = Model.OrderID }, null)
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/OrderItems.js")
+}

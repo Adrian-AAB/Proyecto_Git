@@ -1,9 +1,0 @@
-name: Call a reusable workflow
-
-on:
-  workflow_call:
-    
-jobs: 
-  call-workflow:
-    uses: Adrian-AAB/Proyectp_Git/.github/workflows/pull_request.yml@v1.0.0
-    secrets: inherit
