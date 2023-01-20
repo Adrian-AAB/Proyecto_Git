@@ -1,6 +1,6 @@
 name: dotnet package
 
-on: [push]
+on: push
 
 jobs:
   create-pr-on-push:
