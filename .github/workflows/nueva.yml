@@ -4,7 +4,6 @@ on: push
 
 jobs:
   create-pr-on-push:
-    needs: build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@1.0.0
