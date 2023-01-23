@@ -37,7 +37,7 @@ jobs:
         title: "An automatically created PR!"
   
   assign:
-    needs: [build, create-pr-on-push]
+    needs: [create-pr-on-push]
     runs-on: ubuntu-latest
     steps:
       - uses: kentaro-m/auto-assign-action@v1.2.4
