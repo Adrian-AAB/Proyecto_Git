@@ -1,6 +1,6 @@
 name: dotnet package
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -38,10 +38,15 @@ jobs:
     - name: nombre .ref  
       run: echo "${{ github.ref }}"
 
-
-    - uses: kentaro-m/auto-assign-action@v1.2.4
-      with:
-        configuration-path: '.github/auto_assign.yml'
+  
+  assign:
+    needs: create-pr-on-push
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - uses: kentaro-m/auto-assign-action@v1.2.4
+        with:
+          configuration-path: '.github/auto_assign.yml'
 
     
     
