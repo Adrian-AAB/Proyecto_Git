@@ -1,6 +1,7 @@
 name: dotnet package
 
-on: [push]
+on: 
+  push
 
 jobs:
   build:
@@ -34,7 +35,13 @@ jobs:
         base: master
         title: "An automatically created PR!"
   
-
+  assign:
+    needs: [create-pull-request]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: kentaro-m/auto-assign-action@v1.2.4
+        with:
+          configuration-path: '.github/auto_assign.yml'
 
     
     
