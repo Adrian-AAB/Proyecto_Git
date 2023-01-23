@@ -35,12 +35,9 @@ jobs:
         head: ${{ github.ref }}
         base: master
         title: "An automatically created PR!"
-    - name: nombre .ref  
-      run: echo "${{ github.ref }}"
 
   
   assign:
-    needs: create-pr-on-push
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' }}
     steps:
