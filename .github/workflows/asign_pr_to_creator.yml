@@ -8,15 +8,7 @@ jobs:
   assign:
     runs-on: ubuntu-latest
     steps:
-      - if: github.base_ref == 'master' # base branch name is 'master'
-        run: echo REVIEWERS=foo >> $GITHUB_ENV
-      - if: startsWith(github.base_ref, 'develop_') # base branch name starts with 'develop_'
-        run: echo REVIEWERS=bar >> $GITHUB_ENV
-      - if: startsWith(github.event.pull_request.title, 'bug') # title starts with 'bug'
-        run: echo REVIEWERS=foo, baz >> $GITHUB_ENV
-      - if: contains(github.event.pull_request.body, 'enhancement') # body contains 'enhancement'
-        run: echo REVIEWERS=foo, bar, baz >> $GITHUB_ENV
       - uses: hkusu/review-assign-action@v1
         with:
-          assignees: ${{ github.actor }}
-          reviewers: ${{ env.REVIEWERS }}
+          assignees: ${{ github.actor }} # assign pull request author
+          reviewers: foo, bar, baz # if draft, assigned when draft is released
