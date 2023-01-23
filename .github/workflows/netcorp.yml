@@ -35,11 +35,10 @@ jobs:
         head: ${{ github.ref }}
         base: master
         title: "An automatically created PR!"
-
   
   assign:
+    needs: [build, create-pr-on-push]
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' }}
     steps:
       - uses: kentaro-m/auto-assign-action@v1.2.4
         with:
