@@ -44,8 +44,7 @@ jobs:
     steps:
       - uses: hkusu/review-assign-action@v1
         with:
-          assignees: ${{ github.actor }} # assign pull request author
-          addAssignees: ${{ github.actor }} 
+          configuration-path: '.github/auto_assign.yml'
 
     
     
