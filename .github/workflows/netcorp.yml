@@ -37,14 +37,11 @@ jobs:
         title: "An automatically created PR!"
     - name: nombre .ref  
       run: echo "${{ github.ref }}"
-  
-  assign:
-    needs: create-pr-on-push
-    runs-on: ubuntu-latest
-    steps:
-      - uses: kentaro-m/auto-assign-action@v1.2.4
-        with:
-          configuration-path: '.github/auto_assign.yml'
+
+
+    - uses: kentaro-m/auto-assign-action@v1.2.4
+      with:
+        configuration-path: '.github/auto_assign.yml'
 
     
     
