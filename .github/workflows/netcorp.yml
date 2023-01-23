@@ -23,7 +23,7 @@ jobs:
   create-pull-request:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ github.refs/heads/<branch_name> != 'master' }}
+    if: ${{ github.ref/heads/<branch_name> != 'master' }}
     steps:
     - uses: actions/checkout@1.0.0
     
