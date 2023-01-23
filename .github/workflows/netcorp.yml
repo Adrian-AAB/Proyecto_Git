@@ -24,6 +24,7 @@ jobs:
   create-pull-request:
     needs: build
     runs-on: ubuntu-latest
+    if: ${{ github.ref == 'master' }}
     steps:
     - uses: actions/checkout@1.0.0
     
