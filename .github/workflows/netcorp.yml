@@ -38,12 +38,10 @@ jobs:
     - name: nombre .ref  
       run: echo "${{ github.ref }}"
   
-  automation:
+  add-reviews:
     needs: create-pr-on-push
     runs-on: ubuntu-latest
     steps:
-    - name: Assign PR to creator
-      uses: thomaseizinger/assign-pr-creator-action@v1.0.0
-      if: github.event_name == 'pull_request' && github.event.action == 'opened'
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: dawn0114/assign-action@v1.3.0
+        with:
+          configuration-path: '.github/some_name_for_configs.yml'
