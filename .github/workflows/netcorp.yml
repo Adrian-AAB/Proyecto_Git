@@ -23,7 +23,7 @@ jobs:
   create-pull-request:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ github.ref != '6' }}
+    if: branch != 'master'
     steps:
     - uses: actions/checkout@1.0.0
     
