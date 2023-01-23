@@ -23,7 +23,6 @@ jobs:
   create-pull-request:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ github.head_ref  != '6' }}
     steps:
     - uses: actions/checkout@1.0.0
     
@@ -32,6 +31,7 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         head: ${{ github.ref }}
+        if: ${{ github.ref  != 'refs/heads/master' }}
         base: master
         title: "An automatically created PR!"
   
