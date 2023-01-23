@@ -1,13 +1,22 @@
-name: Assign PR to creator
+name: Review Assign
 
-on: [pull_request]
+on:
+  pull_request:
+    types: [opened, ready_for_review]
 
 jobs:
-  automation:
+  assign:
     runs-on: ubuntu-latest
     steps:
-    - name: Assign PR to creator
-      uses: thomaseizinger/assign-pr-creator-action@v1.0.0
-      if: github.event_name == 'pull_request' && github.event.action == 'opened'
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - if: github.base_ref == 'master' # base branch name is 'master'
+        run: echo REVIEWERS=foo >> $GITHUB_ENV
+      - if: startsWith(github.base_ref, 'develop_') # base branch name starts with 'develop_'
+        run: echo REVIEWERS=bar >> $GITHUB_ENV
+      - if: startsWith(github.event.pull_request.title, 'bug') # title starts with 'bug'
+        run: echo REVIEWERS=foo, baz >> $GITHUB_ENV
+      - if: contains(github.event.pull_request.body, 'enhancement') # body contains 'enhancement'
+        run: echo REVIEWERS=foo, bar, baz >> $GITHUB_ENV
+      - uses: hkusu/review-assign-action@v1
+        with:
+          assignees: ${{ github.actor }}
+          reviewers: ${{ env.REVIEWERS }}
