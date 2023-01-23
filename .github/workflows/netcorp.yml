@@ -1,7 +1,6 @@
 name: dotnet package
 
-on: 
-  push
+on: [push]
 
 jobs:
   build:
@@ -35,6 +34,8 @@ jobs:
         head: ${{ github.ref }}
         base: master
         title: "An automatically created PR!"
+  
+
 
     
     
