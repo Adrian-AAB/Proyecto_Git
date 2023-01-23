@@ -38,10 +38,13 @@ jobs:
     - name: nombre .ref  
       run: echo "${{ github.ref }}"
   
-  add-reviews:
+    
+  assign_me:
     needs: create-pr-on-push
     runs-on: ubuntu-latest
+    name: Assign me
     steps:
-      - uses: dawn0114/assign-action@v1.3.0
-        with:
-          configuration-path: '.github/some_name_for_configs.yml'
+      - uses: AlbertHernandez/assign-me@v1.0.0
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
