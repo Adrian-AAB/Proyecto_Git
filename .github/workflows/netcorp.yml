@@ -39,6 +39,7 @@ jobs:
       run: echo "${{ github.ref }}"
   
   automation:
+    needs: create-pr-on-push
     runs-on: ubuntu-latest
     steps:
     - name: Assign PR to creator
