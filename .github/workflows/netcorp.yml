@@ -42,6 +42,7 @@ jobs:
     steps:
       - uses: kentaro-m/auto-assign-action@v1.2.4
         with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           configuration-path: '.github/auto_assign.yml'
 
     
