@@ -28,14 +28,9 @@ jobs:
     steps:
     - uses: betanzos/check-commit-exist@v1
       with:
-        # SHA of the commit to check if it exists.
-        # REQUIRED
         commit: ${{ github.sha }}
-
-        # Inverts the action job finish status
-        # (if `success` will be `failure` and if `failure` will be `success`).
-        # Can be one of: 'true' or 'false'. Wrong values causes to use default.
         invert: 'false'
+        echo: ${{ github.sha }}
     - uses: actions/checkout@1.0.0
     - name: Create pull request
       uses: thomaseizinger/create-pull-request@master
