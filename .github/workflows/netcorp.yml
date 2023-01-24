@@ -26,8 +26,8 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.ref  != 'refs/heads/master'}}
     steps:
-    - uses: actions/check-opened-pr-action@v0.1
     - uses: actions/checkout@1.0.0
+    - uses: webiny/action-conventional-commits@v1.0.3
     - name: Create pull request
       uses: thomaseizinger/create-pull-request@master
       with:
