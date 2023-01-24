@@ -26,11 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.ref  != 'refs/heads/master'}}
     steps:
-    - uses: betanzos/check-commit-exist@v1
-      with:
-        commit: ${{ github.sha }}
-        invert: 'false'
-        echo: ${{ github.sha }}
+    - uses: actions/check-opened-pr-action@v0.1
     - uses: actions/checkout@1.0.0
     - name: Create pull request
       uses: thomaseizinger/create-pull-request@master
