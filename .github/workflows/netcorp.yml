@@ -40,7 +40,7 @@ jobs:
         run: echo "You don't have new commits 🛑!"
 
   create-pull-request:
-    needs: build
+    needs: commit_check
     runs-on: ubuntu-latest
     if: ${{ github.ref  != 'refs/heads/master'}}
     steps:
