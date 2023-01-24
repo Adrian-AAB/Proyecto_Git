@@ -44,6 +44,7 @@ jobs:
           head: ${{ github.ref }}
           base: master
           title: "An automatically created PR!"
+      - name: Print de github.head_ref
         run: echo "print de github.head_ref ${{ github.head_ref }} "
       - name: Print another thing if new commits couldn't be found
         if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
