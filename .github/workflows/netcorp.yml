@@ -21,29 +21,18 @@ jobs:
       - name: Test
         run: dotnet test --no-restore --verbosity normal
   
-  commit_check:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check for new commits today
-        id: check-new-commits
-        uses: adriangl/check-new-commits-action@v1
-        with:
-          token: ${{ github.token }}
-          seconds: 86400 # One day in seconds
-          branch: 'master'
-      - name: Print something if new commits are found
-        if: ${{ steps.check-new-commits.outputs.has-new-commits == 'true' }}
-        run: echo "You have ${{ steps.check-new-commits.outputs.new-commits-number }} new commit(s) ✅!"
-      - name: Print another thing if new commits couldn't be found
-        if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
-        run: echo "You don't have new commits 🛑!"
-
   create-pull-request:
-    needs: commit_check
+    needs: build
     runs-on: ubuntu-latest
     if: ${{ github.ref  != 'refs/heads/master'}}
     steps:
+    - name: Check for new commits today
+      id: check-new-commits
+      uses: adriangl/check-new-commits-action@v1
+      with:
+        token: ${{ github.token }}
+        seconds: 86400 # One day in second
+      if: ${{ steps.check-new-commits.outputs.has-new-commits == 'true' }}
     - uses: actions/checkout@1.0.0
     - name: Create pull request
       uses: thomaseizinger/create-pull-request@master
