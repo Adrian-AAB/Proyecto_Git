@@ -24,6 +24,7 @@ jobs:
   commit_check:
     needs: build
     runs-on: ubuntu-latest
+    if: ${{ github.ref  != 'refs/heads/master'}}
     steps:
       - name: Check for new commits today
         id: check-new-commits
@@ -31,11 +32,12 @@ jobs:
         with:
           token: ${{ github.token }}
           seconds: 86400 # One day in seconds
+          branch: ${{GITHUB_REF##*/}}
       - name: Print something if new commits are found
         if: ${{ steps.check-new-commits.outputs.has-new-commits == 'true' }}
         run: echo "You have ${{ steps.check-new-commits.outputs.new-commits-number }} new commit(s) ✅!"       
       - uses: actions/checkout@1.0.0
-        if: ${{ github.ref  != 'refs/heads/master'}}
+        
       - name: Create pull request
         uses: thomaseizinger/create-pull-request@master
         with:
@@ -47,7 +49,20 @@ jobs:
         if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
         run: echo "You don't have new commits 🛑!"
 
-  
+  create-pull-request:
+    needs: commit_check
+    runs-on: ubuntu-latest
+    if: ${{ github.ref  != 'refs/heads/master'}}
+    steps:
+    - uses: actions/checkout@1.0.0
+    - name: Create pull request
+      uses: thomaseizinger/create-pull-request@master
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        head: ${{ github.ref }}
+        base: master
+        title: "An automatically created PR!"
+
     
     
     
