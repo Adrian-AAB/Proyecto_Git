@@ -35,7 +35,7 @@ jobs:
         head: ${{ github.ref }}
         base: master
         title: "An automatically created PR!"
-        echo: ${{ github.action }}
+        echo: ${{ github.job }}
 
     
     
