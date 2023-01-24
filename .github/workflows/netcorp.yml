@@ -37,7 +37,6 @@ jobs:
         if: ${{ steps.check-new-commits.outputs.has-new-commits == 'true' }}
         run: echo "You have ${{ steps.check-new-commits.outputs.new-commits-number }} new commit(s) ✅!"       
       - uses: actions/checkout@1.0.0
-        
       - name: Create pull request
         uses: thomaseizinger/create-pull-request@master
         with:
