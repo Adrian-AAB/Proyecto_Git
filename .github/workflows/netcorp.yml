@@ -34,7 +34,7 @@ jobs:
           seconds: 86400 # One day in seconds
           branch: ${{ github.ref_name }}
       - name: Print something if new commits are found
-        if: ${{ steps.check-new-commits.outputs.has-new-commits == 'true' }}
+        if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
         run: echo "You have ${{ steps.check-new-commits.outputs.new-commits-number }} new commit(s) ✅!"       
       - uses: actions/checkout@1.0.0
       - name: Create pull request
@@ -47,7 +47,7 @@ jobs:
       - name: Print de github.ref_name
         run: echo "print de github.ref_name ${{ github.ref_name }} "
       - name: Print another thing if new commits couldn't be found
-        if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
+        if: ${{ steps.check-new-commits.outputs.has-new-commits == 'true' }}
         run: echo "You don't have new commits 🛑!"
 
     
