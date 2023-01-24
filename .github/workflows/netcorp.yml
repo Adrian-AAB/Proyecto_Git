@@ -27,7 +27,14 @@ jobs:
     if: ${{ github.ref  != 'refs/heads/master'}}
     steps:
     - uses: actions/checkout@1.0.0
-    - uses: webiny/action-conventional-commits@v1.0.3
+    - name: Check for new commits today
+      id: check-new-commits
+      uses: adriangl/check-new-commits-action@v1
+      with:
+        token: 'your_github_token'
+        seconds: 86400 # One day in seconds
+        branch: 'master'
+      if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
     - name: Create pull request
       uses: thomaseizinger/create-pull-request@master
       with:
