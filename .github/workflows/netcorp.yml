@@ -32,7 +32,7 @@ jobs:
       with:
         token: ${{ github.token }}
         seconds: 86400 # One day in second
-      if: ${{ steps.check-new-commits.outputs.has-new-commits == 'true' }}
+      if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
     - uses: actions/checkout@1.0.0
     - name: Create pull request
       uses: thomaseizinger/create-pull-request@master
