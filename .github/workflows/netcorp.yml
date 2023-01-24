@@ -24,7 +24,7 @@ jobs:
   create-pull-request:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ github.ref  != 'refs/heads/master' }}
+    if: ${{ github.ref  != 'refs/heads/master' && steps.create-pull-request.conclusion != 'failure'}}
     steps:
     - uses: actions/checkout@1.0.0
     
