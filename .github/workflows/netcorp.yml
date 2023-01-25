@@ -48,7 +48,7 @@ jobs:
     if: ${{ github.ref  != 'refs/heads/master'}}
     steps:
       - name: steps.check-new-commits.outputs.new-commits-number != 0
-        if: ${{ steps.check-new-commits.outputs.new-commits-number == 0  }} 
+        if: ${{ steps.check-new-commits.outputs.new-commits-number >= 0  }} 
         run: echo "steps.check-new-commits.outputs.new-commits-number"
       - uses: actions/checkout@1.0.0
       - name: Create pull request
