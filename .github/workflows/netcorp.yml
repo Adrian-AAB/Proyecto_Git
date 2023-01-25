@@ -33,6 +33,10 @@ jobs:
           token: ${{ github.token }}
           seconds: 60 # One day in seconds
           branch: ${{ github.ref_name }}
+      - name: Print another thing if new commits couldn't be found
+        if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
+        run: echo "You don't have new commits 🛑!"
+    
       - name: Print something if new commits are found
         if: ${{ steps.check-new-commits.outputs.has-new-commits == 'True' }}
         run: echo "You have ${{ steps.check-new-commits.outputs.new-commits-number }} new commit(s) ✅!"       
@@ -44,25 +48,4 @@ jobs:
           head: ${{ github.ref }}
           base: master
           title: "An automatically created PR!"
-      - name: Print de github.ref_name
-        run: echo "print de github.ref_name ${{ github.ref_name }} "
-      - name: Print another thing if new commits couldn't be found
-        if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
-        run: echo "You don't have new commits 🛑!"
-    
-
-  sync-branches:
-    runs-on: ubuntu-20.04
-    name: Syncing branches
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Set up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - name: Sync Branches PR
-        uses: cyberdantes/filter-branches@1
-        with:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          TARGET_BRANCH_STARTS_WITH: "feature/"
+      
