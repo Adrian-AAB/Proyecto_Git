@@ -53,11 +53,16 @@ jobs:
   branch:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - run: npm ci
-    - uses: nelonoel/branch-name@v1
-    # Use branch name for whatever purpose
-    - run: echo ${BRANCH_NAME}
-        
-      
+    - name: Get branch name based on PR
+      uses: andrevalentin/get-branch-name-by-pr@1.0.0
+      id: pr_data
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ steps.pr_data.outputs.branch }}
+            
+          
       
