@@ -50,19 +50,30 @@ jobs:
         if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
         run: echo "You don't have new commits 🛑!"
     
-  branch:
+  services:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.changes.outputs.matrix }}
     steps:
-    - name: Get branch name based on PR
-      uses: andrevalentin/get-branch-name-by-pr@1.0.0
-      id: pr_data
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: find changed services
+        id: changes
+        uses: CrusaderX/changes@v1
+        with:
+          folder: 'services'
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Checkout code
-      uses: actions/checkout@v2
-      with:
-        ref: ${{ steps.pr_data.outputs.branch }}
-            
+  tests:
+    needs: [services]
+    if: ${{ fromJSON(needs.services.outputs.matrix).services[0] }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJson(needs.services.outputs.matrix) }}
+      fail-fast: false
+    steps:
+      - run: |
+          echo ${{ matrix.services }} was changed! # will output auth and pizza becase changes were made there
           
       
