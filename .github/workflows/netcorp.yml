@@ -54,16 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: check-branch-exists
-        id: check-branch-exists
-        uses: GuillaumeFalourd/branch-exists@v1
-        with:
-          branch: ${{ github.ref_name }}
-
-      - if: steps.check-branch-exists.outputs.exists == 'true'
-        run: echo '<BRANCH_NAME> Branch exists'
-
-      - if: steps.check-branch-exists.outputs.exists == 'false'
-        run: echo '<BRANCH_NAME> Branch NOT FOUND'    
+        uses: ypicard/get-branch-name-github-action@v1
         
       
       
