@@ -50,15 +50,19 @@ jobs:
         if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
         run: echo "You don't have new commits 🛑!"
     
-  services:
-    runs-on: ubuntu-latest
+
+  sync-branches:
+    runs-on: ubuntu-20.04
+    name: Syncing branches
     steps:
-      - name: Generate branchlog
-        uses: abalioni/branchlog@1.0
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Node
+        uses: actions/setup-node@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          repository: branch_name
-          owner: organization_name
-          base_branch: main
-          feature_branch: homolog
-          pr_state: closed
+          node-version: 12
+      - name: Sync Branches PR
+        uses: cyberdantes/filter-branches@1
+        with:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          TARGET_BRANCH_STARTS_WITH: "feature/"
