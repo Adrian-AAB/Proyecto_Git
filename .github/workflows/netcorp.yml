@@ -1,7 +1,9 @@
 name: dotnet package
 
 on: 
-  push
+  push:
+    branches:
+      - "${{ github.ref_name }}"
 
 jobs:
   build:
