@@ -52,28 +52,13 @@ jobs:
     
   services:
     runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.changes.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v3
+      - name: Generate branchlog
+        uses: abalioni/branchlog@1.0
         with:
-          fetch-depth: 0
-      - name: find changed services
-        id: changes
-        uses: CrusaderX/changes@v1
-        with:
-          folder: 'services'
           token: ${{ secrets.GITHUB_TOKEN }}
-
-  tests:
-    needs: [services]
-    if: ${{ fromJSON(needs.services.outputs.matrix).services[0] }}
-    runs-on: ubuntu-latest
-    strategy:
-      matrix: ${{ fromJson(needs.services.outputs.matrix) }}
-      fail-fast: false
-    steps:
-      - run: |
-          echo ${{ matrix.services }} was changed! # will output auth and pizza becase changes were made there
-          
-      
+          repository: branch_name
+          owner: organization_name
+          base_branch: main
+          feature_branch: homolog
+          pr_state: closed
