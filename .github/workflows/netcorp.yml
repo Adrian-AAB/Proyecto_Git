@@ -38,8 +38,8 @@ jobs:
         run: echo "You don't have new commits 🛑!"
     
       - name: Print something if new commits are found
-        if: ${{ steps.check-new-commits.outputs.has-new-commits == 'True' }}
-        run: echo "You have ${{ steps.check-new-commits.outputs.new-commits-number }} new commit(s) ✅!"       
+        if: ${{ steps.check-new-commits.outputs.has-new-commits == 'True' && steps.check-new-commits.outputs.new-commits-number != 0 }}
+        run: echo "You have ${{ steps.check-new-commits.outputs.new-commits-number }} new commit(s) ✅!"   
       - uses: actions/checkout@1.0.0
       - name: Create pull request
         uses: thomaseizinger/create-pull-request@master
