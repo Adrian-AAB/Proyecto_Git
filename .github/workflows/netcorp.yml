@@ -20,8 +20,6 @@ jobs:
         run: dotnet build --configuration Release --no-restore
       - name: Test
         run: dotnet test --no-restore --verbosity normal
-      - name:  ryolambert/current-branch@v1.0 
-        uses: ryolambert/current-branch@v1.0
   
   commit_check:
     needs: build
@@ -52,8 +50,20 @@ jobs:
         if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
         run: echo "You don't have new commits 🛑!"
     
-  
-          
+  branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check-branch-exists
+        id: check-branch-exists
+        uses: GuillaumeFalourd/branch-exists@v1
+        with:
+          branch: ${{ github.ref_name }}
+
+      - if: steps.check-branch-exists.outputs.exists == 'true'
+        run: echo '<BRANCH_NAME> Branch exists'
+
+      - if: steps.check-branch-exists.outputs.exists == 'false'
+        run: echo '<BRANCH_NAME> Branch NOT FOUND'    
         
       
       
