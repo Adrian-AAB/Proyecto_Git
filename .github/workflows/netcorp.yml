@@ -53,9 +53,11 @@ jobs:
   branch:
     runs-on: ubuntu-latest
     steps:
-      - uses: younited/detect-branch-changes-action@v0.1.3
-        with:
-          pathspec: "application configs"
+    - uses: actions/checkout@v1
+    - run: npm ci
+    - uses: nelonoel/branch-name@v1
+    # Use branch name for whatever purpose
+    - run: echo ${BRANCH_NAME}
         
       
       
