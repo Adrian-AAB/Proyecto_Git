@@ -31,7 +31,7 @@ jobs:
         uses: adriangl/check-new-commits-action@v1
         with:
           token: ${{ github.token }}
-          seconds: 86400 # One day in seconds
+          seconds: 60 # One day in seconds
           branch: ${{ github.ref_name }}
       - name: Print something if new commits are found
         if: ${{ steps.check-new-commits.outputs.has-new-commits == 'True' }}
