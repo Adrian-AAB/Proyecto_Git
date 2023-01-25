@@ -45,7 +45,7 @@ jobs:
   pull_request:
     needs: commit_check
     runs-on: ubuntu-latest
-    if: ${{ github.ref  != 'refs/heads/master' && steps.check-new-commits.outputs.new-commits-number != 0 }}
+    if: ${{ github.ref  != 'refs/heads/master'}}
     steps:
       - uses: actions/checkout@1.0.0
       - name: Create pull request
