@@ -31,7 +31,7 @@ jobs:
         uses: adriangl/check-new-commits-action@v1
         with:
           token: ${{ github.token }}
-          seconds: 120 # Two minutes in seconds
+          seconds: 300 # Two minutes in seconds
           branch: ${{ github.ref_name }}
       # condicional para saber si existe un pull request
       - name: Print something if new commits are found
@@ -56,4 +56,3 @@ jobs:
 
 #  ${{ steps.check-new-commits.outputs.new-commits-number }} Variable que contiene la cantidad de pull request
       
-# 
