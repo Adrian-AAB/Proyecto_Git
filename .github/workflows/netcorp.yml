@@ -36,8 +36,8 @@ jobs:
       - name: Print something if new commits are found
         if: ${{ steps.check-new-commits.outputs.has-new-commits == 'True' }}
         run: echo "You have ${{ steps.check-new-commits.outputs.new-commits-number }} new commit(s) ✅!"  
-      - name: steps.check-new-commits.outputs.new-commits-number != 0
-        if: ${{ steps.check-new-commits.outputs.new-commits-number >= 0  }} 
+      - name: steps.check-new-commits.outputs.new-commits-number >= 1
+        if: ${{ steps.check-new-commits.outputs.new-commits-number >= 1  }} 
         run: echo "${{ steps.check-new-commits.outputs.new-commits-number }}" 
       - uses: actions/checkout@1.0.0
       - name: Create pull request
