@@ -44,11 +44,7 @@ jobs:
           head: ${{ github.ref }}
           base: master
           title: "An automatically created PR!"
-      - uses: kentaro-m/auto-assign-action@v1.2.4
-        with:
-          configuration-path: '.github/auto_assign.yml'
 
-      
       - name: Print another thing if new commits couldn't be found
         if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
         run: echo "You don't have new commits 🛑!"
@@ -60,5 +56,5 @@ jobs:
 #  ${{ steps.check-new-commits.outputs.has-new-commits }} Variable que muestra si exist un nuevo commit, retorna True o false, 
 #  si es True se reconoce que existe un commit, si es false es por que no encuentra ningún commit 
 
-#
+#  ${{ steps.check-new-commits.outputs.new-commits-number }} Variable que contiene la cantidad de pull request
       
