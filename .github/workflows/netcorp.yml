@@ -39,21 +39,6 @@ jobs:
       - name: steps.check-new-commits.outputs.new-commits-number != 0
         if: ${{ steps.check-new-commits.outputs.new-commits-number >= 0  }} 
         run: echo "${{ steps.check-new-commits.outputs.new-commits-number }}" 
-      - name: Print another thing if new commits couldn't be found
-        if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
-        run: echo "You don't have new commits 🛑!"
-    
-      
-
-
-  pull_request:
-    needs: commit_check
-    runs-on: ubuntu-latest
-    if: ${{ github.ref  != 'refs/heads/master'}}
-    steps:
-      - name: steps.check-new-commits.outputs.new-commits-number != 0
-        if: ${{ steps.check-new-commits.outputs.new-commits-number >= 0  }} 
-        run: echo "${{ steps.check-new-commits.outputs.new-commits-number }}"
       - uses: actions/checkout@1.0.0
       - name: Create pull request
         uses: thomaseizinger/create-pull-request@master
@@ -62,4 +47,9 @@ jobs:
           head: ${{ github.ref }}
           base: master
           title: "An automatically created PR!"
+      
+      - name: Print another thing if new commits couldn't be found
+        if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
+        run: echo "You don't have new commits 🛑!"
+    
       
