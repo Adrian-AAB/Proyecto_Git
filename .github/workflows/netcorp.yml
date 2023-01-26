@@ -33,11 +33,13 @@ jobs:
           token: ${{ github.token }}
           seconds: 120 # Two minutes in seconds
           branch: ${{ github.ref_name }}
+      # condicional para saber si existe un pull request
       - name: Print something if new commits are found
         if: ${{ steps.check-new-commits.outputs.has-new-commits == 'True' }}
         uses: actions/checkout@1.0.0 
+      
       - name: steps.check-new-commits.outputs.new-commits-number >= 1
-        if: ${{ steps.check-new-commits.outputs.new-commits-number >= 1  }} 
+        if: ${{ github.ref }} = ${{ github.base_ref }}
         uses: thomaseizinger/create-pull-request@master
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
