@@ -17,5 +17,4 @@ jobs:
         head: ${{ github.ref }}
         base: master
         title: "An automatically created PR!"
-    - name: nombre .ref  
-      run: echo "${{ github.ref }}"
+
