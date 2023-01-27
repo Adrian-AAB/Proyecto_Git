@@ -52,6 +52,9 @@ jobs:
             }
           run: echo 'github.event.commits'
 
+      - name: github.ref.head_name
+        run: ${{ github.ref.head_name }}  
+
       - name: Print another thing if new commits couldn't be found
         if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
         run: echo "You don't have new commits 🛑!"
