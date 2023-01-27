@@ -42,11 +42,14 @@ jobs:
           head: ${{ github.ref }}
           base: master
           title: "An automatically created PR!"
-      - uses: actions/checkout@v1
+
       - uses: RiskLedger/generate-changelog@v2
         env:
           GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
 
+      - name:  ${{ github.event.pull_request.head.sha || github.sha }}
+        run: echo '${{ github.event.pull_request.head.sha || github.sha }}'
+        
       - name: Print another thing if new commits couldn't be found
         if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
         run: echo "You don't have new commits 🛑!"bfv| |gv hb 
