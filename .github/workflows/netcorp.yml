@@ -44,7 +44,7 @@ jobs:
           title: "An automatically created PR!"
 
       - name: github.event.push.commit
-        run: echo '${{ github.event.push.commit != true }}'
+        run: echo '${{ github.event.push.commit }}'
 
       - name: Print another thing if new commits couldn't be found
         if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
