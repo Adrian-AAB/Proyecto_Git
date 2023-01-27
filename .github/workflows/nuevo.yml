@@ -4,54 +4,32 @@ on:
   push
 
 jobs:
-  diff:
-    name: Diff
-    runs-on: ubuntu-20.04
-    outputs:
-      modules: ${{ steps.run.outputs.modules }}
-      changed: ${{ steps.run.outputs.changed }}
-      diff: ${{ steps.run.outputs.diff }}
-      tags: ${{ steps.run.outputs.tags }}
+  test:
+    runs-on: ubuntu-latest
     steps:
-    -
-      name: Checkout code
-      uses: actions/checkout@v2
-    -
-      uses: achieve-3000/diff-action@main
-      id: run
+    - uses: actions/checkout@v2
+    - uses: tony84727/changed-file-filter@v0.2.0
+      id: filter
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        modules: |
-          src:
-            tags: [ts]
-          dist:
-            tags: [js]
-            pattern: dist/*
-          workflows:
-            pattern:
-              - .github/workflows/*
-    -
-      name: Print output
-      run: echo '${{ toJSON(steps.run.outputs) }}'
-
-  print-changes:
-    needs: [diff]
-    name: Print changes
-    runs-on: ubuntu-20.04
-    if: ${{ fromJson(needs.diff.outputs.changed) }}
-    strategy:
-      fail-fast: false
-      matrix:
-        module: ${{ fromJson(needs.diff.outputs.modules).changes }}
-    steps:
-    -
-      name: Print module
-      run: echo '${{ matrix.module }}'
-    -
-      name: Print diff
-      run: echo '${{ toJSON(fromJson(needs.diff.outputs.diff)[matrix.module]) }}'
-    -
-      name: Print files
-      run: echo '${{ toJSON(fromJson(needs.diff.outputs.diff)[matrix.module].files.all) }}'
-    - name: ${{ steps.run.outputs.diff }}
-      run: echo '${{ steps.run.outputs.diff }}'
+        # head: optional head commit SHA, default to ${{ github.event.pull_request.head.sha || github.sha }}
+        # base: optional base commit SHA, default to ${{ github.event.pull_request.base.sha }} or HEAD^ if not triggered by pull_request
+        
+        # filter rules in YAML format
+        # <rule-name>:
+        #  - <glob expression>
+        filters: |
+          doc:
+            - 'doc/**/*'
+          cc:
+            - 'cc/**/*'
+    # decide if to run a job based on variables outputted by the change filter
+    - name: Test
+      # get the variables by steps.<step id>.outputs.<rulename>
+      if: steps.filter.outputs.cc == 'true'
+      run: make test
+    - name: Test Doc
+      if: steps.filter.outputs.doc == 'true'
+      run: ./doc/test.sh
+    - name: Print changed doc files
+      if: steps.filter.outputs.doc == 'true'
+      run: echo 'Changed doc files ${{ step.filter.outputs.doc_files }}'
