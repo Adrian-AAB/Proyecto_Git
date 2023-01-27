@@ -57,7 +57,7 @@ jobs:
         run: echo "You don't have new commits 🛑!"
 
   test_update_notify:
-    if: ${{ (github.event_name == 'workflow_dispatch' || github.event.pull_request == false) }}
+    if: ${{ (github.event_name == 'workflow_dispatch' || github.event.pull_request != false) }}
     runs-on: ubuntu-latest
     steps:
     - name: abjsjnjj
