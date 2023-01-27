@@ -43,10 +43,6 @@ jobs:
           base: master
           title: "An automatically created PR!"
 
-      - uses: RiskLedger/generate-changelog@v2
-        env:
-          GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
-
       - name: ${{ github.event.push.commit == true }}
         run: echo '${{ github.event.push.commit == true }}'
 
