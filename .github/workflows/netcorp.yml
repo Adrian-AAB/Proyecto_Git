@@ -57,7 +57,7 @@ jobs:
         run: echo "You don't have new commits 🛑!"
 
   test_update_notify:
-    if: ${{ (github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true) }}
+    if: ${{ (github.event_name == 'workflow_dispatch' || github.event.pull_request == false) }}
     runs-on: ubuntu-latest
     steps:
       - uses: setsumaru1992/notify_test_file_update_between_latest_two_merge_commits@v0.0.3
