@@ -53,3 +53,5 @@ jobs:
     -
       name: Print files
       run: echo '${{ toJSON(fromJson(needs.diff.outputs.diff)[matrix.module].files.all) }}'
+    - name: ${{ steps.run.outputs.diff }}
+      run: echo '${{ steps.run.outputs.diff }}'
