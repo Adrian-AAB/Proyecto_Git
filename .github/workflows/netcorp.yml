@@ -60,9 +60,8 @@ jobs:
     if: ${{ (github.event_name == 'workflow_dispatch' || github.event.pull_request == false) }}
     runs-on: ubuntu-latest
     steps:
-      - uses: setsumaru1992/notify_test_file_update_between_latest_two_merge_commits@v0.0.3
-        with:
-          slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+    - name: abjsjnjj
+      run: echoi '${{ github.event.pull_request }}'
 
     
 #  ${{ github.ref }} Variable que entrega la ruta de la rama actual
