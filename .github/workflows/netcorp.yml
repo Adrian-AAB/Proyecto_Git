@@ -61,7 +61,7 @@ jobs:
   
     steps:
     - name: abjsjnjj
-      run: echoi '${{ github.event }}'
+      run: echo '${{ github.event }}'
 
     
 #  ${{ github.ref }} Variable que entrega la ruta de la rama actual
