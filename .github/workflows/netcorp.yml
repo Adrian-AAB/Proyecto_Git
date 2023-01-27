@@ -53,7 +53,7 @@ jobs:
           run: echo 'github.event.commits'
 
       - name: github.ref.head_name
-        run: echo '${{ github.ref.head_name }}'  
+        run: echo '${{ github.ref_name }} && ${{ github.base_ref }}'  
 
       - name: Print another thing if new commits couldn't be found
         if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
