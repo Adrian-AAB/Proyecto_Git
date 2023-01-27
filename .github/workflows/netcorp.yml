@@ -57,11 +57,11 @@ jobs:
         run: echo "You don't have new commits 🛑!"
 
   test_update_notify:
-    if: ${{ (github.event_name == 'workflow_dispatch' || github.event.pull_request != false) }}
+    if: ${{ github.event.push.commits != false }}
     runs-on: ubuntu-latest
     steps:
     - name: abjsjnjj
-      run: echoi '${{ github.event.pull_request }}'
+      run: echoi '${{ github.event.push.commits }}'
 
     
 #  ${{ github.ref }} Variable que entrega la ruta de la rama actual
