@@ -57,7 +57,7 @@ jobs:
         run: echo "You don't have new commits 🛑!"
 
   test_update_notify:
-    if: ${{ github.event.push.commits != false }}
+    if: ${{ github.event.push.commits == true }}
     runs-on: ubuntu-latest
     steps:
     - name: abjsjnjj
