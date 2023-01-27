@@ -43,8 +43,13 @@ jobs:
           base: master
           title: "An automatically created PR!"
 
-      - name: github.event.push.commit
-        run: echo '${{ github.event.push.commit }}'
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            const commits = ${{ toJSON(github.event.commits) }}
+            for (const commit of commits) {
+              console.log(commit);
+            }
 
       - name: Print another thing if new commits couldn't be found
         if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
