@@ -61,7 +61,7 @@ jobs:
   
     steps:
     - name: abjsjnjj
-      if: ${{ github.action == 'created' }}
+      if: ${{ github.action == created }}
       run: echo '${{ github.ref }}'
 
     
