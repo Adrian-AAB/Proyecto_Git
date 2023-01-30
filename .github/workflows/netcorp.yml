@@ -61,7 +61,8 @@ jobs:
   
     steps:
     - name: abjsjnjj
-      run: echo '${{ github.pages }}'
+      if: ${{ github.action == 'created' }}
+      run: echo '${{ github.ref }}'
 
     
 #  ${{ github.ref }} Variable que entrega la ruta de la rama actual
