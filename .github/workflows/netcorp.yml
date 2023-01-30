@@ -35,9 +35,8 @@ jobs:
       # condicional para saber si existe un pull request
       - name: Print something if new commits are found
         if: ${{ steps.check-new-commits.outputs.has-new-commits == 'True' }}
-        run: echo '${{ steps.check-new-commits.outputs.new-commits-number }} ${{ github.event.created }} & ${{ github.event.commits }}' 
-      - name: github.event.created  
-        if: ${{ github.event.created != true }}
+        run: echo '${{ steps.check-new-commits.outputs.new-commits-number }} new commit' 
+      - name: Create pull request
         uses: thomaseizinger/create-pull-request@master
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
