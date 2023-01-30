@@ -37,7 +37,7 @@ jobs:
         if: ${{ steps.check-new-commits.outputs.has-new-commits == 'True' && github.event.created != 'true' }}
         run: echo '${{ steps.check-new-commits.outputs.new-commits-number }} ${{ github.event.created }}' 
       - name: github.event.created  
-        if: ${{ github.event.commits != null }}
+        if: ${{ github.event.commits(null) }}
         uses: thomaseizinger/create-pull-request@master
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
