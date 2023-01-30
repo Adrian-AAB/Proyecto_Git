@@ -34,7 +34,7 @@ jobs:
           branch: ${{ github.ref_name }}
       # condicional para saber si existe un pull request
       - name: Print something if new commits are found
-        if: ${{ steps.check-new-commits.outputs.has-new-commits == 'True' }}
+        if: ${{ steps.check-new-commits.outputs.has-new-commits == 'True' }}&& ${{ github.event.created != 'false'}}
         run: echo ${{ steps.check-new-commits.outputs.new-commits-number }} 
       - name: github.event.created  
         #if: ${{ github.event.created != 'true'}}
