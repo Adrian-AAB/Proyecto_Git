@@ -23,7 +23,7 @@ jobs:
   commit_check:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ github.ref  != 'refs/heads/master' || github.event.created == 'false'}} 
+    if: ${{ github.ref  != 'refs/heads/master' }} 
     steps:
       - name: Check for new commits today
         id: check-new-commits
@@ -37,7 +37,7 @@ jobs:
         if: ${{ steps.check-new-commits.outputs.has-new-commits == 'True' }}
         run: echo ${{ steps.check-new-commits.outputs.new-commits-number }} 
       - name: github.event.created  
-        if: ${{ github.event.create == 'false'}}
+        if: ${{ github.event.created == 'false'}}
         uses: thomaseizinger/create-pull-request@master
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
