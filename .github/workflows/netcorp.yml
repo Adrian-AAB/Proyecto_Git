@@ -72,7 +72,7 @@ jobs:
       - name: Dump matrix context
         run: echo '${{ toJSON(matrix) }}'
       - name: Print
-        run: echo '${{ github.event.commits }}'
+        run: echo '${{ github.event.created }}'
 
     
 #  ${{ github.ref }} Variable que entrega la ruta de la rama actual
