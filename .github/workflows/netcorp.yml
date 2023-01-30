@@ -61,7 +61,7 @@ jobs:
   
     steps:
     - name: abjsjnjj
-      run: echo '${{ github.comment }}'
+      run: echo '${{ github.description }}'
 
     
 #  ${{ github.ref }} Variable que entrega la ruta de la rama actual
