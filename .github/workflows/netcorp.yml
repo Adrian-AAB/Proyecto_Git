@@ -23,7 +23,7 @@ jobs:
   commit_check:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ github.ref  != 'refs/heads/master' }} && ${{ github.event.created != 'true'}}
+    if: ${{ github.ref  != 'refs/heads/master' || github.event.created == 'false'}} 
     steps:
       - name: Check for new commits today
         id: check-new-commits
@@ -34,10 +34,10 @@ jobs:
           branch: ${{ github.ref_name }}
       # condicional para saber si existe un pull request
       - name: Print something if new commits are found
-        if: ${{ steps.check-new-commits.outputs.has-new-commits == 'True' }}&& ${{ github.event.create != 'false'}}
+        if: ${{ steps.check-new-commits.outputs.has-new-commits == 'True' }}
         run: echo ${{ steps.check-new-commits.outputs.new-commits-number }} 
       - name: github.event.created  
-        if: ${{ github.event.create != 'true'}}
+        if: ${{ github.event.create == 'false'}}
         uses: thomaseizinger/create-pull-request@master
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
