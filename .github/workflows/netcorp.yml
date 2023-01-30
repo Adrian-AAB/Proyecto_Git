@@ -2,7 +2,6 @@ name: dotnet package
 
 on: 
   push
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -61,7 +60,7 @@ jobs:
   
     steps:
     - name: abjsjnjj
-      run: echo '${{ github.event_name }}'
+      run: echo '${{ github.description }}'
 
     
 #  ${{ github.ref }} Variable que entrega la ruta de la rama actual
