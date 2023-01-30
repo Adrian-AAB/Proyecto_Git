@@ -60,7 +60,7 @@ jobs:
   
     steps:
     - name: abjsjnjj
-      run: echo '${{ github.repository }}'
+      run: echo '${{ github.repository.name }}'
 
     
 #  ${{ github.ref }} Variable que entrega la ruta de la rama actual
