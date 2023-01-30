@@ -71,6 +71,8 @@ jobs:
         run: echo '${{ toJSON(strategy) }}'
       - name: Dump matrix context
         run: echo '${{ toJSON(matrix) }}'
+      - name: Print
+        run: echo '${{ github.event.commits }}'
 
     
 #  ${{ github.ref }} Variable que entrega la ruta de la rama actual
