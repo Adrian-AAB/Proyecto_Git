@@ -1,0 +1,4434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--- tipoAmbiente="PROD" o "CERT"-->
+
+<Archivo tipo="AEI_CO" descripcion="Archivo AEI - Colombia" extension="json" charset="UTF-8"
+         tipoDoc="TipoDocumento" wrkDir="in\carg_AEI_ubl21" prcDir="in\carg_AEI_ubl21\proc" prgFirma="http://localhost:8080/dbnWssCrypto/Crypto/restapi/Principal" prgValFirma="" tipoAmbiente="PROD" versionUBL="21" valFecha="NO" >
+
+
+   <!--- **** IMPORTANTE ****  **** IMPORTANTE ****  **** IMPORTANTE ****  **** IMPORTANTE **** -->
+   <!--- **** IMPORTANTE ****      Este archivo no debe ser modificado     **** IMPORTANTE **** -->
+
+   <Grafo>
+      <Nodo origen="S0" destino="Encabezado"/>
+
+     <Nodo origen="Encabezado" destino="Direccion"/>
+     <Nodo origen="Encabezado" destino="ContratoMandato"/>
+     <Nodo origen="Encabezado" destino="ObligResp"/>
+      
+     <Nodo origen="ContratoMandato" destino="Mandante"/>
+      
+     <Nodo origen="Mandante" destino="Mandante"/>
+     <Nodo origen="Mandante" destino="ObligResp"/>
+     <Nodo origen="Mandante" destino="Direccion"/>
+      
+     <Nodo origen="ObligResp" destino="Mandante"/>
+     <Nodo origen="ObligResp" destino="ContratoMandato"/>
+     <Nodo origen="ObligResp" destino="ObligResp"/>	  
+     <Nodo origen="ObligResp" destino="Direccion"/>
+     
+     <Nodo origen="Direccion" destino="Direccion"/>
+     <Nodo origen="Direccion" destino="Contacto"/>
+     <Nodo origen="Direccion" destino="Impuesto"/>
+     <Nodo origen="Direccion" destino="Consorcio"/>
+     <Nodo origen="Direccion" destino="MedioPago"/>
+      
+          <Nodo origen="Consorcio" destino="Consorcio"/>
+          <Nodo origen="Consorcio" destino="Contacto"/>
+          <Nodo origen="Consorcio" destino="Impuesto"/>
+          <Nodo origen="Consorcio" destino="Referencia"/>
+          <Nodo origen="Consorcio" destino="Item"/>
+
+     <Nodo origen="Contacto" destino="Contacto"/>
+	 <Nodo origen="Contacto" destino="MedioPago"/>
+     <Nodo origen="Contacto" destino="Impuesto"/>
+	 <Nodo origen="Contacto" destino="DsctoCargo"/>	 
+     <Nodo origen="Contacto" destino="Referencia"/>
+	 <Nodo origen="Contacto" destino="Item"/>
+ 
+     <Nodo origen="Impuesto" destino="Impuesto"/>
+     <Nodo origen="Impuesto" destino="MedioPago"/>     
+     <Nodo origen="Impuesto" destino="CondPago"/>      
+     <Nodo origen="Impuesto" destino="Anticipo"/>      
+     <Nodo origen="Impuesto" destino="DsctoCargo"/>      
+     <Nodo origen="Impuesto" destino="Referencia"/>      
+     <Nodo origen="Impuesto" destino="Item"/>
+     <Nodo origen="Impuesto" destino="EOF"/>
+
+     <Nodo origen="MedioPago" destino="MedioPago"/>
+     <Nodo origen="MedioPago" destino="CondPago"/>      
+     <Nodo origen="MedioPago" destino="Anticipo"/>      
+     <Nodo origen="MedioPago" destino="DsctoCargo"/>      
+     <Nodo origen="MedioPago" destino="Referencia"/>      
+     <Nodo origen="MedioPago" destino="Item"/>
+     <Nodo origen="MedioPago" destino="EOF"/>
+      
+     <Nodo origen="CondPago" destino="CondPago"/>
+     <Nodo origen="CondPago" destino="Anticipo"/>      
+     <Nodo origen="CondPago" destino="DsctoCargo"/>      
+     <Nodo origen="CondPago" destino="Referencia"/>      
+     <Nodo origen="CondPago" destino="Item"/>
+     <Nodo origen="CondPago" destino="EOF"/>
+	  
+     <Nodo origen="Anticipo" destino="Anticipo"/>      
+     <Nodo origen="Anticipo" destino="DsctoCargo"/>      
+     <Nodo origen="Anticipo" destino="Item"/>
+     <Nodo origen="Anticipo" destino="EOF"/>
+
+     <Nodo origen="DsctoCargo" destino="DsctoCargo"/>
+	 <Nodo origen="DsctoCargo" destino="Referencia"/>
+     <Nodo origen="DsctoCargo" destino="Item"/>
+     <Nodo origen="DsctoCargo" destino="EOF"/>
+      
+     <Nodo origen="MandatoItem" destino="Item"/>
+     <Nodo origen="MandatoItem" destino="CdgItem"/>      
+     <Nodo origen="MandatoItem" destino="RefeItem"/>      
+     <Nodo origen="MandatoItem" destino="DsctoItem"/>      
+     <Nodo origen="MandatoItem" destino="Referencia"/>	
+     <Nodo origen="MandatoItem" destino="CampoLibre"/>
+     <Nodo origen="MandatoItem" destino="CorreoDespacho"/>
+     <Nodo origen="MandatoItem" destino="EOF"/>
+
+     <Nodo origen="Item" destino="Item"/>
+     <Nodo origen="Item" destino="ImpuestoItem"/>
+     <Nodo origen="Item" destino="CdgItem"/>
+     <Nodo origen="Item" destino="RefeItem"/>
+     <Nodo origen="Item" destino="DsctoItem"/>      
+     <Nodo origen="Item" destino="MandatoItem"/>
+     <Nodo origen="Item" destino="PeriServItem"/>
+     <Nodo origen="Item" destino="Referencia"/>
+     <Nodo origen="Item" destino="Entrega"/>
+     <Nodo origen="Item" destino="CampoLibre"/>
+     <Nodo origen="Item" destino="CorreoDespacho"/>	
+     <Nodo origen="Item" destino="CaraAdicItem"/>
+     <Nodo origen="Item" destino="EOF"/>
+      
+     <Nodo origen="CaraAdicItem" destino="CaraAdicItem"/>
+     <Nodo origen="CaraAdicItem" destino="ImpuestoItem"/>
+     <Nodo origen="CaraAdicItem" destino="CdgItem"/>
+     <Nodo origen="CaraAdicItem" destino="RefeItem"/>
+     <Nodo origen="CaraAdicItem" destino="DsctoItem"/>
+     <Nodo origen="CaraAdicItem" destino="PeriServItem"/>
+     <Nodo origen="CaraAdicItem" destino="Referencia"/>
+     <Nodo origen="CaraAdicItem" destino="Entrega"/>
+     <Nodo origen="CaraAdicItem" destino="CampoLibre"/>
+     <Nodo origen="CaraAdicItem" destino="CorreoDespacho"/>	
+     <Nodo origen="CaraAdicItem" destino="EOF"/>
+      
+     <Nodo origen="ImpuestoItem" destino="ImpuestoItem"/>
+     <Nodo origen="ImpuestoItem" destino="CdgItem"/>
+     <Nodo origen="ImpuestoItem" destino="RefeItem"/>
+     <Nodo origen="ImpuestoItem" destino="DsctoItem"/>
+     <Nodo origen="ImpuestoItem" destino="PeriServItem"/>
+	 <Nodo origen="ImpuestoItem" destino="Item"/>
+     <Nodo origen="ImpuestoItem" destino="Referencia"/>
+     <Nodo origen="ImpuestoItem" destino="Entrega"/>
+     <Nodo origen="ImpuestoItem" destino="CampoLibre"/>
+     <Nodo origen="ImpuestoItem" destino="CorreoDespacho"/>	
+     <Nodo origen="ImpuestoItem" destino="EOF"/>
+         
+     <Nodo origen="CdgItem" destino="CdgItem"/>
+     <Nodo origen="CdgItem" destino="RefeItem"/>
+     <Nodo origen="CdgItem" destino="DsctoItem"/>
+     <Nodo origen="CdgItem" destino="PeriServItem"/>
+     <Nodo origen="CdgItem" destino="Item"/>
+     <Nodo origen="CdgItem" destino="Referencia"/>
+	 <Nodo origen="CdgItem" destino="PropExtra"/>										  
+     <Nodo origen="CdgItem" destino="Entrega"/>
+     <Nodo origen="CdgItem" destino="CampoLibre"/>
+     <Nodo origen="CdgItem" destino="CorreoDespacho"/>	
+     <Nodo origen="CdgItem" destino="EOF"/>
+     
+     <Nodo origen="RefeItem" destino="RefeItem"/>
+     <Nodo origen="RefeItem" destino="DsctoItem"/>
+     <Nodo origen="RefeItem" destino="PeriServItem"/>
+     <Nodo origen="RefeItem" destino="Item"/>
+     <Nodo origen="RefeItem" destino="Referencia"/>
+	 <Nodo origen="RefeItem" destino="PropExtra"/>										   
+     <Nodo origen="RefeItem" destino="Entrega"/>
+     <Nodo origen="RefeItem" destino="CampoLibre"/>
+     <Nodo origen="RefeItem" destino="CorreoDespacho"/>	
+     <Nodo origen="RefeItem" destino="EOF"/>
+     
+     <Nodo origen="DsctoItem" destino="DsctoItem"/>
+     <Nodo origen="DsctoItem" destino="PeriServItem"/>
+     <Nodo origen="DsctoItem" destino="Item"/>
+     <Nodo origen="DsctoItem" destino="Referencia"/>
+	 <Nodo origen="DsctoItem" destino="PropExtra"/>											
+     <Nodo origen="DsctoItem" destino="Entrega"/>
+     <Nodo origen="DsctoItem" destino="CampoLibre"/>
+     <Nodo origen="DsctoItem" destino="CorreoDespacho"/>	
+     <Nodo origen="DsctoItem" destino="EOF"/>
+     
+     <Nodo origen="PeriServItem" destino="PeriServItem"/>
+     <Nodo origen="PeriServItem" destino="Item"/>
+     <Nodo origen="PeriServItem" destino="Referencia"/>
+	 <Nodo origen="PeriServItem" destino="PropExtra"/>											   
+     <Nodo origen="PeriServItem" destino="Entrega"/>
+     <Nodo origen="PeriServItem" destino="CampoLibre"/>
+     <Nodo origen="PeriServItem" destino="CorreoDespacho"/>	
+     <Nodo origen="PeriServItem" destino="EOF"/>
+     
+     <Nodo origen="Referencia" destino="Referencia"/>
+     <Nodo origen="Referencia" destino="Despacho"/>
+     <Nodo origen="Referencia" destino="CampoLibre"/>
+     <Nodo origen="Referencia" destino="CorreoDespacho"/>	
+     <Nodo origen="Referencia" destino="PropExtra"/>
+	 <Nodo origen="Referencia" destino="EOF"/>												   
+     
+     <Nodo origen="Despacho" destino="Despacho"/>
+     <Nodo origen="Despacho" destino="Transportista"/>
+     <Nodo origen="Despacho" destino="Entrega"/>
+     <Nodo origen="Despacho" destino="CampoLibre"/>
+     <Nodo origen="Despacho" destino="CorreoDespacho"/>	
+     <Nodo origen="Despacho" destino="EOF"/>
+     
+     <Nodo origen="Transportista" destino="Transportista"/>
+     <Nodo origen="Transportista" destino="Despacho"/>
+     <Nodo origen="Transportista" destino="Entrega"/>
+     <Nodo origen="Transportista" destino="CampoLibre"/>
+     <Nodo origen="Transportista" destino="CorreoDespacho"/>	
+     <Nodo origen="Transportista" destino="EOF"/>		
+       
+     <Nodo origen="Entrega" destino="Entrega"/>
+     <Nodo origen="Entrega" destino="Consignador"/>
+     <Nodo origen="Entrega" destino="Despacho"/>
+     <Nodo origen="Entrega" destino="CampoLibre"/>
+     <Nodo origen="Entrega" destino="CorreoDespacho"/>	
+     <Nodo origen="Entrega" destino="EOF"/>	
+      
+     <Nodo origen="Consignador" destino="Consignador"/>
+     <Nodo origen="Consignador" destino="Despacho"/>
+     <Nodo origen="Consignador" destino="Entrega"/>
+     <Nodo origen="Consignador" destino="CampoLibre"/>
+     <Nodo origen="Consignador" destino="CorreoDespacho"/>
+     <Nodo origen="Consignador" destino="EOF"/>	
+     
+     <Nodo origen="CampoLibre" destino="CampoLibre"/>
+     <Nodo origen="CampoLibre" destino="CorreoDespacho"/>	
+     <Nodo origen="CampoLibre" destino="DocAsociado"/>	
+     <Nodo origen="CampoLibre" destino="EOF"/>
+    
+     
+     <Nodo origen="CorreoDespacho" destino="CorreoDespacho"/>	
+     <Nodo origen="CorreoDespacho" destino="DocAsociado"/>
+          <Nodo origen="CorreoDespacho" destino="PropExtra"/>
+     <Nodo origen="CorreoDespacho" destino="EOF"/>
+     
+     <Nodo origen="DocAsociado" destino="DocAsociado"/>	
+     <Nodo origen="DocAsociado" destino="EOF"/>	
+	 
+	 
+	<Nodo origen="PropExtra" destino="Referencia"/>
+     <Nodo origen="PropExtra" destino="Despacho"/>
+     <Nodo origen="PropExtra" destino="CampoLibre"/>
+     <Nodo origen="PropExtra" destino="CorreoDespacho"/>												 										
+     <Nodo origen="PropExtra" destino="PropExtra"/>
+     <Nodo origen="PropExtra" destino="CorreoDespacho"/>	
+     <Nodo origen="PropExtra" destino="DocAsociado"/>	
+     <Nodo origen="PropExtra" destino="EOF"/>
+   </Grafo>
+
+   <Constantes>
+      <K posicion="0" nombre="IVA" valor="19.0"/>
+      <K posicion="1" nombre="EPSILON" valor="1.0"/>
+      <K posicion="2" nombre="pkDocu" valor="0"/>          <!--- Id unico de Documento -->
+      <K posicion="3" nombre="retSP2" valor="0"/>          <!--- Rut del Receptor  -->
+      <K posicion="4" nombre="retSP3" valor="0"/>          <!--- Dv del Receptor   -->
+      <K posicion="5" nombre="retSP4" valor="0"/>          <!--- Empr del Receptor -->
+      <K posicion="6" nombre="retSP5" valor="0"/>          <!--- Sin definicion    -->
+   </Constantes>
+   
+   <Registros>
+
+      <Registro tipo="Encabezado" posicion="0" descripcion="Encabezado Documento">
+
+         <CondicionOccurs>S</CondicionOccurs>
+         <MaxLineas>1</MaxLineas>
+         <SizeBuffXml>10240</SizeBuffXml>
+
+         <CantidadCampos>65</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+	      <Obligatorio>S</Obligatorio>
+	      <TipoCampo>K</TipoCampo>
+	      <LongitudCampo>20</LongitudCampo>
+	      <ValorDefecto>Encabezado</ValorDefecto>
+	 </Campo>
+         <Campo posicion="1" nombre="LineaEncabezado" descripcion="Correlativo de Encabezado">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+	      <ValorDefecto>1</ValorDefecto>
+         </Campo>
+
+         <Campo posicion="2" nombre="TipoDocumento" descripcion="Tipo de Documento">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>2</LongitudCampo>
+              <Valores cantidad="6">
+                 <Valor>FE</Valor>
+                 <Valor>NC</Valor>
+                 <Valor>ND</Valor>
+                 <Valor>DE</Valor>
+                 <Valor>DS</Valor>
+                 <Valor>NS</Valor>
+              </Valores>
+         </Campo>
+         <Campo posicion="3" nombre="Prefijo" descripcion="Prefijo de Documento">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>4</LongitudCampo>
+         </Campo>
+         <Campo posicion="4" nombre="Correlativo" descripcion="Correlativo del Documento">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <!-- <SubTipoCampo>P</SubTipoCampo> -->
+              <LongitudCampo>20</LongitudCampo>
+         </Campo>
+         <Campo posicion="5" nombre="FechaEmision" descripcion="Fecha Emision del Documento">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>D</TipoCampo>
+              <SubTipoCampo>YYYY-MM-DD</SubTipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+         </Campo>
+         <Campo posicion="6" nombre="HoraEmision" descripcion="Hora Emision del Documento">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>D</TipoCampo>
+              <SubTipoCampo>HH:MI:SS</SubTipoCampo>
+              <LongitudCampo>8</LongitudCampo>
+         </Campo>
+         <Campo posicion="7" nombre="FechaVencimiento" descripcion="Fecha de vencimiento del Documento">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>D</TipoCampo>
+              <SubTipoCampo>YYYY-MM-DD</SubTipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+         </Campo>
+         <Campo posicion="8" nombre="TipoOperacion" descripcion="Tipo de operacion">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>2</LongitudCampo>
+              <ValorDefecto>10</ValorDefecto>
+              <Valores cantidad="17">
+                 <Valor>01</Valor>
+                 <Valor>02</Valor>
+                 <Valor>03</Valor>
+                 <Valor>04</Valor>
+                 <Valor>05</Valor>
+                 <Valor>06</Valor>
+                 <Valor>07</Valor>
+                 <Valor>08</Valor>
+                 <Valor>09</Valor>
+				 <Valor>10</Valor>
+				 <Valor>11</Valor>
+				 <Valor>12</Valor>
+				 <Valor>20</Valor>
+				 <Valor>22</Valor>
+				 <Valor>23</Valor>
+				 <Valor>30</Valor>
+				 <Valor>32</Valor>
+				 <Valor>33</Valor>
+              </Valores>
+         </Campo>
+         <Campo posicion="9" nombre="TipoFactura" descripcion="Tipo de Factura">
+              <Obligatorio>VSNN</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>2</LongitudCampo>
+              <Valores cantidad="8">
+                  <Valor>01</Valor>
+                  <Valor>02</Valor>
+                  <Valor>03</Valor>
+                  <Valor>04</Valor>
+                  <Valor>05</Valor>
+                  <Valor>91</Valor>
+                  <Valor>92</Valor>
+                  <Valor>95</Valor>
+              </Valores>
+         </Campo>
+         <Campo posicion="10" nombre="MonedaDocumento" descripcion="Moneda del Documento">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>3</LongitudCampo>
+              <Valores cantidad="22">
+                 <Valor>AED</Valor>
+<Valor>BOB</Valor>
+<Valor>CAD</Valor>
+<Valor>CLP</Valor>
+<Valor>CNY</Valor>
+<Valor>COP</Valor>
+<Valor>DOP</Valor>
+<Valor>EUR</Valor>
+<Valor>GTQ</Valor>
+<Valor>HKD</Valor>
+<Valor>HNL</Valor>
+<Valor>MXN</Valor>
+<Valor>NOK</Valor>
+<Valor>PAB</Valor>
+<Valor>PEN</Valor>
+<Valor>PYG</Valor>
+<Valor>RMB</Valor>
+<Valor>TRY</Valor>
+<Valor>USD</Valor>
+<Valor>JPY</Valor>
+<Valor>BRL</Valor>
+<Valor>CRC</Valor>
+              </Valores>
+	      <ValorDefecto>COP</ValorDefecto>
+         </Campo>
+         <Campo posicion="11" nombre="NotaDocumento" descripcion="Info Adicional Libre">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>2048</LongitudCampo>
+             
+         </Campo>
+         <Campo posicion="12" nombre="periodoFechaInicio" descripcion="Fecha de inicio del periodo de facturación">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>D</TipoCampo>
+              <SubTipoCampo>YYYY-MM-DD</SubTipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+         </Campo>
+         <Campo posicion="13" nombre="periodoHoraInicio" descripcion="Hora de inicio del periodo de facturación">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>D</TipoCampo>
+              <SubTipoCampo>HH:MI:SS</SubTipoCampo>
+              <LongitudCampo>8</LongitudCampo>
+         </Campo>
+         <Campo posicion="14" nombre="periodoFechaFin" descripcion="Fecha de inicio del periodo de facturación">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>D</TipoCampo>
+              <SubTipoCampo>YYYY-MM-DD</SubTipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+         </Campo>
+         <Campo posicion="15" nombre="periodoHoraFin" descripcion="Hora de inicio del periodo de facturación">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>D</TipoCampo>
+              <SubTipoCampo>HH:MI:SS</SubTipoCampo>
+              <LongitudCampo>8</LongitudCampo>
+         </Campo>
+         <Campo posicion="16" nombre="TipoEmisor" descripcion="Tipo de Persona Emisora">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>2</LongitudCampo>
+              <Valores cantidad="3">
+                 <Valor>1</Valor>
+                 <Valor>2</Valor>
+                 <Valor>3</Valor>
+              </Valores>
+         </Campo>
+         <Campo posicion="17" nombre="TipoIdenEmisor" descripcion="Tipo de Documento Identidad Emisor">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>2</LongitudCampo>
+              <Valores cantidad="10">
+                 <Valor>11</Valor>
+                 <Valor>12</Valor>
+                 <Valor>13</Valor>
+                 <Valor>21</Valor>
+                 <Valor>22</Valor>
+                 <Valor>31</Valor>
+                 <Valor>41</Valor>
+                 <Valor>42</Valor>
+                 <Valor>50</Valor>
+                 <Valor>91</Valor>
+              </Valores>
+         </Campo>
+         <Campo posicion="18" nombre="IdentificacionEmisor" descripcion="Numero identificacion del Emisor">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+         </Campo>
+         <Campo posicion="19" nombre="DigitoVerificadorEmisor" descripcion="Digito verificador del Emisor">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+         </Campo>
+         <Campo posicion="20" nombre="RegimenEmisor" descripcion="Regimen Tributario del Emisor">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+              <Valores cantidad="5">
+				 <Valor>No aplica</Valor>
+                 <Valor>04</Valor>
+                 <Valor>05</Valor>
+				 <Valor>48</Valor>
+                 <Valor>49</Valor>
+              </Valores>
+         </Campo>
+         <Campo posicion="21" nombre="CodigoRespEmisor" descripcion="Responsabilidad del emisor">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>99</LongitudCampo>
+         </Campo>
+         <Campo posicion="22" nombre="NomComerEmisor" descripcion="Nombre Comercial del Emisor">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>250</LongitudCampo>
+         </Campo>
+         <Campo posicion="23" nombre="RSocApeEmisor" descripcion="Razon Social o Apellidos del Emisor">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>100</LongitudCampo>
+         </Campo>
+         <Campo posicion="24" nombre="NombreEmisor" descripcion="Nombres del Emisor">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>200</LongitudCampo>
+         </Campo>
+         <Campo posicion="25" nombre="IdentificadorTributoEmisor" descripcion="Identificador tributo adquiriente">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>3</LongitudCampo>
+              <ValorDefecto>01</ValorDefecto>
+         </Campo>
+               <Campo posicion="26" nombre="NombreTributoEmisor" descripcion="Nombres del tributo del adquiriente">
+	       <Obligatorio>S</Obligatorio>
+	       <TipoCampo>C</TipoCampo>
+	       <LongitudCampo>30</LongitudCampo>
+	       <ValorDefecto>IVA</ValorDefecto>
+         </Campo>
+         <Campo posicion="27" nombre="TipoAdquirente" descripcion="Tipo de Persona Adquirente">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>2</LongitudCampo>
+              <Valores cantidad="3">
+                 <Valor>1</Valor>
+                 <Valor>2</Valor>
+                 <Valor>3</Valor>
+              </Valores>
+         </Campo>
+         <Campo posicion="28" nombre="TipoIdenAdquirente" descripcion="Tipo de Documento Identidad Adquirente">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>2</LongitudCampo>
+              <Valores cantidad="10">
+                 <Valor>11</Valor>
+                 <Valor>12</Valor>
+                 <Valor>13</Valor>
+                 <Valor>21</Valor>
+                 <Valor>22</Valor>
+                 <Valor>31</Valor>
+                 <Valor>41</Valor>
+                 <Valor>42</Valor>
+                 <Valor>50</Valor>
+                 <Valor>91</Valor>
+              </Valores>
+         </Campo>
+         <Campo posicion="29" nombre="IdentificacionAdquirente" descripcion="Numero identificacion del Adquirente">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>20</LongitudCampo>
+         </Campo>
+		 <Campo posicion="30" nombre="DigitoVerificadorAdquiriente" descripcion="Digito verificador del Adquirente">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+         </Campo>
+         <Campo posicion="31" nombre="RegimenAdquirente" descripcion="Regimen Tributario del Adquirente">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+               <Valores cantidad="5">
+			     <Valor>No aplica</Valor>
+                 <Valor>04</Valor>
+                 <Valor>05</Valor>
+				 <Valor>48</Valor>
+                 <Valor>49</Valor>
+              </Valores>
+         </Campo>
+         <Campo posicion="32" nombre="CodigoRespAdquiriente" descripcion="Codigo responsabilidad adquiriente">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>99</LongitudCampo>
+         </Campo>
+         <Campo posicion="33" nombre="NomComerAdquirente" descripcion="Nombre Comercial del Adquirente">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>200</LongitudCampo>
+         </Campo>
+         <Campo posicion="34" nombre="RSocApeAdquirente" descripcion="Razon Social o Apellidos del Adquirente">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>200</LongitudCampo>
+         </Campo>
+         <Campo posicion="35" nombre="NombreAdquirente" descripcion="Nombres del Adquirente">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>200</LongitudCampo>
+         </Campo>
+         <Campo posicion="36" nombre="IdentificadorTributoAdquiriente" descripcion="Identificador del tributo">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>3</LongitudCampo>
+              <ValorDefecto>01</ValorDefecto>
+         </Campo>
+               <Campo posicion="37" nombre="NombreTributoAdquiriente" descripcion="Nombre del tributo">
+	       <Obligatorio>S</Obligatorio>
+	       <TipoCampo>C</TipoCampo>
+	       <LongitudCampo>30</LongitudCampo>
+	       <ValorDefecto>IVA</ValorDefecto>
+         </Campo>
+         <Campo posicion="38" nombre="TotalBrutoDocumento" descripcion="Suma Importes de lineas del documento">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>R</TipoCampo>
+              <SubTipoCampo>R</SubTipoCampo>
+              <LongitudCampo>18</LongitudCampo>
+              <LongitudEntero>14</LongitudEntero>
+              <LongitudDecimal>4</LongitudDecimal>
+         </Campo>
+         <Campo posicion="39" nombre="TotalDescuentoDocumento" descripcion="Total de Descuentos">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>R</TipoCampo>
+              <SubTipoCampo>R</SubTipoCampo>
+              <LongitudCampo>18</LongitudCampo>
+              <LongitudEntero>14</LongitudEntero>
+              <LongitudDecimal>4</LongitudDecimal>
+         </Campo>
+         <Campo posicion="40" nombre="TotalCargoDocumento" descripcion="Total de Cargos">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>R</TipoCampo>
+              <SubTipoCampo>R</SubTipoCampo>
+              <LongitudCampo>18</LongitudCampo>
+              <LongitudEntero>14</LongitudEntero>
+              <LongitudDecimal>4</LongitudDecimal>
+         </Campo>
+         <Campo posicion="41" nombre="BaseImponibleDocumento" descripcion="Total de Impuestos">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>R</TipoCampo>
+              <SubTipoCampo>R</SubTipoCampo>
+              <LongitudCampo>18</LongitudCampo>
+              <LongitudEntero>14</LongitudEntero>
+              <LongitudDecimal>4</LongitudDecimal>
+         </Campo>
+         <Campo posicion="42" nombre="TotalAnticipoDocumento" descripcion="Total de Anticipos">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>R</TipoCampo>
+              <SubTipoCampo>R</SubTipoCampo>
+              <LongitudCampo>18</LongitudCampo>
+              <LongitudEntero>14</LongitudEntero>
+              <LongitudDecimal>4</LongitudDecimal>
+         </Campo>
+                  <Campo posicion="43" nombre="TotalBrutoDocumentoImpu" descripcion="Total de Valor Bruto más tributos">
+	               <Obligatorio>N</Obligatorio>
+	               <TipoCampo>R</TipoCampo>
+	               <SubTipoCampo>R</SubTipoCampo>
+	               <LongitudCampo>18</LongitudCampo>
+	               <LongitudEntero>14</LongitudEntero>
+	               <LongitudDecimal>4</LongitudDecimal>
+         </Campo>
+                  <Campo posicion="44" nombre="ValorDiferenciasTotales" descripcion="Redondeo o diferencia de totales">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>R</TipoCampo>
+              <SubTipoCampo>R</SubTipoCampo>
+              <LongitudCampo>18</LongitudCampo>
+              <LongitudEntero>14</LongitudEntero>
+              <LongitudDecimal>4</LongitudDecimal>
+         </Campo>
+         <Campo posicion="45" nombre="TotalDocumento" descripcion="Total de Factura">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>R</TipoCampo>
+              <SubTipoCampo>R</SubTipoCampo>
+              <LongitudCampo>18</LongitudCampo>
+              <LongitudEntero>14</LongitudEntero>
+              <LongitudDecimal>4</LongitudDecimal>
+         </Campo>
+         <Campo posicion="46" nombre="IdenPersonaDescarga" descripcion="Identificacion persona que descarga">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>12</LongitudCampo>
+         </Campo>
+         <Campo posicion="47" nombre="DvPersonaDescarga" descripcion="Digito verificador persona que descarga">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+         </Campo>
+         <Campo posicion="48" nombre="DivisaBase" descripcion="Divisa base del documento">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>3</LongitudCampo>
+         </Campo>
+         <Campo posicion="49" nombre="BaseMonetaria" descripcion="Base monetaria de la divisa extranjera para el cambio">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>15</LongitudCampo>
+         </Campo>
+         <Campo posicion="50" nombre="DivisaConversion" descripcion="Divisa a la cual se hace la conversión">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>3</LongitudCampo>
+         </Campo>
+         <Campo posicion="51" nombre="BaseMonetariaConversion" descripcion="Base monetaria para la conversión">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>15</LongitudCampo>
+         </Campo>
+         <Campo posicion="52" nombre="ValorTasaCambio" descripcion="Valor de la tasa de cambio entre las divisas">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>15</LongitudCampo>
+         </Campo>
+         <Campo posicion="53" nombre="FechaTasaCambio" descripcion="Fecha en la que se fijó la tasa de cambio">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>D</TipoCampo>
+              <SubTipoCampo>YYYY-MM-DD</SubTipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+         </Campo>
+
+         <Campo posicion="54" nombre="DivisaBaseAdicional" descripcion="Divisa base del documento">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>3</LongitudCampo>
+         </Campo>
+
+         <Campo posicion="55" nombre="BaseMonetariaAdicional" descripcion="Base monetaria de la divisa extranjera para el cambio">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>15</LongitudCampo>
+         </Campo>
+
+
+         <Campo posicion="56" nombre="DivisaConversionAdicional" descripcion="Divisa a la cual se hace la conversión">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>3</LongitudCampo>
+         </Campo>
+
+
+         <Campo posicion="57" nombre="BaseMonetariaConversionAdicional" descripcion="Base monetaria para la conversión">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+         </Campo>
+
+
+         <Campo posicion="58" nombre="ValorTasaCambioAdicional" descripcion="Valor de la tasa de cambio entre las divisas">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+         </Campo>
+
+
+         <Campo posicion="59" nombre="FechaTasaCambioAdicional" descripcion="Fecha en la que se fijó la tasa de cambio">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>D</TipoCampo>
+              <SubTipoCampo>YYYY-MM-DD</SubTipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+         </Campo>
+
+         
+         <Campo posicion="60" nombre="ActividadEconomicaEmisor" descripcion="Actividad economica Emisor">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>20</LongitudCampo>
+         </Campo>
+
+         <SQL nombre="DTEControl">
+             <ArrSize>1</ArrSize>
+             <Stmt>INSERT INTO DTE_CONTROL (TIPO_OPER, TIPO_DOCU, PREF_DOCU, NUME_DOCU, FECH_EMIS, HORA_EMIS, TIPO_FACT, MONE_DOCU,
+ 	      TIPO_EMIS, IDEN_EMIS, DIGI_EMIS, RAZO_EMIS, 
+              TIPO_RECE, IDEN_RECE, DIGI_RECE, RAZO_RECE,
+              TOTA_BRUT, TOTA_DESC, TOTA_CARG, TOTA_IMPO, TOTA_ANTI, MONT_TOTA, NCOM_EMIS, ESTA_DOCU,TIPO_UBL,TIPO_CARG)
+             </Stmt>
+             <Vars nroVar="25">
+                <Var tipo="L" literal="EMI"/>
+
+                <Var tipo="R" regCons="Encabezado" campo="TipoDocumento"/>
+                <Var tipo="R" regCons="Encabezado" campo="Prefijo"/>
+                <Var tipo="R" regCons="Encabezado" campo="Correlativo"/>
+                <Var tipo="R" regCons="Encabezado" campo="FechaEmision"/>
+                <Var tipo="R" regCons="Encabezado" campo="HoraEmision"/>
+                <Var tipo="R" regCons="Encabezado" campo="TipoFactura"/>
+		<Var tipo="R" regCons="Encabezado" campo="MonedaDocumento"/>
+                <Var tipo="R" regCons="Encabezado" campo="TipoIdenEmisor"/>
+                <Var tipo="R" regCons="Encabezado" campo="IdentificacionEmisor"/>
+            <Var tipo="R" regCons="Encabezado" campo="DigitoVerificadorEmisor"/>
+                <Var tipo="R" regCons="Encabezado" campo="RSocApeEmisor"/>
+
+                <Var tipo="R" regCons="Encabezado" campo="TipoIdenAdquirente"/>
+                <Var tipo="R" regCons="Encabezado" campo="IdentificacionAdquirente"/>
+		<Var tipo="R" regCons="Encabezado" campo="DigitoVerificadorAdquiriente"/>
+                <Var tipo="R" regCons="Encabezado" campo="RSocApeAdquirente"/>
+
+                <Var tipo="R" regCons="Encabezado" campo="TotalBrutoDocumento"/>
+                <Var tipo="R" regCons="Encabezado" campo="TotalDescuentoDocumento"/>
+                <Var tipo="R" regCons="Encabezado" campo="TotalCargoDocumento"/>
+                <Var tipo="R" regCons="Encabezado" campo="BaseImponibleDocumento"/>
+                <Var tipo="R" regCons="Encabezado" campo="TotalAnticipoDocumento"/>
+                <Var tipo="R" regCons="Encabezado" campo="TotalDocumento"/>               
+                <Var tipo="R" regCons="Encabezado" campo="NomComerEmisor"/>
+                <Var tipo="L" literal="Registrado"/>
+				<Var tipo="L" literal="21"/>
+                
+             </Vars>
+         </SQL>
+      </Registro>
+      <Registro tipo="ContratoMandato" posicion="1" descripcion="Contrato de mandato">
+         <CondicionOccurs>N</CondicionOccurs>
+         <MaxLineas>100</MaxLineas>
+         <SizeBuffXml>1024</SizeBuffXml>
+
+         <CantidadCampos>4</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>K</TipoCampo>
+            <LongitudCampo>20</LongitudCampo>
+            <ValorDefecto>ContratoMandato</ValorDefecto>
+         </Campo>
+         <Campo posicion="1" nombre="LineaContrato" descripcion="Linea de contrato mandato">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>N</TipoCampo>
+            <SubTipoCampo>P</SubTipoCampo>
+            <LongitudCampo>2</LongitudCampo>
+         </Campo>
+         <Campo posicion="2" nombre="IdentificadorContrato" descripcion="Identificador del contrato de mandato">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>20</LongitudCampo>
+         </Campo>
+         <Campo posicion="3" nombre="FechaContrato" descripcion="Fecha del contrato de mandato">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>D</TipoCampo>
+            <SubTipoCampo>YYYY-MM-DD</SubTipoCampo>
+            <LongitudCampo>10</LongitudCampo>
+         </Campo>
+      </Registro>
+      <Registro tipo="Mandante" posicion="1" descripcion="Mandante">
+         <CondicionOccurs>N</CondicionOccurs>
+         <MaxLineas>100</MaxLineas>
+         <SizeBuffXml>1024</SizeBuffXml>
+
+         <CantidadCampos>18</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>K</TipoCampo>
+            <LongitudCampo>20</LongitudCampo>
+            <ValorDefecto>Mandante</ValorDefecto>
+         </Campo>
+         <Campo posicion="1" nombre="LineaMandante" descripcion="Linea de contrato mandato">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>N</TipoCampo>
+            <SubTipoCampo>P</SubTipoCampo>
+            <LongitudCampo>2</LongitudCampo>
+         </Campo>
+         <Campo posicion="2" nombre="TipoMandante" descripcion="Tipo de mandante">
+            <Obligatorio>N</Obligatorio>
+            <TipoCampo>N</TipoCampo>
+            <LongitudCampo>1</LongitudCampo>
+            <Valores cantidad="3">
+               <Valor>1</Valor><!--  Persona Jurídica -->
+               <Valor>2</Valor><!--  Persona natural -->
+               <Valor>3</Valor><!--  Gran Contribuyente -->
+            </Valores>
+         </Campo>
+         <Campo posicion="3" nombre="TipoIdenMandante" descripcion="Tipo de identificacion del mandante">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>N</TipoCampo>
+            <LongitudCampo>2</LongitudCampo>
+            <Valores cantidad="9">
+               <Valor>11</Valor><!-- Registro civil -->
+               <Valor>12</Valor><!-- Tarjeta de identidad -->
+               <Valor>13</Valor><!-- Cédula de ciudadanía -->
+               <Valor>21</Valor><!-- Tarjeta de extranjería -->
+               <Valor>22</Valor><!-- Cédula de extranjería -->
+               <Valor>31</Valor><!-- NIT -->
+               <Valor>41</Valor><!-- Pasaporte -->
+               <Valor>42</Valor><!-- Documento de identificación extranjero -->
+               <Valor>91</Valor><!-- NUIP -->
+            </Valores>
+         </Campo>
+         <Campo posicion="4" nombre="IdentificacionMandante" descripcion="Identificacion mandante">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>20</LongitudCampo>
+         </Campo>
+         <Campo posicion="5" nombre="DigitoVerificadorMandante" descripcion="Digito verificador">
+            <Obligatorio>N</Obligatorio>
+            <TipoCampo>N</TipoCampo>
+            <SubTipoCampo>P</SubTipoCampo>
+            <LongitudCampo>1</LongitudCampo>
+         </Campo>
+         <Campo posicion="5" nombre="MatriculaMercantil" descripcion="Matricula mercantil">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>20</LongitudCampo>
+         </Campo>
+         <Campo posicion="6" nombre="RegimenMandante" descripcion="Regimen del mandante">
+            <Obligatorio>N</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>10</LongitudCampo>
+            <Valores cantidad="5">
+			     <Valor>No aplica</Valor>
+                 <Valor>04</Valor>
+                 <Valor>05</Valor>
+				 <Valor>48</Valor>
+                 <Valor>49</Valor>
+             </Valores>
+         </Campo>
+         <Campo posicion="7" nombre="NomComerMandante" descripcion="Nombre comercial mandante">
+            <Obligatorio>N</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>255</LongitudCampo>
+         </Campo>
+         <Campo posicion="8" nombre="RSocApeMandante" descripcion="Razon social o apellido del mandante">
+            <Obligatorio>N</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>255</LongitudCampo>
+         </Campo>
+         <Campo posicion="9" nombre="NombreMandante" descripcion="Nombre del mandante (solo en caso de persona natural)">
+            <Obligatorio>N</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>255</LongitudCampo>
+         </Campo>
+         <Campo posicion="10" nombre="SitioWeb" descripcion="Sitio web del mandante">
+            <Obligatorio>N</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>255</LongitudCampo>
+         </Campo>
+         <Campo posicion="11" nombre="Direccion" descripcion="Direccion del mandante">
+            <Obligatorio>N</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>255</LongitudCampo>
+         </Campo>
+         <Campo posicion="12" nombre="Area" descripcion="Area del mandante">
+            <Obligatorio>N</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>255</LongitudCampo>
+         </Campo>
+         <Campo posicion="13" nombre="Ciudad" descripcion="Ciudad del mandante">
+            <Obligatorio>N</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>255</LongitudCampo>
+         </Campo>
+         <Campo posicion="14" nombre="Departamento" descripcion="Departamento del mandante">
+            <Obligatorio>N</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>255</LongitudCampo>
+         </Campo>
+         <Campo posicion="15" nombre="CodigoPais" descripcion="Codigo del pais del mandante">
+            <Obligatorio>N</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>255</LongitudCampo>
+            <Valores cantidad="250">
+		     <Valor>AF</Valor>
+		     <Valor>AL</Valor>
+		     <Valor>DE</Valor>
+		     <Valor>DZ</Valor>
+		     <Valor>AD</Valor>
+		     <Valor>AO</Valor>
+		     <Valor>AI</Valor>
+		     <Valor>AQ</Valor>
+		     <Valor>AG</Valor>
+		     <Valor>SA</Valor>
+		     <Valor>AR</Valor>
+		     <Valor>AM</Valor>
+		     <Valor>AW</Valor>
+		     <Valor>AU</Valor>
+		     <Valor>AT</Valor>
+		     <Valor>AZ</Valor>
+		     <Valor>BE</Valor>
+		     <Valor>BS</Valor>
+		     <Valor>BH</Valor>
+		     <Valor>BD</Valor>
+		     <Valor>BB</Valor>
+		     <Valor>BZ</Valor>
+		     <Valor>BJ</Valor>
+		     <Valor>BT</Valor>
+		     <Valor>BY</Valor>
+		     <Valor>MM</Valor>
+		     <Valor>BO</Valor>
+		     <Valor>BA</Valor>
+		     <Valor>BW</Valor>
+		     <Valor>BR</Valor>
+		     <Valor>BN</Valor>
+		     <Valor>BG</Valor>
+		     <Valor>BF</Valor>
+		     <Valor>BI</Valor>
+		     <Valor>CV</Valor>
+		     <Valor>KH</Valor>
+		     <Valor>CM</Valor>
+		     <Valor>CA</Valor>
+		     <Valor>TD</Valor>
+		     <Valor>CL</Valor>
+		     <Valor>CN</Valor>
+		     <Valor>CY</Valor>
+		     <Valor>VA</Valor>
+		     <Valor>CO</Valor>
+		     <Valor>KM</Valor>
+		     <Valor>CG</Valor>
+		     <Valor>CD</Valor>
+		     <Valor>KP</Valor>
+		     <Valor>KR</Valor>
+		     <Valor>CI</Valor>
+		     <Valor>CR</Valor>
+		     <Valor>HR</Valor>
+		     <Valor>CU</Valor>
+		     <Valor>CW</Valor>
+		     <Valor>DK</Valor>
+		     <Valor>DM</Valor>
+		     <Valor>EC</Valor>
+		     <Valor>EG</Valor>
+		     <Valor>SV</Valor>
+		     <Valor>AE</Valor>
+		     <Valor>ER</Valor>
+		     <Valor>SK</Valor>
+		     <Valor>SI</Valor>
+		     <Valor>ES</Valor>
+		     <Valor>US</Valor>
+		     <Valor>EE</Valor>
+		     <Valor>ET</Valor>
+		     <Valor>PH</Valor>
+		     <Valor>FI</Valor>
+		     <Valor>FJ</Valor>
+		     <Valor>FR</Valor>
+		     <Valor>GA</Valor>
+		     <Valor>GM</Valor>
+		     <Valor>GE</Valor>
+		     <Valor>GH</Valor>
+		     <Valor>GI</Valor>
+		     <Valor>GD</Valor>
+		     <Valor>GR</Valor>
+		     <Valor>GL</Valor>
+		     <Valor>GP</Valor>
+		     <Valor>GU</Valor>
+		     <Valor>GT</Valor>
+		     <Valor>GF</Valor>
+		     <Valor>GG</Valor>
+		     <Valor>GN</Valor>
+		     <Valor>GQ</Valor>
+		     <Valor>GW</Valor>
+		     <Valor>GY</Valor>
+		     <Valor>HT</Valor>
+		     <Valor>HN</Valor>
+		     <Valor>HK</Valor>
+		     <Valor>HU</Valor>
+		     <Valor>IN</Valor>
+		     <Valor>ID</Valor>
+		     <Valor>IR</Valor>
+		     <Valor>IQ</Valor>
+		     <Valor>IE</Valor>
+		     <Valor>BV</Valor>
+		     <Valor>IM</Valor>
+		     <Valor>CX</Valor>
+		     <Valor>NF</Valor>
+		     <Valor>IS</Valor>
+		     <Valor>BM</Valor>
+		     <Valor>KY</Valor>
+		     <Valor>CC</Valor>
+		     <Valor>CK</Valor>
+		     <Valor>AX</Valor>
+		     <Valor>FO</Valor>
+		     <Valor>GS</Valor>
+		     <Valor>HM</Valor>
+		     <Valor>MV</Valor>
+		     <Valor>FK</Valor>
+		     <Valor>MP</Valor>
+		     <Valor>MH</Valor>
+		     <Valor>PN</Valor>
+		     <Valor>SB</Valor>
+		     <Valor>TC</Valor>
+		     <Valor>UM</Valor>
+		     <Valor>VG</Valor>
+		     <Valor>VI</Valor>
+		     <Valor>IL</Valor>
+		     <Valor>IT</Valor>
+		     <Valor>JM</Valor>
+		     <Valor>JP</Valor>
+		     <Valor>JE</Valor>
+		     <Valor>JO</Valor>
+		     <Valor>KZ</Valor>
+		     <Valor>KE</Valor>
+		     <Valor>KG</Valor>
+		     <Valor>KI</Valor>
+		     <Valor>KW</Valor>
+		     <Valor>LB</Valor>
+		     <Valor>LA</Valor>
+		     <Valor>LS</Valor>
+		     <Valor>LV</Valor>
+		     <Valor>LR</Valor>
+		     <Valor>LY</Valor>
+		     <Valor>LI</Valor>
+		     <Valor>LT</Valor>
+		     <Valor>LU</Valor>
+		     <Valor>MX</Valor>
+		     <Valor>MC</Valor>
+		     <Valor>MO</Valor>
+		     <Valor>MK</Valor>
+		     <Valor>MG</Valor>
+		     <Valor>MY</Valor>
+		     <Valor>MW</Valor>
+		     <Valor>ML</Valor>
+		     <Valor>MT</Valor>
+		     <Valor>MA</Valor>
+		     <Valor>MQ</Valor>
+		     <Valor>MU</Valor>
+		     <Valor>MR</Valor>
+		     <Valor>YT</Valor>
+		     <Valor>FM</Valor>
+		     <Valor>MD</Valor>
+		     <Valor>MN</Valor>
+		     <Valor>ME</Valor>
+		     <Valor>MS</Valor>
+		     <Valor>MZ</Valor>
+		     <Valor>NA</Valor>
+		     <Valor>NR</Valor>
+		     <Valor>NP</Valor>
+		     <Valor>NI</Valor>
+		     <Valor>NE</Valor>
+		     <Valor>NG</Valor>
+		     <Valor>NU</Valor>
+		     <Valor>NO</Valor>
+		     <Valor>NC</Valor>
+		     <Valor>NZ</Valor>
+		     <Valor>OM</Valor>
+		     <Valor>NL</Valor>
+		     <Valor>PK</Valor>
+		     <Valor>PW</Valor>
+		     <Valor>PS</Valor>
+		     <Valor>PA</Valor>
+		     <Valor>PG</Valor>
+		     <Valor>PY</Valor>
+		     <Valor>PE</Valor>
+		     <Valor>PF</Valor>
+		     <Valor>PL</Valor>
+		     <Valor>PT</Valor>
+		     <Valor>PR</Valor>
+		     <Valor>QA</Valor>
+		     <Valor>GB</Valor>
+		     <Valor>CF</Valor>
+		     <Valor>CZ</Valor>
+		     <Valor>DO</Valor>
+		     <Valor>SS</Valor>
+		     <Valor>RE</Valor>
+		     <Valor>RW</Valor>
+		     <Valor>RO</Valor>
+		     <Valor>RU</Valor>
+		     <Valor>EH</Valor>
+		     <Valor>WS</Valor>
+		     <Valor>AS</Valor>
+		     <Valor>BL</Valor>
+		     <Valor>KN</Valor>
+		     <Valor>SM</Valor>
+		     <Valor>MF</Valor>
+		     <Valor>PM</Valor>
+		     <Valor>VC</Valor>
+		     <Valor>SH</Valor>
+		     <Valor>LC</Valor>
+		     <Valor>ST</Valor>
+		     <Valor>SN</Valor>
+		     <Valor>RS</Valor>
+		     <Valor>SC</Valor>
+		     <Valor>SL</Valor>
+		     <Valor>SG</Valor>
+		     <Valor>SX</Valor>
+		     <Valor>SY</Valor>
+		     <Valor>SO</Valor>
+		     <Valor>LK</Valor>
+		     <Valor>ZA</Valor>
+		     <Valor>SD</Valor>
+		     <Valor>SE</Valor>
+		     <Valor>CH</Valor>
+		     <Valor>SR</Valor>
+		     <Valor>SJ</Valor>
+		     <Valor>SZ</Valor>
+		     <Valor>TJ</Valor>
+		     <Valor>TH</Valor>
+		     <Valor>TW</Valor>
+		     <Valor>TZ</Valor>
+		     <Valor>IO</Valor>
+		     <Valor>TF</Valor>
+		     <Valor>TL</Valor>
+		     <Valor>TG</Valor>
+		     <Valor>TK</Valor>
+		     <Valor>TO</Valor>
+		     <Valor>TT</Valor>
+		     <Valor>TN</Valor>
+		     <Valor>TM</Valor>
+		     <Valor>TR</Valor>
+		     <Valor>TV</Valor>
+		     <Valor>UA</Valor>
+		     <Valor>UG</Valor>
+		     <Valor>UY</Valor>
+		     <Valor>UZ</Valor>
+		     <Valor>VU</Valor>
+		     <Valor>VE</Valor>
+		     <Valor>VN</Valor>
+		     <Valor>WF</Valor>
+		     <Valor>YE</Valor>
+		     <Valor>DJ</Valor>
+		     <Valor>ZM</Valor>
+		     <Valor>ZW</Valor>
+			 <Valor>BQ</Valor>
+			 <Valor>UN</Valor>
+              </Valores>
+         </Campo>
+         <Campo posicion="16" nombre="PorcentajeParticipacon" descripcion="Porcentaje de participacion del mandante">
+            <Obligatorio>N</Obligatorio>
+            <TipoCampo>N</TipoCampo>
+            <SubTipoCampo>P</SubTipoCampo>
+            <LongitudCampo>3</LongitudCampo>
+         </Campo>
+      </Registro>
+      <Registro tipo="ObligResp" posicion="1" descripcion="Obligaciones o responsabilidades">
+
+         <CondicionOccurs>N</CondicionOccurs>
+         <MaxLineas>100</MaxLineas>
+         <SizeBuffXml>1024</SizeBuffXml>
+
+         <CantidadCampos>7</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>K</TipoCampo>
+            <LongitudCampo>20</LongitudCampo>
+            <ValorDefecto>ObligResp</ValorDefecto>
+         </Campo>
+         <Campo posicion="1" nombre="LineaObligResp" descripcion="Linea de registro">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>N</TipoCampo>
+            <SubTipoCampo>P</SubTipoCampo>
+            <LongitudCampo>2</LongitudCampo>
+         </Campo>
+         <Campo posicion="2" nombre="EmisAdq" descripcion="Emisor o adquiriente">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>1</LongitudCampo>
+            <Valores cantidad="2">
+               <Valor>E</Valor>
+               <Valor>A</Valor>
+            </Valores>
+         </Campo>
+         <Campo posicion="3" nombre="ObligResp" descripcion="Es obligacion o responsabilidad">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>1</LongitudCampo>
+            <Valores cantidad="2">
+               <Valor>O</Valor>
+               <Valor>R</Valor>
+            </Valores>
+         </Campo>
+         <Campo posicion="4" nombre="Codigo" descripcion="Codigo de la obligacion/responsabilidad">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>10</LongitudCampo>
+         </Campo>
+         <Campo posicion="5" nombre="Descripcion" descripcion="Descripcion de la obligacion/responsabilidad">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>500</LongitudCampo>
+         </Campo>
+         <Campo posicion="6" nombre="ListaObligResp" descripcion="Tipo Registro">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>255</LongitudCampo>
+            <ValorDefecto>TIPOS OBLIGACIONES:2016</ValorDefecto>
+         </Campo>
+      </Registro>
+      <Registro tipo="Direccion" posicion="1" descripcion="Detalle de Direccion">
+
+         <CondicionOccurs>S</CondicionOccurs>
+         <MaxLineas>3</MaxLineas>
+         <SizeBuffXml>1024</SizeBuffXml>
+
+         <CantidadCampos>12</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+	      <Obligatorio>S</Obligatorio>
+	      <TipoCampo>K</TipoCampo>
+	      <LongitudCampo>20</LongitudCampo>
+	      <ValorDefecto>Direccion</ValorDefecto>
+	 </Campo>
+         <Campo posicion="1" nombre="LineaDireccion" descripcion="Correlativo de Direccion">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+         </Campo>
+
+         <Campo posicion="2" nombre="TipoDireccion" descripcion="Tipo de Direccion">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>4</LongitudCampo>
+              <Valores cantidad="3">
+                 <Valor>DISU</Valor>
+                 <Valor>DICU</Valor>
+                 <Valor>DIDT</Valor>
+              </Valores>
+         </Campo>
+         <Campo posicion="3" nombre="IdDUNS" descripcion="Identificador unicos DUNS">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+         </Campo>
+         <Campo posicion="4" nombre="CodigoPostal" descripcion="Codigo Postal de la Direccion">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+         </Campo>
+         <Campo posicion="5" nombre="ApartadoPostal" descripcion="Apartado Postal o Casilla de la Direccion">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+         </Campo>
+         <Campo posicion="6" nombre="Direccion" descripcion="Direccion Detallada">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>250</LongitudCampo>
+         </Campo>
+         <Campo posicion="7" nombre="Ciudad" descripcion="Nombre de la Cuidad">
+                    <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>40</LongitudCampo>
+         </Campo>
+         <Campo posicion="8" nombre="Departamento" descripcion="Subdivision del Departamento">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>40</LongitudCampo>
+         </Campo>
+         <Campo posicion="9" nombre="CodigoDepartamento" descripcion="Codigo del Departamento">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>5</LongitudCampo>
+         </Campo>
+         <Campo posicion="10" nombre="CodigoPais" descripcion="Codigo de Pais">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>2</LongitudCampo>
+              <Valores cantidad="250">
+	      		     <Valor>AF</Valor>
+	      		     <Valor>AL</Valor>
+	      		     <Valor>DE</Valor>
+	      		     <Valor>DZ</Valor>
+	      		     <Valor>AD</Valor>
+	      		     <Valor>AO</Valor>
+	      		     <Valor>AI</Valor>
+	      		     <Valor>AQ</Valor>
+	      		     <Valor>AG</Valor>
+	      		     <Valor>SA</Valor>
+	      		     <Valor>AR</Valor>
+	      		     <Valor>AM</Valor>
+	      		     <Valor>AW</Valor>
+	      		     <Valor>AU</Valor>
+	      		     <Valor>AT</Valor>
+	      		     <Valor>AZ</Valor>
+	      		     <Valor>BE</Valor>
+	      		     <Valor>BS</Valor>
+	      		     <Valor>BH</Valor>
+	      		     <Valor>BD</Valor>
+	      		     <Valor>BB</Valor>
+	      		     <Valor>BZ</Valor>
+	      		     <Valor>BJ</Valor>
+	      		     <Valor>BT</Valor>
+	      		     <Valor>BY</Valor>
+	      		     <Valor>MM</Valor>
+	      		     <Valor>BO</Valor>
+	      		     <Valor>BA</Valor>
+	      		     <Valor>BW</Valor>
+	      		     <Valor>BR</Valor>
+	      		     <Valor>BN</Valor>
+	      		     <Valor>BG</Valor>
+	      		     <Valor>BF</Valor>
+	      		     <Valor>BI</Valor>
+	      		     <Valor>CV</Valor>
+	      		     <Valor>KH</Valor>
+	      		     <Valor>CM</Valor>
+	      		     <Valor>CA</Valor>
+	      		     <Valor>TD</Valor>
+	      		     <Valor>CL</Valor>
+	      		     <Valor>CN</Valor>
+	      		     <Valor>CY</Valor>
+	      		     <Valor>VA</Valor>
+	      		     <Valor>CO</Valor>
+	      		     <Valor>KM</Valor>
+	      		     <Valor>CG</Valor>
+	      		     <Valor>CD</Valor>
+	      		     <Valor>KP</Valor>
+	      		     <Valor>KR</Valor>
+	      		     <Valor>CI</Valor>
+	      		     <Valor>CR</Valor>
+	      		     <Valor>HR</Valor>
+	      		     <Valor>CU</Valor>
+	      		     <Valor>CW</Valor>
+	      		     <Valor>DK</Valor>
+	      		     <Valor>DM</Valor>
+	      		     <Valor>EC</Valor>
+	      		     <Valor>EG</Valor>
+	      		     <Valor>SV</Valor>
+	      		     <Valor>AE</Valor>
+	      		     <Valor>ER</Valor>
+	      		     <Valor>SK</Valor>
+	      		     <Valor>SI</Valor>
+	      		     <Valor>ES</Valor>
+	      		     <Valor>US</Valor>
+	      		     <Valor>EE</Valor>
+	      		     <Valor>ET</Valor>
+	      		     <Valor>PH</Valor>
+	      		     <Valor>FI</Valor>
+	      		     <Valor>FJ</Valor>
+	      		     <Valor>FR</Valor>
+	      		     <Valor>GA</Valor>
+	      		     <Valor>GM</Valor>
+	      		     <Valor>GE</Valor>
+	      		     <Valor>GH</Valor>
+	      		     <Valor>GI</Valor>
+	      		     <Valor>GD</Valor>
+	      		     <Valor>GR</Valor>
+	      		     <Valor>GL</Valor>
+	      		     <Valor>GP</Valor>
+	      		     <Valor>GU</Valor>
+	      		     <Valor>GT</Valor>
+	      		     <Valor>GF</Valor>
+	      		     <Valor>GG</Valor>
+	      		     <Valor>GN</Valor>
+	      		     <Valor>GQ</Valor>
+	      		     <Valor>GW</Valor>
+	      		     <Valor>GY</Valor>
+	      		     <Valor>HT</Valor>
+	      		     <Valor>HN</Valor>
+	      		     <Valor>HK</Valor>
+	      		     <Valor>HU</Valor>
+	      		     <Valor>IN</Valor>
+	      		     <Valor>ID</Valor>
+	      		     <Valor>IR</Valor>
+	      		     <Valor>IQ</Valor>
+	      		     <Valor>IE</Valor>
+	      		     <Valor>BV</Valor>
+	      		     <Valor>IM</Valor>
+	      		     <Valor>CX</Valor>
+	      		     <Valor>NF</Valor>
+	      		     <Valor>IS</Valor>
+	      		     <Valor>BM</Valor>
+	      		     <Valor>KY</Valor>
+	      		     <Valor>CC</Valor>
+	      		     <Valor>CK</Valor>
+	      		     <Valor>AX</Valor>
+	      		     <Valor>FO</Valor>
+	      		     <Valor>GS</Valor>
+	      		     <Valor>HM</Valor>
+	      		     <Valor>MV</Valor>
+	      		     <Valor>FK</Valor>
+	      		     <Valor>MP</Valor>
+	      		     <Valor>MH</Valor>
+	      		     <Valor>PN</Valor>
+	      		     <Valor>SB</Valor>
+	      		     <Valor>TC</Valor>
+	      		     <Valor>UM</Valor>
+	      		     <Valor>VG</Valor>
+	      		     <Valor>VI</Valor>
+	      		     <Valor>IL</Valor>
+	      		     <Valor>IT</Valor>
+	      		     <Valor>JM</Valor>
+	      		     <Valor>JP</Valor>
+	      		     <Valor>JE</Valor>
+	      		     <Valor>JO</Valor>
+	      		     <Valor>KZ</Valor>
+	      		     <Valor>KE</Valor>
+	      		     <Valor>KG</Valor>
+	      		     <Valor>KI</Valor>
+	      		     <Valor>KW</Valor>
+	      		     <Valor>LB</Valor>
+	      		     <Valor>LA</Valor>
+	      		     <Valor>LS</Valor>
+	      		     <Valor>LV</Valor>
+	      		     <Valor>LR</Valor>
+	      		     <Valor>LY</Valor>
+	      		     <Valor>LI</Valor>
+	      		     <Valor>LT</Valor>
+	      		     <Valor>LU</Valor>
+	      		     <Valor>MX</Valor>
+	      		     <Valor>MC</Valor>
+	      		     <Valor>MO</Valor>
+	      		     <Valor>MK</Valor>
+	      		     <Valor>MG</Valor>
+	      		     <Valor>MY</Valor>
+	      		     <Valor>MW</Valor>
+	      		     <Valor>ML</Valor>
+	      		     <Valor>MT</Valor>
+	      		     <Valor>MA</Valor>
+	      		     <Valor>MQ</Valor>
+	      		     <Valor>MU</Valor>
+	      		     <Valor>MR</Valor>
+	      		     <Valor>YT</Valor>
+	      		     <Valor>FM</Valor>
+	      		     <Valor>MD</Valor>
+	      		     <Valor>MN</Valor>
+	      		     <Valor>ME</Valor>
+	      		     <Valor>MS</Valor>
+	      		     <Valor>MZ</Valor>
+	      		     <Valor>NA</Valor>
+	      		     <Valor>NR</Valor>
+	      		     <Valor>NP</Valor>
+	      		     <Valor>NI</Valor>
+	      		     <Valor>NE</Valor>
+	      		     <Valor>NG</Valor>
+	      		     <Valor>NU</Valor>
+	      		     <Valor>NO</Valor>
+	      		     <Valor>NC</Valor>
+	      		     <Valor>NZ</Valor>
+	      		     <Valor>OM</Valor>
+	      		     <Valor>NL</Valor>
+	      		     <Valor>PK</Valor>
+	      		     <Valor>PW</Valor>
+	      		     <Valor>PS</Valor>
+	      		     <Valor>PA</Valor>
+	      		     <Valor>PG</Valor>
+	      		     <Valor>PY</Valor>
+	      		     <Valor>PE</Valor>
+	      		     <Valor>PF</Valor>
+	      		     <Valor>PL</Valor>
+	      		     <Valor>PT</Valor>
+	      		     <Valor>PR</Valor>
+	      		     <Valor>QA</Valor>
+	      		     <Valor>GB</Valor>
+	      		     <Valor>CF</Valor>
+	      		     <Valor>CZ</Valor>
+	      		     <Valor>DO</Valor>
+	      		     <Valor>SS</Valor>
+	      		     <Valor>RE</Valor>
+	      		     <Valor>RW</Valor>
+	      		     <Valor>RO</Valor>
+	      		     <Valor>RU</Valor>
+	      		     <Valor>EH</Valor>
+	      		     <Valor>WS</Valor>
+	      		     <Valor>AS</Valor>
+	      		     <Valor>BL</Valor>
+	      		     <Valor>KN</Valor>
+	      		     <Valor>SM</Valor>
+	      		     <Valor>MF</Valor>
+	      		     <Valor>PM</Valor>
+	      		     <Valor>VC</Valor>
+	      		     <Valor>SH</Valor>
+	      		     <Valor>LC</Valor>
+	      		     <Valor>ST</Valor>
+	      		     <Valor>SN</Valor>
+	      		     <Valor>RS</Valor>
+	      		     <Valor>SC</Valor>
+	      		     <Valor>SL</Valor>
+	      		     <Valor>SG</Valor>
+	      		     <Valor>SX</Valor>
+	      		     <Valor>SY</Valor>
+	      		     <Valor>SO</Valor>
+	      		     <Valor>LK</Valor>
+	      		     <Valor>ZA</Valor>
+	      		     <Valor>SD</Valor>
+	      		     <Valor>SE</Valor>
+	      		     <Valor>CH</Valor>
+	      		     <Valor>SR</Valor>
+	      		     <Valor>SJ</Valor>
+	      		     <Valor>SZ</Valor>
+	      		     <Valor>TJ</Valor>
+	      		     <Valor>TH</Valor>
+	      		     <Valor>TW</Valor>
+	      		     <Valor>TZ</Valor>
+	      		     <Valor>IO</Valor>
+	      		     <Valor>TF</Valor>
+	      		     <Valor>TL</Valor>
+	      		     <Valor>TG</Valor>
+	      		     <Valor>TK</Valor>
+	      		     <Valor>TO</Valor>
+	      		     <Valor>TT</Valor>
+	      		     <Valor>TN</Valor>
+	      		     <Valor>TM</Valor>
+	      		     <Valor>TR</Valor>
+	      		     <Valor>TV</Valor>
+	      		     <Valor>UA</Valor>
+	      		     <Valor>UG</Valor>
+	      		     <Valor>UY</Valor>
+	      		     <Valor>UZ</Valor>
+	      		     <Valor>VU</Valor>
+	      		     <Valor>VE</Valor>
+	      		     <Valor>VN</Valor>
+	      		     <Valor>WF</Valor>
+	      		     <Valor>YE</Valor>
+	      		     <Valor>DJ</Valor>
+	      		     <Valor>ZM</Valor>
+	      		     <Valor>ZW</Valor>
+					 <Valor>BQ</Valor>
+					 <Valor>UN</Valor>
+              </Valores>
+         </Campo>
+      </Registro>
+          <Registro tipo="Consorcio" posicion="2" descripcion="Detalle de Consorcio">
+               <CondicionOccurs>N</CondicionOccurs>
+               <MaxLineas>11</MaxLineas>
+               <SizeBuffXml>4096</SizeBuffXml>
+               <CantidadCampos>11</CantidadCampos>
+               <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+                    <Obligatorio>S</Obligatorio>
+                    <TipoCampo>K</TipoCampo>
+                    <LongitudCampo>20</LongitudCampo>
+                    <ValorDefecto>Consorcio</ValorDefecto>
+               </Campo>
+               <Campo posicion="1" nombre="LineaParticipante" descripcion="Correlativo de Direccion">
+                    <Obligatorio>S</Obligatorio>
+                    <TipoCampo>N</TipoCampo>
+                    <SubTipoCampo>P</SubTipoCampo>
+                    <LongitudCampo>2</LongitudCampo>
+               </Campo>
+               <Campo posicion="2" nombre="PorcentajeParticipante" descripcion="Porcentaje de participante">
+                    <Obligatorio>S</Obligatorio>
+                    <TipoCampo>R</TipoCampo>
+                    <LongitudCampo>20</LongitudCampo>
+                    <ValorDefecto>0.0</ValorDefecto>
+               </Campo>
+               <Campo posicion="3" nombre="RSocParticipante" descripcion="Razón Social del Participante">
+                    <Obligatorio>S</Obligatorio>
+                    <TipoCampo>C</TipoCampo>
+                    <LongitudCampo>100</LongitudCampo>
+               </Campo>
+               <Campo posicion="4" nombre="IdentificacionParticipante" descripcion="NIT empresa participante">
+                    <Obligatorio>S</Obligatorio>
+                    <TipoCampo>N</TipoCampo>
+                    <LongitudCampo>10</LongitudCampo>
+               </Campo>
+               <Campo posicion="5" nombre="DigitoVerificadorParticipante" descripcion="Digito verificador">
+                    <Obligatorio>S</Obligatorio>
+                    <TipoCampo>N</TipoCampo>
+                    <LongitudCampo>1</LongitudCampo>
+               </Campo>
+               <Campo posicion="6" nombre="TipoIdenParticipante" descripcion="Tipo de identificacion participante">
+                    <Obligatorio>S</Obligatorio>
+                    <TipoCampo>N</TipoCampo>
+                    <LongitudCampo>3</LongitudCampo>
+               </Campo>
+               <Campo posicion="7" nombre="RegimenParticipante" descripcion="Regimen empresa participante">
+                    <Obligatorio>N</Obligatorio>
+                    <TipoCampo>C</TipoCampo>
+                    <LongitudCampo>10</LongitudCampo>
+                    <Valores cantidad="5">
+					     <Valor>No aplica</Valor>
+                         <Valor>04</Valor>
+                         <Valor>05</Valor>
+                         <Valor>48</Valor>
+                         <Valor>49</Valor>
+                    </Valores>
+               </Campo>
+               <Campo posicion="8" nombre="ObligacionesParticipante" descripcion="Código de obigaciones del participante">
+                    <Obligatorio>S</Obligatorio>
+                    <TipoCampo>C</TipoCampo>
+                    <LongitudCampo>255</LongitudCampo>
+                    <ValorDefecto>O-99</ValorDefecto>
+               </Campo>
+               <Campo posicion="9" nombre="IdentificadorTributo" descripcion="Tipo de tributo">
+                    <Obligatorio>S</Obligatorio>
+                    <TipoCampo>C</TipoCampo>
+                    <LongitudCampo>3</LongitudCampo>
+                    <Valores cantidad="17">
+						 <Valor>00</Valor>
+                         <Valor>01</Valor>
+                         <Valor>02</Valor>
+                         <Valor>03</Valor>
+                         <Valor>04</Valor>
+                         <Valor>05</Valor>
+                         <Valor>06</Valor>
+                         <Valor>07</Valor>
+                         <Valor>20</Valor>
+                         <Valor>21</Valor>
+                         <Valor>22</Valor>
+                         <Valor>23</Valor>
+                         <Valor>24</Valor>
+                         <Valor>25</Valor>
+                         <Valor>26</Valor>
+                         <Valor>ZY</Valor>
+                         <Valor>ZZ</Valor>
+                    </Valores>
+               </Campo>
+               <Campo posicion="10" nombre="DescripcionTributo" descripcion="Descripcion o nombre de tributo">
+                    <Obligatorio>S</Obligatorio>
+                    <TipoCampo>C</TipoCampo>
+                    <LongitudCampo>50</LongitudCampo>
+               </Campo>
+          </Registro>
+      <Registro tipo="Contacto" posicion="2" descripcion="Detalle de Contacto">
+
+         <CondicionOccurs>N</CondicionOccurs>
+         <MaxLineas>8</MaxLineas>
+         <SizeBuffXml>1024</SizeBuffXml>
+
+         <CantidadCampos>7</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+	      <Obligatorio>S</Obligatorio>
+	      <TipoCampo>K</TipoCampo>
+	      <LongitudCampo>20</LongitudCampo>
+	      <ValorDefecto>Contacto</ValorDefecto>
+	 </Campo>
+         <Campo posicion="1" nombre="LineaContacto" descripcion="Correlativo de Contacto">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+         </Campo>
+
+         <Campo posicion="2" nombre="TipoContacto" descripcion="Tipo de Contacto">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>4</LongitudCampo>
+              <Valores cantidad="8">
+                 <Valor>CEMI</Valor>
+                 <Valor>CEDE</Valor>
+                 <Valor>CECT</Valor>
+                 <Valor>CEVE</Valor>
+                 <Valor>CADQ</Valor>
+                 <Valor>CADE</Valor>
+                 <Valor>CACT</Valor>
+                 <Valor>CACO</Valor>
+              </Valores>
+         </Campo>
+         <Campo posicion="3" nombre="NombreContacto" descripcion="Nombre del Contacto">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>100</LongitudCampo>
+         </Campo>
+         <Campo posicion="4" nombre="TelefonoContacto" descripcion="Telefono del Contacto">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>40</LongitudCampo>
+         </Campo>
+         <Campo posicion="5" nombre="MailContacto" descripcion="Correo del Contacto">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>80</LongitudCampo>
+         </Campo>
+         <Campo posicion="6" nombre="DescripcionContacto" descripcion="Descripcion del Contacto">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>250</LongitudCampo>
+         </Campo>
+
+      </Registro>
+
+      <Registro tipo="Impuesto" posicion="3" descripcion="Totales de Impuestos">
+
+         <CondicionOccurs>N</CondicionOccurs>
+         <MaxLineas>999</MaxLineas>
+         <SizeBuffXml>10240</SizeBuffXml>
+
+         <CantidadCampos>14</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+	      <Obligatorio>S</Obligatorio>
+	      <TipoCampo>K</TipoCampo>
+	      <LongitudCampo>20</LongitudCampo>
+	      <ValorDefecto>Impuesto</ValorDefecto>
+	 </Campo>
+         <Campo posicion="1" nombre="LineaImpuesto" descripcion="Correlativo de Impuesto">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>3</LongitudCampo>
+         </Campo>
+
+         <Campo posicion="2" nombre="MonedaImpuesto" descripcion="Moneda del Impuesto">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>3</LongitudCampo>
+              <Valores cantidad="22">
+                 <Valor>AED</Valor>
+<Valor>BOB</Valor>
+<Valor>CAD</Valor>
+<Valor>CLP</Valor>
+<Valor>CNY</Valor>
+<Valor>COP</Valor>
+<Valor>DOP</Valor>
+<Valor>EUR</Valor>
+<Valor>GTQ</Valor>
+<Valor>HKD</Valor>
+<Valor>HNL</Valor>
+<Valor>MXN</Valor>
+<Valor>NOK</Valor>
+<Valor>PAB</Valor>
+<Valor>PEN</Valor>
+<Valor>PYG</Valor>
+<Valor>RMB</Valor>
+<Valor>TRY</Valor>
+<Valor>USD</Valor>
+<Valor>JPY</Valor>
+<Valor>BRL</Valor>
+<Valor>CRC</Valor>
+              </Valores>
+	      <ValorDefecto>COP</ValorDefecto>
+         </Campo>
+         <Campo posicion="3" nombre="TotalImpuesto" descripcion="Importe Impuesto">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>R</TipoCampo>
+              <SubTipoCampo>R</SubTipoCampo>
+              <LongitudCampo>18</LongitudCampo>
+              <LongitudEntero>14</LongitudEntero>
+              <LongitudDecimal>4</LongitudDecimal>
+         </Campo>
+         <Campo posicion="4" nombre="IndicadorImpuesto" descripcion="Indica Impuesto o Retenido">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>5</LongitudCampo>
+              <ValorDefecto>false</ValorDefecto>
+              <Valores cantidad="2">
+                 <Valor>true</Valor>
+                 <Valor>false</Valor>
+              </Valores>
+         </Campo>
+         <Campo posicion="5" nombre="BaseImponible" descripcion="Base Imponible para calculo">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>R</TipoCampo>
+              <SubTipoCampo>R</SubTipoCampo>
+              <LongitudCampo>18</LongitudCampo>
+              <LongitudEntero>14</LongitudEntero>
+              <LongitudDecimal>4</LongitudDecimal>
+         </Campo>
+         <Campo posicion="6" nombre="PorcentajeImpuesto" descripcion="Porcentaje del Impuesto">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>R</TipoCampo>
+              <SubTipoCampo>R0</SubTipoCampo>
+              <LongitudCampo>9</LongitudCampo>
+              <LongitudEntero>4</LongitudEntero>
+              <LongitudDecimal>4</LongitudDecimal>
+              <MinimoCampo>0.0</MinimoCampo>
+              <MaximoCampo>100.0</MaximoCampo>				
+          </Campo>
+          <Campo posicion="7" nombre="CodigoImpuesto" descripcion="Codigo de Impuesto">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>3</LongitudCampo>
+          </Campo>
+          <Campo posicion="8" nombre="TipoImpuesto" descripcion="Tipo de Impuesto">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>3</LongitudCampo>
+          </Campo>
+          <Campo posicion="9" nombre="NumeroImpuesto" descripcion="Numero de Impuesto">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>3</LongitudCampo>
+              <Valores cantidad="16">
+		<Valor>01</Valor>
+		<Valor>02</Valor>
+		<Valor>03</Valor>
+		<Valor>04</Valor>
+		<Valor>05</Valor>
+		<Valor>06</Valor>
+		<Valor>07</Valor>
+		<Valor>20</Valor>
+		<Valor>21</Valor>
+		<Valor>22</Valor>
+		<Valor>23</Valor>
+		<Valor>24</Valor>
+		<Valor>25</Valor>
+		<Valor>26</Valor>
+	   <Valor>ZY</Valor>
+		<Valor>ZZ</Valor>
+	      </Valores>
+         </Campo>
+	   <Campo posicion="10" nombre="NombreImpuesto" descripcion="Nombre de impuesto">
+      		<Obligatorio>N</Obligatorio>
+      		<TipoCampo>C</TipoCampo>
+      		<LongitudCampo>33</LongitudCampo>
+	   </Campo>
+	   <Campo posicion="11" nombre="UnidadMedidaBase" descripcion="Unidad de medida base">
+      		<Obligatorio>N</Obligatorio>
+      		<TipoCampo>C</TipoCampo>
+      		<LongitudCampo>3</LongitudCampo>
+	   </Campo>
+	   <Campo posicion="12" nombre="IdUnidadMedida" descripcion="Identificador unidad de medida">
+      		<Obligatorio>N</Obligatorio>
+      		<TipoCampo>C</TipoCampo>
+      		<LongitudCampo>5</LongitudCampo>
+	   </Campo>
+	   <Campo posicion="13" nombre="ValorTributoUnidad" descripcion="Valor tributo por unidad">
+      		<Obligatorio>N</Obligatorio>
+      		<TipoCampo>C</TipoCampo>
+      		<LongitudCampo>15</LongitudCampo>
+	   </Campo>
+         
+	  <SQL nombre="DTEControl">
+	      <ArrSize>1</ArrSize>
+	      <Stmt>INSERT INTO DTE_DOCU_IMPU (CORR_CONT, NUME_LINE, MONE_IMPU, TOTA_IMPU, INDI_IMPU, BASE_IMPU, PORC_IMPU, NUME_IMPU)</Stmt>
+	      <Vars nroVar="8">
+		 <Var tipo="K" regCons="pkDocu"/>
+
+		 <Var tipo="R" regCons="Impuesto" campo="LineaImpuesto"/>
+		 <Var tipo="R" regCons="Impuesto" campo="MonedaImpuesto"/>
+		 <Var tipo="R" regCons="Impuesto" campo="TotalImpuesto"/>
+		 <Var tipo="R" regCons="Impuesto" campo="IndicadorImpuesto"/>
+		 <Var tipo="R" regCons="Impuesto" campo="BaseImponible"/>
+		 <Var tipo="R" regCons="Impuesto" campo="PorcentajeImpuesto"/>
+		 <Var tipo="R" regCons="Impuesto" campo="NumeroImpuesto"/>
+	      </Vars>
+         </SQL>
+
+      </Registro>
+
+		<Registro tipo="MedioPago" posicion="5" descripcion="Informacion de Pago">
+
+			<CondicionOccurs>VSSS</CondicionOccurs>
+			<MaxLineas>5</MaxLineas>
+			<SizeBuffXml>10240</SizeBuffXml>
+
+			<CantidadCampos>6</CantidadCampos>
+
+			<Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+				<Obligatorio>S</Obligatorio>
+				<TipoCampo>K</TipoCampo>
+				<LongitudCampo>20</LongitudCampo>
+				<ValorDefecto>MedioPago</ValorDefecto>
+			</Campo>
+			<Campo posicion="1" nombre="LineaMedioPago" descripcion="Correlativo de Medio de Pago">
+				<Obligatorio>S</Obligatorio>
+				<TipoCampo>N</TipoCampo>
+				<SubTipoCampo>P</SubTipoCampo>
+				<LongitudCampo>1</LongitudCampo>
+			</Campo>
+			<Campo posicion="2" nombre="IdMedioPago" descripcion="Identificador del Medio de Pago">
+				<Obligatorio>S</Obligatorio>
+				<TipoCampo>N</TipoCampo>
+				<SubTipoCampo>P</SubTipoCampo>
+				<LongitudCampo>2</LongitudCampo>
+			</Campo>
+			<Campo posicion="3" nombre="CodigoMedioPago" descripcion="Tipo de Medio de Pago">
+				<Obligatorio>S</Obligatorio>
+				<TipoCampo>C</TipoCampo>
+				<LongitudCampo>5</LongitudCampo>
+			</Campo>
+			<Campo posicion="4" nombre="FechaMedioPago" descripcion="Fecha de vencimiento del Pago">
+				<Obligatorio>N</Obligatorio>
+				<TipoCampo>C</TipoCampo>
+				<LongitudCampo>200</LongitudCampo>
+			</Campo>
+			<Campo posicion="5" nombre="IdentificadorPago" descripcion="Identicador del Pago">
+				<Obligatorio>N</Obligatorio>
+				<TipoCampo>C</TipoCampo>
+				<LongitudCampo>500</LongitudCampo>
+			</Campo>
+
+               <SQL nombre="DTEControl">
+                    <ArrSize>1</ArrSize>
+                    <Stmt>INSERT INTO DTE_DOCU_PAGO (CORR_CONT, NUME_LINE, CODI_PAGO, MEDI_PAGO)</Stmt>
+                    <Vars nroVar="4">
+                         <Var tipo="K" regCons="pkDocu"/>
+
+                         <Var tipo="R" regCons="MedioPago" campo="LineaMedioPago"/>
+                         <Var tipo="R" regCons="MedioPago" campo="IdMedioPago"/>
+                         <Var tipo="R" regCons="MedioPago" campo="CodigoMedioPago"/>
+                    </Vars>
+               </SQL>
+		</Registro>
+
+      <Registro tipo="CondPago" posicion="5" descripcion="Condiciones de Pago">
+
+         <CondicionOccurs>VNXX</CondicionOccurs>
+         <MaxLineas>5</MaxLineas>
+         <SizeBuffXml>10240</SizeBuffXml>
+
+         <CantidadCampos>7</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+	      <Obligatorio>S</Obligatorio>
+	      <TipoCampo>K</TipoCampo>
+	      <LongitudCampo>20</LongitudCampo>
+	      <ValorDefecto>CondPago</ValorDefecto>
+	 </Campo>
+         <Campo posicion="1" nombre="LineaCondPago" descripcion="Correlativo de Condicion de Pago">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+         </Campo>
+
+         <Campo posicion="2" nombre="CodigoCondPago" descripcion="Tipo de Condicion de Pago">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>5</LongitudCampo>
+         </Campo>
+         <Campo posicion="3" nombre="DescripcionCondPago" descripcion="Descripcion de Condicion de Pago">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>250</LongitudCampo>
+         </Campo>
+         <Campo posicion="4" nombre="PorcentajePenalidad" descripcion="Porcentaje de Penalidad en el Pago">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>R</TipoCampo>
+              <SubTipoCampo>R0</SubTipoCampo>
+              <LongitudCampo>5</LongitudCampo>
+              <LongitudEntero>3</LongitudEntero>
+              <LongitudDecimal>2</LongitudDecimal>
+              <MinimoCampo>0.0</MinimoCampo>
+              <MaximoCampo>100.0</MaximoCampo>				
+         </Campo>
+         <Campo posicion="5" nombre="MontoPenalidad" descripcion="Monto de la Penalidad">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>R</TipoCampo>
+              <SubTipoCampo>R</SubTipoCampo>
+              <LongitudCampo>32</LongitudCampo>
+              <LongitudEntero>16</LongitudEntero>
+              <LongitudDecimal>15</LongitudDecimal>
+         </Campo>
+         <Campo posicion="6" nombre="InicioPenalidad" descripcion="Fecha Inicio Penalidad">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>D</TipoCampo>
+              <SubTipoCampo>YYYY-MM-DD</SubTipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+         </Campo>
+
+      </Registro>
+
+      <Registro tipo="Anticipo" posicion="6" descripcion="Informacion de Anticipos">
+
+         <CondicionOccurs>N</CondicionOccurs>
+         <MaxLineas>5</MaxLineas>
+         <SizeBuffXml>10240</SizeBuffXml>
+
+         <CantidadCampos>5</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+	      <Obligatorio>S</Obligatorio>
+	      <TipoCampo>K</TipoCampo>
+	      <LongitudCampo>20</LongitudCampo>
+	      <ValorDefecto>Anticipo</ValorDefecto>
+	 </Campo>
+         <Campo posicion="1" nombre="LineaAnticipo" descripcion="Correlativo de Anticipo">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+         </Campo>
+
+         <Campo posicion="2" nombre="ImporteAnticipo" descripcion="Monto de Anticipo">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>R</TipoCampo>
+              <SubTipoCampo>R</SubTipoCampo>
+              <LongitudCampo>32</LongitudCampo>
+              <LongitudEntero>16</LongitudEntero>
+              <LongitudDecimal>15</LongitudDecimal>
+         </Campo>
+         <Campo posicion="3" nombre="FechaAnticipo" descripcion="Fecha de Anticipo">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>D</TipoCampo>
+              <SubTipoCampo>YYYY-MM-DD</SubTipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+         </Campo>
+         <Campo posicion="4" nombre="HoraAnticipo" descripcion="Hora de Anticipo">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>D</TipoCampo>
+              <SubTipoCampo>HH:MI:SS</SubTipoCampo>
+              <LongitudCampo>8</LongitudCampo>
+         </Campo>
+
+      </Registro>
+
+      <Registro tipo="DsctoCargo" posicion="7" descripcion="Descuentos y Cargos">
+
+         <CondicionOccurs>N</CondicionOccurs>
+         <MaxLineas>20</MaxLineas>
+         <SizeBuffXml>10240</SizeBuffXml>
+
+         <CantidadCampos>9</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+	      <Obligatorio>S</Obligatorio>
+	      <TipoCampo>K</TipoCampo>
+	      <LongitudCampo>20</LongitudCampo>
+	      <ValorDefecto>DsctoCargo</ValorDefecto>
+	 </Campo>
+         <Campo posicion="1" nombre="LineaDsctoCargo" descripcion="Correlativo de Descuento/Cargo">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+         </Campo>
+
+         <Campo posicion="2" nombre="IndicadorDsctoCargo" descripcion="Indicador de Descuento o Cargo">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>5</LongitudCampo>
+         </Campo>
+         <Campo posicion="3" nombre="CodigoDsctoCargo" descripcion="Codigo Descuento/Cargo">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>5</LongitudCampo>
+               <Valores cantidad="1">
+	      	     <Valor>01</Valor>
+               </Valores>
+         </Campo>
+         <Campo posicion="4" nombre="DescripcionDsctoCargo" descripcion="Descripcion Descuento/Cargo">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>250</LongitudCampo>
+         </Campo>
+         <Campo posicion="5" nombre="PorcentajeDsctoCargo" descripcion="Porcentaje de Descuento/Cargo">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>R</TipoCampo>
+              <SubTipoCampo>R0</SubTipoCampo>
+              <LongitudCampo>8</LongitudCampo>
+              <LongitudEntero>6</LongitudEntero>
+              <LongitudDecimal>2</LongitudDecimal>
+              <MinimoCampo>0.0</MinimoCampo>
+              <MaximoCampo>2000.0</MaximoCampo>				
+         </Campo>
+         <Campo posicion="6" nombre="MontoDsctoCargo" descripcion="Monto de Descuento/Cargo">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>R</TipoCampo>
+              <SubTipoCampo>R</SubTipoCampo>
+              <LongitudCampo>32</LongitudCampo>
+              <LongitudEntero>16</LongitudEntero>
+              <LongitudDecimal>15</LongitudDecimal>
+         </Campo>
+                  <Campo posicion="7" nombre="ValorBaseDsctoCargo" descripcion="Vaor base de Descuento/Cargo">
+	               <Obligatorio>S</Obligatorio>
+	               <TipoCampo>R</TipoCampo>
+	               <SubTipoCampo>R</SubTipoCampo>
+	               <LongitudCampo>32</LongitudCampo>
+	               <LongitudEntero>16</LongitudEntero>
+	               <LongitudDecimal>15</LongitudDecimal>
+         </Campo>
+         	<Campo posicion="8" nombre="MonedaDsctoCargo" descripcion="Codigo de moneda">
+	 		<Obligatorio>S</Obligatorio>
+	 		<TipoCampo>C</TipoCampo>
+	 		<LongitudCampo>20</LongitudCampo>
+	</Campo>
+
+      </Registro>
+
+      <Registro tipo="Item" posicion="8" descripcion="Itemes (detalles) del Documento">
+
+         <CondicionOccurs>S</CondicionOccurs>
+         <MaxLineas>1500</MaxLineas>
+         <SizeBuffXml>20240000</SizeBuffXml>
+
+         <CantidadCampos>21</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+	      <Obligatorio>S</Obligatorio>
+	      <TipoCampo>K</TipoCampo>
+	      <LongitudCampo>20</LongitudCampo>
+	      <ValorDefecto>Item</ValorDefecto>
+	 </Campo>
+         <Campo posicion="1" nombre="LineaItem" descripcion="Correlativo de Item">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>4</LongitudCampo>
+         </Campo>
+         <Campo posicion="2" nombre="DescripcionItem" descripcion="Descripcion del Item">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>250</LongitudCampo>
+         </Campo>
+         <Campo posicion="3" nombre="CantidadItem" descripcion="Cantidad del Item o Servicio">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>R</TipoCampo>
+              <SubTipoCampo>R</SubTipoCampo>
+              <LongitudCampo>11</LongitudCampo>
+              <LongitudEntero>7</LongitudEntero>
+              <LongitudDecimal>4</LongitudDecimal>
+         </Campo>
+         <Campo posicion="4" nombre="UnidadMedidaItem" descripcion="Unidad de Medida del Item">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>3</LongitudCampo>
+             <Valores cantidad="1093">
+                    <Valor>04</Valor>
+                    <Valor>05</Valor>
+                    <Valor>08</Valor>
+                    <Valor>10</Valor>
+                    <Valor>11</Valor>
+                    <Valor>13</Valor>
+                    <Valor>14</Valor>
+                    <Valor>15</Valor>
+                    <Valor>16</Valor>
+                    <Valor>17</Valor>
+                    <Valor>18</Valor>
+                    <Valor>19</Valor>
+                    <Valor>20</Valor>
+                    <Valor>21</Valor>
+                    <Valor>22</Valor>
+                    <Valor>23</Valor>
+                    <Valor>24</Valor>
+                    <Valor>25</Valor>
+                    <Valor>26</Valor>
+                    <Valor>27</Valor>
+                    <Valor>28</Valor>
+                    <Valor>29</Valor>
+                    <Valor>30</Valor>
+                    <Valor>31</Valor>
+                    <Valor>32</Valor>
+                    <Valor>33</Valor>
+                    <Valor>34</Valor>
+                    <Valor>35</Valor>
+                    <Valor>36</Valor>
+                    <Valor>37</Valor>
+                    <Valor>38</Valor>
+                    <Valor>40</Valor>
+                    <Valor>41</Valor>
+                    <Valor>43</Valor>
+                    <Valor>44</Valor>
+                    <Valor>45</Valor>
+                    <Valor>46</Valor>
+                    <Valor>47</Valor>
+                    <Valor>48</Valor>
+                    <Valor>53</Valor>
+                    <Valor>54</Valor>
+                    <Valor>56</Valor>
+                    <Valor>57</Valor>
+                    <Valor>58</Valor>
+                    <Valor>59</Valor>
+                    <Valor>60</Valor>
+                    <Valor>61</Valor>
+                    <Valor>62</Valor>
+                    <Valor>63</Valor>
+                    <Valor>64</Valor>
+                    <Valor>66</Valor>
+                    <Valor>69</Valor>
+                    <Valor>71</Valor>
+                    <Valor>72</Valor>
+                    <Valor>73</Valor>
+                    <Valor>74</Valor>
+                    <Valor>76</Valor>
+                    <Valor>77</Valor>
+                    <Valor>78</Valor>
+                    <Valor>80</Valor>
+                    <Valor>81</Valor>
+                    <Valor>84</Valor>
+                    <Valor>85</Valor>
+                    <Valor>87</Valor>
+                    <Valor>89</Valor>
+                    <Valor>90</Valor>
+                    <Valor>91</Valor>
+                    <Valor>92</Valor>
+                    <Valor>93</Valor>
+                    <Valor>94</Valor>
+                    <Valor>95</Valor>
+                    <Valor>96</Valor>
+                    <Valor>97</Valor>
+                    <Valor>98</Valor>
+                    <Valor>1ª</Valor>
+                    <Valor>1B</Valor>
+                    <Valor>1C</Valor>
+                    <Valor>1D</Valor>
+                    <Valor>1E</Valor>
+                    <Valor>1F</Valor>
+                    <Valor>1G</Valor>
+                    <Valor>1H</Valor>
+                    <Valor>1I</Valor>
+                    <Valor>1J</Valor>
+                    <Valor>1K</Valor>
+                    <Valor>1L</Valor>
+                    <Valor>1M</Valor>
+                    <Valor>1X</Valor>
+                    <Valor>2ª</Valor>
+                    <Valor>2B</Valor>
+                    <Valor>2C</Valor>
+                    <Valor>2I</Valor>
+                    <Valor>2J</Valor>
+                    <Valor>2K</Valor>
+                    <Valor>2L</Valor>
+                    <Valor>2M</Valor>
+                    <Valor>2N</Valor>
+                    <Valor>2P</Valor>
+                    <Valor>2Q</Valor>
+                    <Valor>2R</Valor>
+                    <Valor>2U</Valor>
+                    <Valor>2V</Valor>
+                    <Valor>2W</Valor>
+                    <Valor>2X</Valor>
+                    <Valor>2Y</Valor>
+                    <Valor>2Z</Valor>
+                    <Valor>3B</Valor>
+                    <Valor>3C</Valor>
+                    <Valor>3E</Valor>
+                    <Valor>3G</Valor>
+                    <Valor>3H</Valor>
+                    <Valor>3I</Valor>
+                    <Valor>4ª</Valor>
+                    <Valor>4B</Valor>
+                    <Valor>4C</Valor>
+                    <Valor>4E</Valor>
+                    <Valor>4G</Valor>
+                    <Valor>4H</Valor>
+                    <Valor>4K</Valor>
+                    <Valor>4L</Valor>
+                    <Valor>4M</Valor>
+                    <Valor>4N</Valor>
+                    <Valor>4º</Valor>
+                    <Valor>4P</Valor>
+                    <Valor>4Q</Valor>
+                    <Valor>4R</Valor>
+                    <Valor>4T</Valor>
+                    <Valor>4U</Valor>
+                    <Valor>4W</Valor>
+                    <Valor>4X</Valor>
+                    <Valor>5ª</Valor>
+                    <Valor>5B</Valor>
+                    <Valor>5C</Valor>
+                    <Valor>5E</Valor>
+                    <Valor>5F</Valor>
+                    <Valor>5G</Valor>
+                    <Valor>5H</Valor>
+                    <Valor>5I</Valor>
+                    <Valor>5J</Valor>
+                    <Valor>5K</Valor>
+                    <Valor>5P</Valor>
+                    <Valor>5Q</Valor>
+                    <Valor>A1</Valor>
+                    <Valor>A10</Valor>
+                    <Valor>A11</Valor>
+                    <Valor>A12</Valor>
+                    <Valor>A13</Valor>
+                    <Valor>A14</Valor>
+                    <Valor>A15</Valor>
+                    <Valor>A16</Valor>
+                    <Valor>A17</Valor>
+                    <Valor>A18</Valor>
+                    <Valor>A19</Valor>
+                    <Valor>A2</Valor>
+                    <Valor>A20</Valor>
+                    <Valor>A21</Valor>
+                    <Valor>A22</Valor>
+                    <Valor>A23</Valor>
+                    <Valor>A24</Valor>
+                    <Valor>A25</Valor>
+                    <Valor>A26</Valor>
+                    <Valor>A27</Valor>
+                    <Valor>A28</Valor>
+                    <Valor>A29</Valor>
+                    <Valor>A3</Valor>
+                    <Valor>A30</Valor>
+                    <Valor>A31</Valor>
+                    <Valor>A32</Valor>
+                    <Valor>A33</Valor>
+                    <Valor>A34</Valor>
+                    <Valor>A35</Valor>
+                    <Valor>A36</Valor>
+                    <Valor>A37</Valor>
+                    <Valor>A38</Valor>
+                    <Valor>A39</Valor>
+                    <Valor>A4</Valor>
+                    <Valor>A40</Valor>
+                    <Valor>A41</Valor>
+                    <Valor>A42</Valor>
+                    <Valor>A43</Valor>
+                    <Valor>A44</Valor>
+                    <Valor>A45</Valor>
+                    <Valor>A47</Valor>
+                    <Valor>A48</Valor>
+                    <Valor>A49</Valor>
+                    <Valor>A5</Valor>
+                    <Valor>A50</Valor>
+                    <Valor>A51</Valor>
+                    <Valor>A52</Valor>
+                    <Valor>A53</Valor>
+                    <Valor>A54</Valor>
+                    <Valor>A55</Valor>
+                    <Valor>A56</Valor>
+                    <Valor>A57</Valor>
+                    <Valor>A58</Valor>
+                    <Valor>A6</Valor>
+                    <Valor>A60</Valor>
+                    <Valor>A61</Valor>
+                    <Valor>A62</Valor>
+                    <Valor>A63</Valor>
+                    <Valor>A64</Valor>
+                    <Valor>A65</Valor>
+                    <Valor>A66</Valor>
+                    <Valor>A67</Valor>
+                    <Valor>A68</Valor>
+                    <Valor>A69</Valor>
+                    <Valor>A7</Valor>
+                    <Valor>A70</Valor>
+                    <Valor>A71</Valor>
+                    <Valor>A73</Valor>
+                    <Valor>A74</Valor>
+                    <Valor>A75</Valor>
+                    <Valor>A76</Valor>
+                    <Valor>A77</Valor>
+                    <Valor>A78</Valor>
+                    <Valor>A79</Valor>
+                    <Valor>A8</Valor>
+                    <Valor>A80</Valor>
+                    <Valor>A81</Valor>
+                    <Valor>A82</Valor>
+                    <Valor>A83</Valor>
+                    <Valor>A84</Valor>
+                    <Valor>A85</Valor>
+                    <Valor>A86</Valor>
+                    <Valor>A87</Valor>
+                    <Valor>A88</Valor>
+                    <Valor>A89</Valor>
+                    <Valor>A9</Valor>
+                    <Valor>A90</Valor>
+                    <Valor>A91</Valor>
+                    <Valor>A93</Valor>
+                    <Valor>A94</Valor>
+                    <Valor>A95</Valor>
+                    <Valor>A96</Valor>
+                    <Valor>A97</Valor>
+                    <Valor>A98</Valor>
+                    <Valor>AA</Valor>
+                    <Valor>AB</Valor>
+                    <Valor>ACR</Valor>
+                    <Valor>AD</Valor>
+                    <Valor>AE</Valor>
+                    <Valor>AH</Valor>
+                    <Valor>AI</Valor>
+                    <Valor>AJ</Valor>
+                    <Valor>AK</Valor>
+                    <Valor>AL</Valor>
+                    <Valor>AM</Valor>
+                    <Valor>AMH</Valor>
+                    <Valor>AMP</Valor>
+                    <Valor>ANA</Valor>
+                    <Valor>AP</Valor>
+                    <Valor>APZ</Valor>
+                    <Valor>AQ</Valor>
+                    <Valor>AR</Valor>
+                    <Valor>SON</Valor>
+                    <Valor>COMO</Valor>
+                    <Valor>ASM</Valor>
+                    <Valor>ASU</Valor>
+                    <Valor>ATM</Valor>
+                    <Valor>ATT</Valor>
+                    <Valor>AV</Valor>
+                    <Valor>AW</Valor>
+                    <Valor>SÍ</Valor>
+                    <Valor>AZ</Valor>
+                    <Valor>B0</Valor>
+                    <Valor>B1</Valor>
+                    <Valor>B11</Valor>
+                    <Valor>B12</Valor>
+                    <Valor>B13</Valor>
+                    <Valor>B14</Valor>
+                    <Valor>B15</Valor>
+                    <Valor>B16</Valor>
+                    <Valor>B18</Valor>
+                    <Valor>B2</Valor>
+                    <Valor>B20</Valor>
+                    <Valor>B21</Valor>
+                    <Valor>B22</Valor>
+                    <Valor>B23</Valor>
+                    <Valor>B24</Valor>
+                    <Valor>B25</Valor>
+                    <Valor>B26</Valor>
+                    <Valor>B27</Valor>
+                    <Valor>B28</Valor>
+                    <Valor>B29</Valor>
+                    <Valor>B3</Valor>
+                    <Valor>B31</Valor>
+                    <Valor>B32</Valor>
+                    <Valor>B33</Valor>
+                    <Valor>B34</Valor>
+                    <Valor>B35</Valor>
+                    <Valor>B36</Valor>
+                    <Valor>B37</Valor>
+                    <Valor>B38</Valor>
+                    <Valor>B39</Valor>
+                    <Valor>B4</Valor>
+                    <Valor>B40</Valor>
+                    <Valor>B41</Valor>
+                    <Valor>B42</Valor>
+                    <Valor>B43</Valor>
+                    <Valor>B44</Valor>
+                    <Valor>B45</Valor>
+                    <Valor>B46</Valor>
+                    <Valor>B47</Valor>
+                    <Valor>B48</Valor>
+                    <Valor>B49</Valor>
+                    <Valor>B5</Valor>
+                    <Valor>B50</Valor>
+                    <Valor>B51</Valor>
+                    <Valor>B52</Valor>
+                    <Valor>B53</Valor>
+                    <Valor>B54</Valor>
+                    <Valor>B55</Valor>
+                    <Valor>B56</Valor>
+                    <Valor>B57</Valor>
+                    <Valor>B58</Valor>
+                    <Valor>B59</Valor>
+                    <Valor>B6</Valor>
+                    <Valor>B60</Valor>
+                    <Valor>B61</Valor>
+                    <Valor>B62</Valor>
+                    <Valor>B63</Valor>
+                    <Valor>B64</Valor>
+                    <Valor>B65</Valor>
+                    <Valor>B66</Valor>
+                    <Valor>B67</Valor>
+                    <Valor>B69</Valor>
+                    <Valor>B7</Valor>
+                    <Valor>B70</Valor>
+                    <Valor>B71</Valor>
+                    <Valor>B72</Valor>
+                    <Valor>B73</Valor>
+                    <Valor>B74</Valor>
+                    <Valor>B75</Valor>
+                    <Valor>B76</Valor>
+                    <Valor>B77</Valor>
+                    <Valor>B78</Valor>
+                    <Valor>B79</Valor>
+                    <Valor>B8</Valor>
+                    <Valor>B81</Valor>
+                    <Valor>B83</Valor>
+                    <Valor>B84</Valor>
+                    <Valor>B85</Valor>
+                    <Valor>B86</Valor>
+                    <Valor>B87</Valor>
+                    <Valor>B88</Valor>
+                    <Valor>B89</Valor>
+                    <Valor>B9</Valor>
+                    <Valor>B90</Valor>
+                    <Valor>B91</Valor>
+                    <Valor>B92</Valor>
+                    <Valor>B93</Valor>
+                    <Valor>B94</Valor>
+                    <Valor>B95</Valor>
+                    <Valor>B96</Valor>
+                    <Valor>B97</Valor>
+                    <Valor>B98</Valor>
+                    <Valor>B99</Valor>
+                    <Valor>BAR</Valor>
+                    <Valor>BB</Valor>
+                    <Valor>BD</Valor>
+                    <Valor>SER</Valor>
+                    <Valor>BFT</Valor>
+                    <Valor>BG</Valor>
+                    <Valor>BH</Valor>
+                    <Valor>BHP</Valor>
+                    <Valor>BIL</Valor>
+                    <Valor>BJ</Valor>
+                    <Valor>BK</Valor>
+                    <Valor>BL</Valor>
+                    <Valor>BLD</Valor>
+                    <Valor>BLL</Valor>
+                    <Valor>BO</Valor>
+                    <Valor>BP</Valor>
+                    <Valor>BQL</Valor>
+                    <Valor>BR</Valor>
+                    <Valor>BT</Valor>
+                    <Valor>BTU</Valor>
+                    <Valor>BUA</Valor>
+                    <Valor>BUI</Valor>
+                    <Valor>BW</Valor>
+                    <Valor>BX</Valor>
+                    <Valor>BZ</Valor>
+                    <Valor>C0</Valor>
+                    <Valor>C1</Valor>
+                    <Valor>C10</Valor>
+                    <Valor>C11</Valor>
+                    <Valor>C12</Valor>
+                    <Valor>C13</Valor>
+                    <Valor>C14</Valor>
+                    <Valor>C15</Valor>
+                    <Valor>C16</Valor>
+                    <Valor>C17</Valor>
+                    <Valor>C18</Valor>
+                    <Valor>C19</Valor>
+                    <Valor>C2</Valor>
+                    <Valor>C20</Valor>
+                    <Valor>C22</Valor>
+                    <Valor>C23</Valor>
+                    <Valor>C24</Valor>
+                    <Valor>C25</Valor>
+                    <Valor>C26</Valor>
+                    <Valor>C27</Valor>
+                    <Valor>C28</Valor>
+                    <Valor>C29</Valor>
+                    <Valor>C3</Valor>
+                    <Valor>C30</Valor>
+                    <Valor>C31</Valor>
+                    <Valor>C32</Valor>
+                    <Valor>C33</Valor>
+                    <Valor>C34</Valor>
+                    <Valor>C35</Valor>
+                    <Valor>C36</Valor>
+                    <Valor>C38</Valor>
+                    <Valor>C39</Valor>
+                    <Valor>C4</Valor>
+                    <Valor>C40</Valor>
+                    <Valor>C41</Valor>
+                    <Valor>C42</Valor>
+                    <Valor>C43</Valor>
+                    <Valor>C44</Valor>
+                    <Valor>C45</Valor>
+                    <Valor>C46</Valor>
+                    <Valor>C47</Valor>
+                    <Valor>C48</Valor>
+                    <Valor>C49</Valor>
+                    <Valor>C5</Valor>
+                    <Valor>C50</Valor>
+                    <Valor>C51</Valor>
+                    <Valor>C52</Valor>
+                    <Valor>C53</Valor>
+                    <Valor>C54</Valor>
+                    <Valor>C55</Valor>
+                    <Valor>C56</Valor>
+                    <Valor>C57</Valor>
+                    <Valor>C58</Valor>
+                    <Valor>C59</Valor>
+                    <Valor>C6</Valor>
+                    <Valor>C60</Valor>
+                    <Valor>C61</Valor>
+                    <Valor>C62</Valor>
+                    <Valor>C63</Valor>
+                    <Valor>C64</Valor>
+                    <Valor>C65</Valor>
+                    <Valor>C66</Valor>
+                    <Valor>C67</Valor>
+                    <Valor>C68</Valor>
+                    <Valor>C69</Valor>
+                    <Valor>C7</Valor>
+                    <Valor>C70</Valor>
+                    <Valor>C71</Valor>
+                    <Valor>C72</Valor>
+                    <Valor>C73</Valor>
+                    <Valor>C75</Valor>
+                    <Valor>C76</Valor>
+                    <Valor>C77</Valor>
+                    <Valor>C78</Valor>
+                    <Valor>C8</Valor>
+                    <Valor>C80</Valor>
+                    <Valor>C81</Valor>
+                    <Valor>C82</Valor>
+                    <Valor>C83</Valor>
+                    <Valor>C84</Valor>
+                    <Valor>C85</Valor>
+                    <Valor>C86</Valor>
+                    <Valor>C87</Valor>
+                    <Valor>C88</Valor>
+                    <Valor>C89</Valor>
+                    <Valor>C9</Valor>
+                    <Valor>C90</Valor>
+                    <Valor>C91</Valor>
+                    <Valor>C92</Valor>
+                    <Valor>C93</Valor>
+                    <Valor>C94</Valor>
+                    <Valor>C95</Valor>
+                    <Valor>C96</Valor>
+                    <Valor>C97</Valor>
+                    <Valor>C98</Valor>
+                    <Valor>C99</Valor>
+                    <Valor>CA</Valor>
+                    <Valor>CCT</Valor>
+                    <Valor>CDL</Valor>
+                    <Valor>CEL</Valor>
+                    <Valor>CEN</Valor>
+                    <Valor>CG</Valor>
+                    <Valor>CGM</Valor>
+                    <Valor>CH</Valor>
+                    <Valor>CJ</Valor>
+                    <Valor>CK</Valor>
+                    <Valor>CKG</Valor>
+                    <Valor>CL</Valor>
+                    <Valor>CLF</Valor>
+                    <Valor>CLT</Valor>
+                    <Valor>CMK</Valor>
+                    <Valor>CMQ</Valor>
+                    <Valor>CMT</Valor>
+                    <Valor>CNP</Valor>
+                    <Valor>CNT</Valor>
+                    <Valor>CO</Valor>
+                    <Valor>COU</Valor>
+                    <Valor>CQ</Valor>
+                    <Valor>CR</Valor>
+                    <Valor>CS</Valor>
+                    <Valor>CT</Valor>
+                    <Valor>CTM</Valor>
+                    <Valor>CU</Valor>
+                    <Valor>CUR</Valor>
+                    <Valor>CV</Valor>
+                    <Valor>CWA</Valor>
+                    <Valor>CWI</Valor>
+                    <Valor>CY</Valor>
+                    <Valor>CZ</Valor>
+                    <Valor>D1</Valor>
+                    <Valor>D10</Valor>
+                    <Valor>D12</Valor>
+                    <Valor>D13</Valor>
+                    <Valor>D14</Valor>
+                    <Valor>D15</Valor>
+                    <Valor>D16</Valor>
+                    <Valor>D17</Valor>
+                    <Valor>D18</Valor>
+                    <Valor>D19</Valor>
+                    <Valor>D2</Valor>
+                    <Valor>D20</Valor>
+                    <Valor>D21</Valor>
+                    <Valor>D22</Valor>
+                    <Valor>D23</Valor>
+                    <Valor>D24</Valor>
+                    <Valor>D25</Valor>
+                    <Valor>D26</Valor>
+                    <Valor>D27</Valor>
+                    <Valor>D28</Valor>
+                    <Valor>D29</Valor>
+                    <Valor>D30</Valor>
+                    <Valor>D31</Valor>
+                    <Valor>D32</Valor>
+                    <Valor>D33</Valor>
+                    <Valor>D34</Valor>
+                    <Valor>D35</Valor>
+                    <Valor>D37</Valor>
+                    <Valor>D38</Valor>
+                    <Valor>D39</Valor>
+                    <Valor>D40</Valor>
+                    <Valor>D41</Valor>
+                    <Valor>D42</Valor>
+                    <Valor>D43</Valor>
+                    <Valor>D44</Valor>
+                    <Valor>D45</Valor>
+                    <Valor>D46</Valor>
+                    <Valor>D47</Valor>
+                    <Valor>D48</Valor>
+                    <Valor>D49</Valor>
+                    <Valor>D5</Valor>
+                    <Valor>D50</Valor>
+                    <Valor>D51</Valor>
+                    <Valor>D52</Valor>
+                    <Valor>D53</Valor>
+                    <Valor>D54</Valor>
+                    <Valor>D55</Valor>
+                    <Valor>D56</Valor>
+                    <Valor>D57</Valor>
+                    <Valor>D58</Valor>
+                    <Valor>D59</Valor>
+                    <Valor>D6</Valor>
+                    <Valor>D60</Valor>
+                    <Valor>D61</Valor>
+                    <Valor>D62</Valor>
+                    <Valor>D63</Valor>
+                    <Valor>D64</Valor>
+                    <Valor>D65</Valor>
+                    <Valor>D66</Valor>
+                    <Valor>D67</Valor>
+                    <Valor>D69</Valor>
+                    <Valor>D7</Valor>
+                    <Valor>D70</Valor>
+                    <Valor>D71</Valor>
+                    <Valor>D72</Valor>
+                    <Valor>D73</Valor>
+                    <Valor>D74</Valor>
+                    <Valor>D75</Valor>
+                    <Valor>D76</Valor>
+                    <Valor>D77</Valor>
+                    <Valor>D79</Valor>
+                    <Valor>D8</Valor>
+                    <Valor>D80</Valor>
+                    <Valor>D81</Valor>
+                    <Valor>D82</Valor>
+                    <Valor>D83</Valor>
+                    <Valor>D85</Valor>
+                    <Valor>D86</Valor>
+                    <Valor>D87</Valor>
+                    <Valor>D88</Valor>
+                    <Valor>D89</Valor>
+                    <Valor>D9</Valor>
+                    <Valor>D90</Valor>
+                    <Valor>D91</Valor>
+                    <Valor>D92</Valor>
+                    <Valor>D93</Valor>
+                    <Valor>D94</Valor>
+                    <Valor>D95</Valor>
+                    <Valor>D96</Valor>
+                    <Valor>D97</Valor>
+                    <Valor>D98</Valor>
+                    <Valor>D99</Valor>
+                    <Valor>DAA</Valor>
+                    <Valor>DAD</Valor>
+                    <Valor>DAY</Valor>
+                    <Valor>DB</Valor>
+                    <Valor>DC</Valor>
+                    <Valor>DD</Valor>
+                    <Valor>DE</Valor>
+                    <Valor>DEC</Valor>
+                    <Valor>DG</Valor>
+                    <Valor>DI</Valor>
+                    <Valor>DJ</Valor>
+                    <Valor>DLT</Valor>
+                    <Valor>DMK</Valor>
+                    <Valor>DMQ</Valor>
+                    <Valor>DMT</Valor>
+                    <Valor>DN</Valor>
+                    <Valor>DPC</Valor>
+                    <Valor>DPR</Valor>
+                    <Valor>DPT</Valor>
+                    <Valor>DQ</Valor>
+                    <Valor>DR</Valor>
+                    <Valor>DRA</Valor>
+                    <Valor>DRI</Valor>
+                    <Valor>DRL</Valor>
+                    <Valor>DRM</Valor>
+                    <Valor>DS</Valor>
+                    <Valor>DT</Valor>
+                    <Valor>DTN</Valor>
+                    <Valor>DU</Valor>
+                    <Valor>DWT</Valor>
+                    <Valor>DX</Valor>
+                    <Valor>DY</Valor>
+                    <Valor>DZN</Valor>
+                    <Valor>DZP</Valor>
+                    <Valor>E2</Valor>
+                    <Valor>E3</Valor>
+                    <Valor>E4</Valor>
+                    <Valor>E5</Valor>
+                    <Valor>EA</Valor>
+                    <Valor>EB</Valor>
+                    <Valor>CE</Valor>
+                    <Valor>EP</Valor>
+                    <Valor>EQ</Valor>
+                    <Valor>EV</Valor>
+                    <Valor>F1</Valor>
+                    <Valor>F9</Valor>
+                    <Valor>FAH</Valor>
+                    <Valor>FAR</Valor>
+                    <Valor>FB</Valor>
+                    <Valor>FC</Valor>
+                    <Valor>FD</Valor>
+                    <Valor>FE</Valor>
+                    <Valor>FF</Valor>
+                    <Valor>FG</Valor>
+                    <Valor>FH</Valor>
+                    <Valor>FL</Valor>
+                    <Valor>FM</Valor>
+                    <Valor>FOT</Valor>
+                    <Valor>FP</Valor>
+                    <Valor>FR</Valor>
+                    <Valor>FS</Valor>
+                    <Valor>FTK</Valor>
+                    <Valor>FTQ</Valor>
+                    <Valor>G2</Valor>
+                    <Valor>G3</Valor>
+                    <Valor>G7</Valor>
+                    <Valor>GB</Valor>
+                    <Valor>GBQ</Valor>
+                    <Valor>GC</Valor>
+                    <Valor>GD</Valor>
+                    <Valor>GE</Valor>
+                    <Valor>GF</Valor>
+                    <Valor>GFI</Valor>
+                    <Valor>GGR</Valor>
+                    <Valor>GH</Valor>
+                    <Valor>GIA</Valor>
+                    <Valor>GII</Valor>
+                    <Valor>GJ</Valor>
+                    <Valor>G K</Valor>
+                    <Valor>GL</Valor>
+                    <Valor>GLD</Valor>
+                    <Valor>GLI</Valor>
+                    <Valor>GLL</Valor>
+                    <Valor>GM</Valor>
+                    <Valor>GN</Valor>
+                    <Valor>GO</Valor>
+                    <Valor>GP</Valor>
+                    <Valor>GQ</Valor>
+                    <Valor>GRM</Valor>
+                    <Valor>GRN</Valor>
+                    <Valor>GRO</Valor>
+                    <Valor>GRT</Valor>
+                    <Valor>GT</Valor>
+                    <Valor>GV</Valor>
+                    <Valor>GW</Valor>
+                    <Valor>GWH</Valor>
+                    <Valor>GY</Valor>
+                    <Valor>GZ</Valor>
+                    <Valor>H1</Valor>
+                    <Valor>H2</Valor>
+                    <Valor>HA</Valor>
+                    <Valor>HAR</Valor>
+                    <Valor>HBA</Valor>
+                    <Valor>HBX</Valor>
+                    <Valor>HC</Valor>
+                    <Valor>HD</Valor>
+                    <Valor>ÉL</Valor>
+                    <Valor>HF</Valor>
+                    <Valor>HGM</Valor>
+                    <Valor>HH</Valor>
+                    <Valor>HI</Valor>
+                    <Valor>HIU</Valor>
+                    <Valor>HJ</Valor>
+                    <Valor>HK</Valor>
+                    <Valor>HL</Valor>
+                    <Valor>HLT</Valor>
+                    <Valor>HM</Valor>
+                    <Valor>HMQ</Valor>
+                    <Valor>HMT</Valor>
+                    <Valor>HN</Valor>
+                    <Valor>HO</Valor>
+                    <Valor>HP</Valor>
+                    <Valor>HPA</Valor>
+                    <Valor>HS</Valor>
+                    <Valor>HT</Valor>
+                    <Valor>HTZ</Valor>
+                    <Valor>HUR</Valor>
+                    <Valor>HY</Valor>
+                    <Valor>IA</Valor>
+                    <Valor>IC</Valor>
+                    <Valor>IE</Valor>
+                    <Valor>IF</Valor>
+                    <Valor>II</Valor>
+                    <Valor>IL</Valor>
+                    <Valor>IM</Valor>
+                    <Valor>INH</Valor>
+                    <Valor>INK</Valor>
+                    <Valor>INQ</Valor>
+                    <Valor>IP</Valor>
+                    <Valor>IT</Valor>
+                    <Valor>IU</Valor>
+                    <Valor>IV</Valor>
+                    <Valor>J2</Valor>
+                    <Valor>JB</Valor>
+                    <Valor>JE</Valor>
+                    <Valor>JG</Valor>
+                    <Valor>JK</Valor>
+                    <Valor>JM</Valor>
+                    <Valor>JO</Valor>
+                    <Valor>JOU</Valor>
+                    <Valor>JR</Valor>
+                    <Valor>K1</Valor>
+                    <Valor>K2</Valor>
+                    <Valor>K3</Valor>
+                    <Valor>K5</Valor>
+                    <Valor>K6</Valor>
+                    <Valor>KA</Valor>
+                    <Valor>KB</Valor>
+                    <Valor>KBA</Valor>
+                    <Valor>KD</Valor>
+                    <Valor>KEL</Valor>
+                    <Valor>KF</Valor>
+                    <Valor>KG</Valor>
+                    <Valor>KGM</Valor>
+                    <Valor>KGS</Valor>
+                    <Valor>KHZ</Valor>
+                    <Valor>KI</Valor>
+                    <Valor>KJ</Valor>
+                    <Valor>KJO</Valor>
+                    <Valor>KL</Valor>
+                    <Valor>KMH</Valor>
+                    <Valor>KMK</Valor>
+                    <Valor>KMQ</Valor>
+                    <Valor>KNI</Valor>
+                    <Valor>KNS</Valor>
+                    <Valor>KNT</Valor>
+                    <Valor>KO</Valor>
+                    <Valor>KPA</Valor>
+                    <Valor>KPH</Valor>
+                    <Valor>KPO</Valor>
+                    <Valor>KPP</Valor>
+                    <Valor>KR</Valor>
+                    <Valor>KS</Valor>
+                    <Valor>KSD</Valor>
+                    <Valor>KSH</Valor>
+                    <Valor>KT</Valor>
+                    <Valor>KTM</Valor>
+                    <Valor>KTN</Valor>
+                    <Valor>KUR</Valor>
+                    <Valor>KVA</Valor>
+                    <Valor>KVR</Valor>
+                    <Valor>KVT</Valor>
+                    <Valor>KW</Valor>
+                    <Valor>KWH</Valor>
+                    <Valor>KWT</Valor>
+                    <Valor>KX</Valor>
+                    <Valor>L2</Valor>
+                    <Valor>LA</Valor>
+                    <Valor>LBR</Valor>
+                    <Valor>LBT</Valor>
+                    <Valor>LC</Valor>
+                    <Valor>LD</Valor>
+                    <Valor>LE</Valor>
+                    <Valor>LEF</Valor>
+                    <Valor>LF</Valor>
+                    <Valor>LH</Valor>
+                    <Valor>LI</Valor>
+                    <Valor>LJ</Valor>
+                    <Valor>LK</Valor>
+                    <Valor>LM</Valor>
+                    <Valor>LN</Valor>
+                    <Valor>LO</Valor>
+                    <Valor>LP</Valor>
+                    <Valor>LPA</Valor>
+                    <Valor>LR</Valor>
+                    <Valor>LS</Valor>
+                    <Valor>LTN</Valor>
+                    <Valor>LTR</Valor>
+                    <Valor>LUM</Valor>
+                    <Valor>LUX</Valor>
+                    <Valor>LX</Valor>
+                    <Valor>LY</Valor>
+                    <Valor>M0</Valor>
+                    <Valor>M1</Valor>
+                    <Valor>M4</Valor>
+                    <Valor>M5</Valor>
+                    <Valor>M7</Valor>
+                    <Valor>M9</Valor>
+                    <Valor>MA</Valor>
+                    <Valor>MAL</Valor>
+                    <Valor>MAM</Valor>
+                    <Valor>MAW</Valor>
+                    <Valor>MBE</Valor>
+                    <Valor>MBF</Valor>
+                    <Valor>MBR</Valor>
+                    <Valor>MC</Valor>
+                    <Valor>MCU</Valor>
+                    <Valor>MD</Valor>
+                    <Valor>MF</Valor>
+                    <Valor>MGM</Valor>
+                    <Valor>MGM</Valor>
+                    <Valor>MIK</Valor>
+                    <Valor>MIL</Valor>
+                    <Valor>MIN</Valor>
+                    <Valor>MIO</Valor>
+                    <Valor>MIU</Valor>
+                    <Valor>MK</Valor>
+                    <Valor>MLD</Valor>
+                    <Valor>MLT</Valor>
+                    <Valor>MMK</Valor>
+                    <Valor>MMQ</Valor>
+                    <Valor>MMT</Valor>
+                    <Valor>LUN</Valor>
+                    <Valor>MPA</Valor>
+                    <Valor>MQ</Valor>
+                    <Valor>MQH</Valor>
+                    <Valor>MQS</Valor>
+                    <Valor>MSK</Valor>
+                    <Valor>MT</Valor>
+                    <Valor>MTK</Valor>
+                    <Valor>MTQ</Valor>
+                    <Valor>MTR</Valor>
+                    <Valor>MTS</Valor>
+                    <Valor>MV</Valor>
+                    <Valor>MVA</Valor>
+                    <Valor>MWH</Valor>
+                    <Valor>N1</Valor>
+                    <Valor>N2</Valor>
+                    <Valor>N3</Valor>
+                    <Valor>NA</Valor>
+                    <Valor>NAR</Valor>
+                    <Valor>NB</Valor>
+                    <Valor>NBB</Valor>
+                    <Valor>NC</Valor>
+                    <Valor>NCL</Valor>
+                    <Valor>ND</Valor>
+                    <Valor>NE</Valor>
+                    <Valor>NEW</Valor>
+                    <Valor>NF</Valor>
+                    <Valor>NG</Valor>
+                    <Valor>NH</Valor>
+                    <Valor>NI</Valor>
+                    <Valor>NIU</Valor>
+                    <Valor>NJ</Valor>
+                    <Valor>NL</Valor>
+                    <Valor>MNI</Valor>
+                    <Valor>NMP</Valor>
+                    <Valor>NN</Valor>
+                    <Valor>NPL</Valor>
+                    <Valor>NPR</Valor>
+                    <Valor>TNP</Valor>
+                    <Valor>NQ</Valor>
+                    <Valor>NR</Valor>
+                    <Valor>NRL</Valor>
+                    <Valor>NT</Valor>
+                    <Valor>NTT</Valor>
+                    <Valor>NU</Valor>
+                    <Valor>NV</Valor>
+                    <Valor>NX</Valor>
+                    <Valor>NY</Valor>
+                    <Valor>OA</Valor>
+                    <Valor>OHM</Valor>
+                    <Valor>EN</Valor>
+                    <Valor>ONZ</Valor>
+                    <Valor>OP</Valor>
+                    <Valor>OT</Valor>
+                    <Valor>ONZ</Valor>
+                    <Valor>OZA</Valor>
+                    <Valor>OZI</Valor>
+                    <Valor>P0</Valor>
+                    <Valor>P1</Valor>
+                    <Valor>P2</Valor>
+                    <Valor>P3</Valor>
+                    <Valor>P4</Valor>
+                    <Valor>P5</Valor>
+                    <Valor>P6</Valor>
+                    <Valor>P7</Valor>
+                    <Valor>P8</Valor>
+                    <Valor>P9</Valor>
+                    <Valor>PA</Valor>
+                    <Valor>PAL</Valor>
+                    <Valor>PB</Valor>
+                    <Valor>PD</Valor>
+                    <Valor>PE</Valor>
+                    <Valor>PF</Valor>
+                    <Valor>PG</Valor>
+                    <Valor>PGL</Valor>
+                    <Valor>Pi</Valor>
+                    <Valor>PK</Valor>
+                    <Valor>PL</Valor>
+                    <Valor>PM</Valor>
+                    <Valor>PN</Valor>
+                    <Valor>PO</Valor>
+                    <Valor>PQ</Valor>
+                    <Valor>PR</Valor>
+                    <Valor>PD</Valor>
+                    <Valor>PT</Valor>
+                    <Valor>PTD</Valor>
+                    <Valor>PTI</Valor>
+                    <Valor>PTL</Valor>
+                    <Valor>PU</Valor>
+                    <Valor>PV</Valor>
+                    <Valor>PW</Valor>
+                    <Valor>PY</Valor>
+                    <Valor>PZ</Valor>
+                    <Valor>Q3</Valor>
+                    <Valor>QA</Valor>
+                    <Valor>QAN</Valor>
+                    <Valor>QB</Valor>
+                    <Valor>QD</Valor>
+                    <Valor>QH</Valor>
+                    <Valor>QK</Valor>
+                    <Valor>QR</Valor>
+                    <Valor>QT</Valor>
+                    <Valor>QTD</Valor>
+                    <Valor>QTI</Valor>
+                    <Valor>QTL</Valor>
+                    <Valor>QTR</Valor>
+                    <Valor>R1</Valor>
+                    <Valor>R4</Valor>
+                    <Valor>R9</Valor>
+                    <Valor>RA</Valor>
+                    <Valor>RD</Valor>
+                    <Valor>RG</Valor>
+                    <Valor>RH</Valor>
+                    <Valor>RK</Valor>
+                    <Valor>RL</Valor>
+                    <Valor>RM</Valor>
+                    <Valor>RN</Valor>
+                    <Valor>RO</Valor>
+                    <Valor>RP</Valor>
+                    <Valor>RPM</Valor>
+                    <Valor>RPS</Valor>
+                    <Valor>RS</Valor>
+                    <Valor>RT</Valor>
+                    <Valor>RU</Valor>
+                    <Valor>S3</Valor>
+                    <Valor>S4</Valor>
+                    <Valor>S5</Valor>
+                    <Valor>S6</Valor>
+                    <Valor>S7</Valor>
+                    <Valor>S8</Valor>
+                    <Valor>SA</Valor>
+                    <Valor>SAN</Valor>
+                    <Valor>OCS</Valor>
+                    <Valor>SCR</Valor>
+                    <Valor>SD</Valor>
+                    <Valor>SE</Valor>
+                    <Valor>SEC</Valor>
+                    <Valor>SET</Valor>
+                    <Valor>SG</Valor>
+                    <Valor>SHT</Valor>
+                    <Valor>SIE</Valor>
+                    <Valor>SK</Valor>
+                    <Valor>SL</Valor>
+                    <Valor>SMI</Valor>
+                    <Valor>SN</Valor>
+                    <Valor>SO</Valor>
+                    <Valor>SP</Valor>
+                    <Valor>SQ</Valor>
+                    <Valor>SR</Valor>
+                    <Valor>SS</Valor>
+                    <Valor>SST</Valor>
+                    <Valor>ST</Valor>
+                    <Valor>ITS</Valor>
+                    <Valor>STN</Valor>
+                    <Valor>SV</Valor>
+                    <Valor>SO</Valor>
+                    <Valor>SX</Valor>
+                    <Valor>T0</Valor>
+                    <Valor>T1</Valor>
+                    <Valor>T3</Valor>
+                    <Valor>T4</Valor>
+                    <Valor>T5</Valor>
+                    <Valor>T6</Valor>
+                    <Valor>T7</Valor>
+                    <Valor>T8</Valor>
+                    <Valor>TA</Valor>
+                    <Valor>TAH</Valor>
+                    <Valor>TC</Valor>
+                    <Valor>TD</Valor>
+                    <Valor>TE</Valor>
+                    <Valor>TF</Valor>
+                    <Valor>TI</Valor>
+                    <Valor>TJ</Valor>
+                    <Valor>TK</Valor>
+                    <Valor>TL</Valor>
+                    <Valor>TN</Valor>
+                    <Valor>TNE</Valor>
+                    <Valor>TP</Valor>
+                    <Valor>TPR</Valor>
+                    <Valor>TQ</Valor>
+                    <Valor>TQD</Valor>
+                    <Valor>TR</Valor>
+                    <Valor>TRL</Valor>
+                    <Valor>TS</Valor>
+                    <Valor>TSD</Valor>
+                    <Valor>TSH</Valor>
+                    <Valor>TT</Valor>
+                    <Valor>TU</Valor>
+                    <Valor>TV</Valor>
+                    <Valor>TW</Valor>
+                    <Valor>TY</Valor>
+                    <Valor>U1</Valor>
+                    <Valor>U2</Valor>
+                    <Valor>UA</Valor>
+                    <Valor>UB</Valor>
+                    <Valor>UC</Valor>
+                    <Valor>UD</Valor>
+                    <Valor>UE</Valor>
+                    <Valor>UF</Valor>
+                    <Valor>UH</Valor>
+                    <Valor>UM</Valor>
+                    <Valor>VA</Valor>
+                    <Valor>VI</Valor>
+                    <Valor>VLT</Valor>
+                    <Valor>VQ</Valor>
+                    <Valor>VS</Valor>
+                    <Valor>W2</Valor>
+                    <Valor>W4</Valor>
+                    <Valor>WA</Valor>
+                    <Valor>WB</Valor>
+                    <Valor>WCD</Valor>
+                    <Valor>WE</Valor>
+                    <Valor>WEB</Valor>
+                    <Valor>WEE</Valor>
+                    <Valor>WG</Valor>
+                    <Valor>WH</Valor>
+                    <Valor>WHR</Valor>
+                    <Valor>WI</Valor>
+                    <Valor>WM</Valor>
+                    <Valor>WR</Valor>
+                    <Valor>WSD</Valor>
+                    <Valor>WTT</Valor>
+                    <Valor>WW</Valor>
+                    <Valor>X1</Valor>
+                    <Valor>YDK</Valor>
+                    <Valor>YDQ</Valor>
+                    <Valor>YL</Valor>
+                    <Valor>YRD</Valor>
+                    <Valor>YT</Valor>
+                    <Valor>Z1</Valor>
+                    <Valor>Z2</Valor>
+                    <Valor>Z3</Valor>
+                    <Valor>Z4</Valor>
+                    <Valor>Z5</Valor>
+                    <Valor>Z6</Valor>
+                    <Valor>Z8</Valor>
+                    <Valor>ZP</Valor>
+                    <Valor>ZZ</Valor>
+               </Valores>
+         </Campo>
+	<Campo posicion="5" nombre="MonedaItem" descripcion="Codigo de moneda item">
+		<Obligatorio>S</Obligatorio>
+		<TipoCampo>C</TipoCampo>
+		<LongitudCampo>20</LongitudCampo>
+	</Campo>
+         <Campo posicion="6" nombre="ValorUnitarioItem" descripcion="Valor Unitario del Item o Servicio">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>R</TipoCampo>
+              <SubTipoCampo>R</SubTipoCampo>
+              <LongitudCampo>32</LongitudCampo>
+              <LongitudEntero>16</LongitudEntero>
+              <LongitudDecimal>15</LongitudDecimal>
+         </Campo>
+         <Campo posicion="7" nombre="CostoTotalItem" descripcion="Costo Total del Item o Servicio">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>R</TipoCampo>
+              <SubTipoCampo>R</SubTipoCampo>
+              <LongitudCampo>32</LongitudCampo>
+              <LongitudEntero>16</LongitudEntero>
+              <LongitudDecimal>15</LongitudDecimal>
+         </Campo>
+	<Campo posicion="8" nombre="CodigoTipoPrecio" descripcion="Codigo del tipo de precio">
+          <Obligatorio>N</Obligatorio>
+		<TipoCampo>C</TipoCampo>
+		<LongitudCampo>20</LongitudCampo>
+           <Valores cantidad="01">
+	      	<Valor>01</Valor>
+           </Valores>
+	</Campo>
+         <Campo posicion="9" nombre="CantidadArticulosEmpaque" descripcion="Cantidad de articulos por empaque">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>250</LongitudCampo>
+         </Campo>
+         <Campo posicion="10" nombre="MarcaItem" descripcion="Informacion de la Marca del Item">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>250</LongitudCampo>
+         </Campo>
+         <Campo posicion="11" nombre="ModeloItem" descripcion="Informacion del Modelo del Item">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>250</LongitudCampo>
+         </Campo>
+         <Campo posicion="12" nombre="NotaItem" descripcion="Informacion Adicional del Item">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>10240</LongitudCampo>
+         </Campo>
+         
+         
+         <Campo posicion="13" nombre="CodigoVendedorArticulo" descripcion="Codigo del vendedor correspondiente al articulo">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>50</LongitudCampo>
+         </Campo>
+         
+         <Campo posicion="14" nombre="CodigoVendedorSubArticulo" descripcion="Codigo del vendedor correspondiente al articulo">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>50</LongitudCampo>
+         </Campo>
+
+         <Campo posicion="15" nombre="TipoIdentificacionMandante" descripcion="Documento de identificacion del mandante">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>2</LongitudCampo>
+	    <Valores cantidad="10">
+	       <Valor>11</Valor>
+	       <Valor>12</Valor>
+	       <Valor>13</Valor>
+	       <Valor>21</Valor>
+	       <Valor>22</Valor>
+	       <Valor>31</Valor>
+	       <Valor>41</Valor>
+	       <Valor>42</Valor>
+	       <Valor>50</Valor>
+	       <Valor>91</Valor>
+              </Valores>
+         </Campo>
+         <Campo posicion="16" nombre="IdentificacionMandante" descripcion="Numero identificacion del mandante">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>20</LongitudCampo>
+         </Campo>
+         <Campo posicion="17" nombre="DvMandante" descripcion="Digito verificador del mandante">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+         </Campo>
+         <Campo posicion="18" nombre="IngTerceroRNDC" descripcion="Digito verificador del mandante">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+               <Valores cantidad="2">
+                    <Valor>0</Valor>
+	               <Valor>1</Valor>
+               </Valores>
+         </Campo>
+         <Campo posicion="19" nombre="FechaCompra" descripcion="Fecha De Compra">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>D</TipoCampo>
+              <SubTipoCampo>YYYY-MM-DD</SubTipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+         </Campo>
+         <Campo posicion="20" nombre="TipoEmision" descripcion="Tipo de emision">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+              <Valores cantidad="2">
+                 <Valor>1</Valor>
+                 <Valor>2</Valor>
+              </Valores>
+         </Campo>
+      </Registro>
+      
+      <Registro tipo="CaraAdicItem" posicion="9" descripcion="Caracteristicas adicionales del item"> 
+      
+      			<CondicionOccurs>N</CondicionOccurs>
+      			<MaxLineas>99</MaxLineas>
+      			<SizeBuffXml>102400</SizeBuffXml>
+      
+      			<CantidadCampos>4</CantidadCampos>
+      			
+      			<Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+      				<Obligatorio>S</Obligatorio>
+      				<TipoCampo>K</TipoCampo>
+      				<LongitudCampo>20</LongitudCampo>
+      				<ValorDefecto>CaraAdicItem</ValorDefecto>
+      			</Campo>
+      			<Campo posicion="1" nombre="LineaCodigoAdicionalItem" descripcion="Numero de linea">
+      				<Obligatorio>S</Obligatorio>
+      				<TipoCampo>N</TipoCampo>
+      				<SubTipoCampo>P</SubTipoCampo>
+      				<LongitudCampo>3</LongitudCampo>
+      			</Campo>
+      			<Campo posicion="2" nombre="CaracteristicaItem" descripcion="Caracteristica del item">
+      				<Obligatorio>N</Obligatorio>
+				<TipoCampo>C</TipoCampo>
+              			<LongitudCampo>50</LongitudCampo>
+      			</Campo>
+      			<Campo posicion="3" nombre="ValorCaracteristicaItem" descripcion="Valor de la caracteristica del item">
+      				<Obligatorio>N</Obligatorio>
+				<TipoCampo>C</TipoCampo>
+              			<LongitudCampo>50</LongitudCampo>
+      			</Campo>
+      </Registro>
+      
+      <Registro tipo="ImpuestoItem" posicion="10" descripcion="Impuestos del item"> 
+      
+      			<CondicionOccurs>N</CondicionOccurs>
+      			<MaxLineas>2999</MaxLineas>
+      			<SizeBuffXml>20480</SizeBuffXml>
+      
+      			<CantidadCampos>14</CantidadCampos>
+      
+      			<Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+      				<Obligatorio>S</Obligatorio>
+      				<TipoCampo>K</TipoCampo>
+      				<LongitudCampo>20</LongitudCampo>
+      				<ValorDefecto>ImpuestoItem</ValorDefecto>
+      			</Campo>
+      			<Campo posicion="1" nombre="LineaImpuestoItem" descripcion="Numero de impuesto item">
+      				<Obligatorio>S</Obligatorio>
+      				<TipoCampo>N</TipoCampo>
+      				<SubTipoCampo>P</SubTipoCampo>
+      				<LongitudCampo>3</LongitudCampo>
+      			</Campo>
+			 <Campo posicion="2" nombre="IndicadorImpuestoItem" descripcion="Indica Impuesto o Retenido">
+			      <Obligatorio>S</Obligatorio>
+			      <TipoCampo>C</TipoCampo>
+			      <LongitudCampo>5</LongitudCampo>
+			      <ValorDefecto>false</ValorDefecto>
+			      <Valores cantidad="2">
+				 <Valor>true</Valor>
+				 <Valor>false</Valor>
+			      </Valores>
+			 </Campo>
+			 <Campo posicion="3" nombre="IndicadorVentaGratuita" descripcion="Indica venta gratuita">
+			      <Obligatorio>S</Obligatorio>
+			      <TipoCampo>C</TipoCampo>
+			      <LongitudCampo>5</LongitudCampo>
+			      <ValorDefecto>false</ValorDefecto>
+			      <Valores cantidad="2">
+				 <Valor>true</Valor>
+				 <Valor>false</Valor>
+			      </Valores>
+			 </Campo>
+      			<Campo posicion="4" nombre="MonedaImpuestoItem" descripcion="Codigo de moneda">
+      				<Obligatorio>S</Obligatorio>
+      				<TipoCampo>C</TipoCampo>
+      				<LongitudCampo>20</LongitudCampo>
+      			</Campo>
+      			<Campo posicion="5" nombre="TotalImpuestoItem" descripcion="Total Impuesto item">
+      				<Obligatorio>N</Obligatorio>
+      				<TipoCampo>C</TipoCampo>
+      				<!-- <SubTipoCampo>P</SubTipoCampo> -->
+      				<LongitudCampo>15</LongitudCampo>
+      			</Campo>
+      			<Campo posicion="6" nombre="BaseImponibleItem" descripcion="Base imponible del item">
+      				<Obligatorio>N</Obligatorio>
+      				<TipoCampo>C</TipoCampo>
+      				<!-- <SubTipoCampo>P</SubTipoCampo> -->
+      				<LongitudCampo>15</LongitudCampo>
+      			</Campo>
+      			<Campo posicion="7" nombre="UnidadMedidaBase" descripcion="Unidad de medida base">
+      				<Obligatorio>N</Obligatorio>
+				<TipoCampo>C</TipoCampo>
+              			<LongitudCampo>3</LongitudCampo>
+      			</Campo>
+      			<Campo posicion="8" nombre="IdUnidadMedida" descripcion="Identificador unidad de medida">
+      				<Obligatorio>N</Obligatorio>
+				<TipoCampo>C</TipoCampo>
+              			<LongitudCampo>5</LongitudCampo>
+      			</Campo>
+      			<Campo posicion="9" nombre="ValorTributoUnidad" descripcion="Valor tributo por unidad">
+      				<Obligatorio>N</Obligatorio>
+      				<TipoCampo>C</TipoCampo>
+      				<LongitudCampo>15</LongitudCampo>
+      			</Campo>
+      			<Campo posicion="10" nombre="PorcentajeImpuestoItem" descripcion="Porcentaje impuesto del item">
+      				<TipoCampo>R</TipoCampo>
+					<SubTipoCampo>R0</SubTipoCampo>
+					<LongitudCampo>9</LongitudCampo>
+					<LongitudEntero>4</LongitudEntero>
+					<LongitudDecimal>4</LongitudDecimal>
+					<MinimoCampo>0.0</MinimoCampo>
+					<MaximoCampo>100.0</MaximoCampo>	
+      			</Campo>
+      			<Campo posicion="11" nombre="NumeroImpuestoItem" descripcion="Numero de impuesto del item">
+      				<Obligatorio>N</Obligatorio>
+      				<TipoCampo>C</TipoCampo>
+      				<!-- <SubTipoCampo>P</SubTipoCampo> -->
+      				<LongitudCampo>2</LongitudCampo>
+      				              <Valores cantidad="15">
+						<Valor>01</Valor>
+						<Valor>02</Valor>
+						<Valor>03</Valor>
+						<Valor>04</Valor>
+						<Valor>05</Valor>
+						<Valor>06</Valor>
+						<Valor>20</Valor>
+						<Valor>21</Valor>
+						<Valor>22</Valor>
+						<Valor>23</Valor>
+						<Valor>24</Valor>
+						<Valor>25</Valor>
+						<Valor>26</Valor>
+						<Valor>ZY</Valor>
+						<Valor>ZZ</Valor>
+	      </Valores>
+      				
+      			</Campo>
+      			<Campo posicion="12" nombre="NombreImpuestoItem" descripcion="Nombre de impuesto del Item">
+      				<Obligatorio>N</Obligatorio>
+      				<TipoCampo>C</TipoCampo>
+      				<!-- <SubTipoCampo>P</SubTipoCampo> -->
+      				<LongitudCampo>40</LongitudCampo>
+      			</Campo>
+      			<Campo posicion="13" nombre="UnidadMedidaImpItem" descripcion="Unidad de medida item">
+      				<Obligatorio>N</Obligatorio>
+				<TipoCampo>C</TipoCampo>
+              			<LongitudCampo>3</LongitudCampo>
+      			</Campo>
+		</Registro>
+		
+		<Registro tipo="CdgItem" posicion="11" descripcion="Codigos del Item">
+		
+					<CondicionOccurs>N</CondicionOccurs>
+					<MaxLineas>5</MaxLineas>
+					<SizeBuffXml>10240</SizeBuffXml>
+		
+					<CantidadCampos>4</CantidadCampos>
+		
+					<Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+						<Obligatorio>S</Obligatorio>
+						<TipoCampo>K</TipoCampo>
+						<LongitudCampo>20</LongitudCampo>
+						<ValorDefecto>CdgItem</ValorDefecto>
+					</Campo>
+					<Campo posicion="1" nombre="TipoCodigo" descripcion="Tipo Codigo">
+						<Obligatorio>S</Obligatorio>
+						<TipoCampo>C</TipoCampo>
+						<LongitudCampo>20</LongitudCampo>
+						<Valores cantidad="4">
+							<Valor>001</Valor>
+							<Valor>010</Valor>
+							<Valor>020</Valor>
+							<Valor>999</Valor>
+						</Valores>
+					</Campo>
+					<Campo posicion="2" nombre="LineaCodigo" descripcion="Correlativo de Codigo Item">
+						<Obligatorio>S</Obligatorio>
+						<TipoCampo>N</TipoCampo>
+						<SubTipoCampo>P</SubTipoCampo>
+						<LongitudCampo>3</LongitudCampo>
+					</Campo>
+					<Campo posicion="3" nombre="ValorCodigo" descripcion="Valor del Código">
+						<Obligatorio>N</Obligatorio>
+						<TipoCampo>C</TipoCampo>
+						<!-- <SubTipoCampo>P</SubTipoCampo> -->
+						<LongitudCampo>35</LongitudCampo>
+					</Campo>
+		</Registro>
+
+		<Registro tipo="RefeItem" posicion="12" descripcion="Referencias del Item">
+
+			<CondicionOccurs>N</CondicionOccurs>
+			<MaxLineas>999</MaxLineas>
+			<SizeBuffXml>1024000</SizeBuffXml>
+
+			<CantidadCampos>5</CantidadCampos>
+
+			<Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+				<Obligatorio>S</Obligatorio>
+				<TipoCampo>K</TipoCampo>
+				<LongitudCampo>20</LongitudCampo>
+				<ValorDefecto>RefeItem</ValorDefecto>
+			</Campo>
+			<Campo posicion="1" nombre="LineaRefeItem" descripcion="Correlativo de Referencia Item">
+				<Obligatorio>S</Obligatorio>
+				<TipoCampo>N</TipoCampo>
+				<SubTipoCampo>P</SubTipoCampo>
+				<LongitudCampo>3</LongitudCampo>
+			</Campo>
+			<Campo posicion="2" nombre="TipoRefeItem" descripcion="Tipo de Referencia Item">
+				<Obligatorio>S</Obligatorio>
+				<TipoCampo>C</TipoCampo>
+				<LongitudCampo>10</LongitudCampo>
+            <Valores cantidad="6">
+					<Valor>LIN</Valor>
+					<Valor>DOC</Valor>
+					<Valor>RLR</Valor>
+					<Valor>REC</Valor>
+					<Valor>DES</Valor>
+					<Valor>BIL</Valor>
+				</Valores>
+			</Campo>
+			<Campo posicion="3" nombre="IdRefeItem" descripcion="Identificador  de documento o Linea de Pedido">
+				<Obligatorio>S</Obligatorio>
+				<TipoCampo>C</TipoCampo>
+				<!-- <SubTipoCampo>P</SubTipoCampo> -->
+				<LongitudCampo>50</LongitudCampo>
+			</Campo>
+			<Campo posicion="4" nombre="TipoDocRefeItem" descripcion="Tipo de documento">
+				<Obligatorio>S</Obligatorio>
+				<TipoCampo>C</TipoCampo>
+				<LongitudCampo>10</LongitudCampo>
+			</Campo>
+		</Registro>
+
+		<Registro tipo="DsctoItem" posicion="13" descripcion="Descuentos del Item">
+
+			<CondicionOccurs>N</CondicionOccurs>
+			<MaxLineas>5</MaxLineas>
+			<SizeBuffXml>10240</SizeBuffXml>
+
+			<CantidadCampos>8</CantidadCampos>
+
+			<Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+				<Obligatorio>S</Obligatorio>
+				<TipoCampo>K</TipoCampo>
+				<LongitudCampo>20</LongitudCampo>
+				<ValorDefecto>DsctoItem</ValorDefecto>
+			</Campo>
+			<Campo posicion="1" nombre="LineaDsctoCargoItem" descripcion="Correlativo de Descuento Item">
+				<Obligatorio>S</Obligatorio>
+				<TipoCampo>N</TipoCampo>
+				<SubTipoCampo>P</SubTipoCampo>
+				<LongitudCampo>3</LongitudCampo>
+			</Campo>
+			<Campo posicion="2" nombre="IndicadorDsctoCargoItem" descripcion="Indicador descuento por item">
+				<Obligatorio>N</Obligatorio>
+				<TipoCampo>C</TipoCampo>
+				<LongitudCampo>5</LongitudCampo>
+				<ValorDefecto>true</ValorDefecto>
+				<Valores cantidad="2">
+					<Valor>true</Valor>
+					<Valor>false</Valor>
+				</Valores>
+			</Campo>
+			<Campo posicion="3" nombre="DescripcionDsctoCargoItem" descripcion="Descripcion descuento por item">
+				<Obligatorio>S</Obligatorio>
+				<TipoCampo>C</TipoCampo>
+	      			<LongitudCampo>5000</LongitudCampo>
+	     		</Campo>
+			<Campo posicion="4" nombre="PorcentajeDsctoCargoItem" descripcion="Porcentaje descuento por item">
+				<Obligatorio>S</Obligatorio>
+				<TipoCampo>C</TipoCampo>
+	      			<LongitudCampo>8</LongitudCampo>
+	     		</Campo>
+			<Campo posicion="5" nombre="MontoDsctoCargoItem" descripcion="Monto descuento por item">
+				<Obligatorio>N</Obligatorio>
+				<TipoCampo>R</TipoCampo>
+				<SubTipoCampo>P</SubTipoCampo>
+				<LongitudCampo>20</LongitudCampo>
+			</Campo>
+			<Campo posicion="6" nombre="ValorBaseItem" descripcion="Valor Base para calcular el descuento el cargo">
+				<Obligatorio>N</Obligatorio>
+				<TipoCampo>R</TipoCampo>
+				<SubTipoCampo>P</SubTipoCampo>
+				<LongitudCampo>20</LongitudCampo>
+			</Campo>
+			<Campo posicion="7" nombre="MonedaDsctoCargoItem" descripcion="Moneda para calcular el descuento el cargo">
+			      <Obligatorio>S</Obligatorio>
+			      <TipoCampo>C</TipoCampo>
+			      <LongitudCampo>3</LongitudCampo>
+			      <Valores cantidad="22">
+				 <Valor>AED</Valor>
+<Valor>BOB</Valor>
+<Valor>CAD</Valor>
+<Valor>CLP</Valor>
+<Valor>CNY</Valor>
+<Valor>COP</Valor>
+<Valor>DOP</Valor>
+<Valor>EUR</Valor>
+<Valor>GTQ</Valor>
+<Valor>HKD</Valor>
+<Valor>HNL</Valor>
+<Valor>MXN</Valor>
+<Valor>NOK</Valor>
+<Valor>PAB</Valor>
+<Valor>PEN</Valor>
+<Valor>PYG</Valor>
+<Valor>RMB</Valor>
+<Valor>TRY</Valor>
+<Valor>USD</Valor>
+<Valor>JPY</Valor>
+<Valor>BRL</Valor>
+<Valor>CRC</Valor>
+			      </Valores>
+			     <ValorDefecto>COP</ValorDefecto>
+		      </Campo>
+			
+		</Registro>
+
+	<Registro tipo="PeriServItem" posicion="14" descripcion="Periodo de Servicio del Item">
+
+         <CondicionOccurs>N</CondicionOccurs>
+         <MaxLineas>5</MaxLineas>
+         <SizeBuffXml>10240</SizeBuffXml>
+
+         <CantidadCampos>2</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+	      <Obligatorio>S</Obligatorio>
+	      <TipoCampo>K</TipoCampo>
+	      <LongitudCampo>20</LongitudCampo>
+	      <ValorDefecto>PeriServItem</ValorDefecto>
+	 </Campo>
+         <Campo posicion="1" nombre="LineaPeriServItem" descripcion="Correlativo de Periodo Servicio Item">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>3</LongitudCampo>
+         </Campo>
+         
+      </Registro>
+      <Registro tipo="MandatoItem" posicion="15" descripcion="Contrato de mandato">
+         <CondicionOccurs>N</CondicionOccurs>
+         <MaxLineas>100</MaxLineas>
+         <SizeBuffXml>10240</SizeBuffXml>
+
+         <CantidadCampos>5</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>K</TipoCampo>
+            <LongitudCampo>20</LongitudCampo>
+            <ValorDefecto>MandatoItem</ValorDefecto>
+         </Campo>
+         <Campo posicion="1" nombre="LineaMandatoItem" descripcion="Linea de contrato mandato">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>N</TipoCampo>
+            <SubTipoCampo>P</SubTipoCampo>
+            <LongitudCampo>2</LongitudCampo>
+         </Campo>
+         <Campo posicion="2" nombre="ItemMandante" descripcion="Identificador del contrato de mandato">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>20</LongitudCampo>
+         </Campo>
+         <Campo posicion="3" nombre="Mandante" descripcion="Fecha del contrato de mandato">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>20</LongitudCampo>
+         </Campo>
+         <Campo posicion="4" nombre="ContratoMandante" descripcion="Fecha del contrato de mandato">
+            <Obligatorio>S</Obligatorio>
+            <TipoCampo>C</TipoCampo>
+            <LongitudCampo>20</LongitudCampo>
+         </Campo>
+      </Registro>
+      <Registro tipo="Referencia" posicion="16" descripcion="Referencias del Documento">
+
+         <CondicionOccurs>VNNN</CondicionOccurs>
+         <MaxLineas>999</MaxLineas>
+         <SizeBuffXml>10240</SizeBuffXml>
+
+         <CantidadCampos>8</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+	      <Obligatorio>S</Obligatorio>
+	      <TipoCampo>K</TipoCampo>
+	      <LongitudCampo>20</LongitudCampo>
+	      <ValorDefecto>Referencia</ValorDefecto>
+	 </Campo>
+         <Campo posicion="1" nombre="LineaReferencia" descripcion="Correlativo de Referencia">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>3</LongitudCampo>
+         </Campo>
+
+         <Campo posicion="2" nombre="TipoReferencia" descripcion="Tipo de Referencia">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>2</LongitudCampo>
+              <Valores cantidad="8">
+                 <Valor>OC</Valor>
+                 <Valor>FA</Valor>
+                 <Valor>DP</Valor>
+                 <Valor>RC</Valor>
+                 <Valor>OG</Valor>
+                 <Valor>CT</Valor>
+                 <Valor>OT</Valor>
+                 <Valor>ID</Valor>
+              </Valores>
+         </Campo>
+         <Campo posicion="3" nombre="NumeroDocReferencia" descripcion="Correlativo/Folio de Documento Referenciado">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>100</LongitudCampo>
+         </Campo>
+         <Campo posicion="4" nombre="FechaDocReferencia" descripcion="Fecha Emision Documento Referenciado">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>D</TipoCampo>
+              <SubTipoCampo>YYYY-MM-DD</SubTipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+         </Campo>
+         <Campo posicion="5" nombre="TipoDocReferencia" descripcion="Tipo/Codigo Documento Referenciado">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+         </Campo>
+         <Campo posicion="6" nombre="CodigoDescReferencia" descripcion="Codigo de tipo de referencia">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+                            <Valores cantidad="6">
+	                       <Valor>1</Valor>
+	                       <Valor>2</Valor>
+	                       <Valor>3</Valor>
+	                       <Valor>4</Valor>
+	                       <Valor>5</Valor>
+	                       <Valor>6</Valor>
+              </Valores>
+         </Campo>
+         <Campo posicion="7" nombre="MotivoReferencia" descripcion="Descripcion de la naturaleza de la correccion">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>5000</LongitudCampo>
+         </Campo>
+
+         <SQL nombre="DTEControl">
+             <ArrSize>1</ArrSize>
+             <Stmt>INSERT INTO DTE_DOCU_REFE (CORR_CONT, NUME_LINE, TIPO_REFE, NUME_REFE, FECH_REFE, TIPO_DREF)</Stmt>
+             <Vars nroVar="6">
+                <Var tipo="K" regCons="pkDocu"/>
+
+                <Var tipo="R" regCons="Referencia" campo="LineaReferencia"/>
+                <Var tipo="R" regCons="Referencia" campo="TipoReferencia"/>
+                <Var tipo="R" regCons="Referencia" campo="NumeroDocReferencia"/>
+                <Var tipo="R" regCons="Referencia" campo="FechaDocReferencia"/>
+                <Var tipo="R" regCons="Referencia" campo="TipoDocReferencia"/>
+             </Vars>
+         </SQL>
+      </Registro>
+      
+      
+
+      <Registro tipo="Entrega" posicion="17" descripcion="Informacion de Entregas">
+
+         <CondicionOccurs>N</CondicionOccurs>
+         <MaxLineas>10</MaxLineas>
+         <SizeBuffXml>10240</SizeBuffXml>
+
+         <CantidadCampos>7</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+	      <Obligatorio>S</Obligatorio>
+	      <TipoCampo>K</TipoCampo>
+	      <LongitudCampo>20</LongitudCampo>
+	      <ValorDefecto>Entrega</ValorDefecto>
+	 </Campo>
+         <Campo posicion="1" nombre="LineaEntrega" descripcion="Correlativo de Entrega">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>3</LongitudCampo>
+         </Campo>
+
+         <Campo posicion="2" nombre="FechaEntrega" descripcion="Fecha de Entrega">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>D</TipoCampo>
+              <SubTipoCampo>YYYY-MM-DD</SubTipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+         </Campo>
+         <Campo posicion="3" nombre="HoraEntrega" descripcion="Hora de Entrega">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>D</TipoCampo>
+              <SubTipoCampo>HH:MI:SS</SubTipoCampo>
+              <LongitudCampo>8</LongitudCampo>
+         </Campo>
+         <Campo posicion="4" nombre="IdEntrega" descripcion="Identificacion del Transporte de la Entrega">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>250</LongitudCampo>
+         </Campo>
+         <Campo posicion="5" nombre="DescripcionLocacion" descripcion="Descripcion locacion de Entrega">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>250</LongitudCampo>
+         </Campo>
+         <Campo posicion="6" nombre="NombreLocacion" descripcion="Nombre de locacion de Entrega">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>80</LongitudCampo>
+         </Campo>
+         
+      </Registro>
+
+      <Registro tipo="Transportista" posicion="18" descripcion="Transportistas asociados a la Entrega">
+
+         <CondicionOccurs>N</CondicionOccurs>
+         <MaxLineas>5</MaxLineas>
+         <SizeBuffXml>10240</SizeBuffXml>
+
+         <CantidadCampos>3</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+	      <Obligatorio>S</Obligatorio>
+	      <TipoCampo>K</TipoCampo>
+	      <LongitudCampo>20</LongitudCampo>
+	      <ValorDefecto>Transportista</ValorDefecto>
+	 </Campo>
+         <Campo posicion="1" nombre="LineaTransportista" descripcion="Correlativo de Transportista">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+         </Campo>
+         
+         <Campo posicion="2" nombre="NombreTransportista" descripcion="Nombre de Transportista">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>80</LongitudCampo>
+         </Campo>
+         
+      </Registro>
+
+      <Registro tipo="Despacho" posicion="19" descripcion="Informacion de Despacho (Origen)">
+
+         <CondicionOccurs>N</CondicionOccurs>
+         <MaxLineas>5</MaxLineas>
+         <SizeBuffXml>10240</SizeBuffXml>
+
+         <CantidadCampos>10</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+	      <Obligatorio>S</Obligatorio>
+	      <TipoCampo>K</TipoCampo>
+	      <LongitudCampo>20</LongitudCampo>
+	      <ValorDefecto>Despacho</ValorDefecto>
+	 </Campo>
+         <Campo posicion="1" nombre="LineaDespacho" descripcion="Correlativo de Despacho">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+         </Campo>
+         
+         <Campo posicion="2" nombre="FechaDespacho" descripcion="Fecha de Despacho">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>D</TipoCampo>
+              <SubTipoCampo>YYYY-MM-DD</SubTipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+         </Campo>
+         <Campo posicion="3" nombre="HoraDespacho" descripcion="Hora de Despacho">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>D</TipoCampo>
+              <SubTipoCampo>HH:MI:SS</SubTipoCampo>
+              <LongitudCampo>8</LongitudCampo>
+         </Campo>
+
+         <Campo posicion="4" nombre="DireccionDespacho" descripcion="Calle  de Despacho">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>80</LongitudCampo>
+         </Campo>
+         <Campo posicion="5" nombre="NumeracionDespacho" descripcion="Numeracion (Calle) de Despacho">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>40</LongitudCampo>
+         </Campo>
+         <Campo posicion="6" nombre="CiudadDespacho" descripcion="Nombre de la Cuidad de Despacho">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>40</LongitudCampo>
+         </Campo>
+         <Campo posicion="7" nombre="CodigoPostalDespacho" descripcion="Codigo Postal del Despacho">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>10</LongitudCampo>
+         </Campo>
+          <Campo posicion="8" nombre="CodigoPaisDespacho" descripcion="Codigo de Pais de Despacho">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>2</LongitudCampo>
+              <Valores cantidad="250">
+	      		     <Valor>AF</Valor>
+	      		     <Valor>AL</Valor>
+	      		     <Valor>DE</Valor>
+	      		     <Valor>DZ</Valor>
+	      		     <Valor>AD</Valor>
+	      		     <Valor>AO</Valor>
+	      		     <Valor>AI</Valor>
+	      		     <Valor>AQ</Valor>
+	      		     <Valor>AG</Valor>
+	      		     <Valor>SA</Valor>
+	      		     <Valor>AR</Valor>
+	      		     <Valor>AM</Valor>
+	      		     <Valor>AW</Valor>
+	      		     <Valor>AU</Valor>
+	      		     <Valor>AT</Valor>
+	      		     <Valor>AZ</Valor>
+	      		     <Valor>BE</Valor>
+	      		     <Valor>BS</Valor>
+	      		     <Valor>BH</Valor>
+	      		     <Valor>BD</Valor>
+	      		     <Valor>BB</Valor>
+	      		     <Valor>BZ</Valor>
+	      		     <Valor>BJ</Valor>
+	      		     <Valor>BT</Valor>
+	      		     <Valor>BY</Valor>
+	      		     <Valor>MM</Valor>
+	      		     <Valor>BO</Valor>
+	      		     <Valor>BA</Valor>
+	      		     <Valor>BW</Valor>
+	      		     <Valor>BR</Valor>
+	      		     <Valor>BN</Valor>
+	      		     <Valor>BG</Valor>
+	      		     <Valor>BF</Valor>
+	      		     <Valor>BI</Valor>
+	      		     <Valor>CV</Valor>
+	      		     <Valor>KH</Valor>
+	      		     <Valor>CM</Valor>
+	      		     <Valor>CA</Valor>
+	      		     <Valor>TD</Valor>
+	      		     <Valor>CL</Valor>
+	      		     <Valor>CN</Valor>
+	      		     <Valor>CY</Valor>
+	      		     <Valor>VA</Valor>
+	      		     <Valor>CO</Valor>
+	      		     <Valor>KM</Valor>
+	      		     <Valor>CG</Valor>
+	      		     <Valor>CD</Valor>
+	      		     <Valor>KP</Valor>
+	      		     <Valor>KR</Valor>
+	      		     <Valor>CI</Valor>
+	      		     <Valor>CR</Valor>
+	      		     <Valor>HR</Valor>
+	      		     <Valor>CU</Valor>
+	      		     <Valor>CW</Valor>
+	      		     <Valor>DK</Valor>
+	      		     <Valor>DM</Valor>
+	      		     <Valor>EC</Valor>
+	      		     <Valor>EG</Valor>
+	      		     <Valor>SV</Valor>
+	      		     <Valor>AE</Valor>
+	      		     <Valor>ER</Valor>
+	      		     <Valor>SK</Valor>
+	      		     <Valor>SI</Valor>
+	      		     <Valor>ES</Valor>
+	      		     <Valor>US</Valor>
+	      		     <Valor>EE</Valor>
+	      		     <Valor>ET</Valor>
+	      		     <Valor>PH</Valor>
+	      		     <Valor>FI</Valor>
+	      		     <Valor>FJ</Valor>
+	      		     <Valor>FR</Valor>
+	      		     <Valor>GA</Valor>
+	      		     <Valor>GM</Valor>
+	      		     <Valor>GE</Valor>
+	      		     <Valor>GH</Valor>
+	      		     <Valor>GI</Valor>
+	      		     <Valor>GD</Valor>
+	      		     <Valor>GR</Valor>
+	      		     <Valor>GL</Valor>
+	      		     <Valor>GP</Valor>
+	      		     <Valor>GU</Valor>
+	      		     <Valor>GT</Valor>
+	      		     <Valor>GF</Valor>
+	      		     <Valor>GG</Valor>
+	      		     <Valor>GN</Valor>
+	      		     <Valor>GQ</Valor>
+	      		     <Valor>GW</Valor>
+	      		     <Valor>GY</Valor>
+	      		     <Valor>HT</Valor>
+	      		     <Valor>HN</Valor>
+	      		     <Valor>HK</Valor>
+	      		     <Valor>HU</Valor>
+	      		     <Valor>IN</Valor>
+	      		     <Valor>ID</Valor>
+	      		     <Valor>IR</Valor>
+	      		     <Valor>IQ</Valor>
+	      		     <Valor>IE</Valor>
+	      		     <Valor>BV</Valor>
+	      		     <Valor>IM</Valor>
+	      		     <Valor>CX</Valor>
+	      		     <Valor>NF</Valor>
+	      		     <Valor>IS</Valor>
+	      		     <Valor>BM</Valor>
+	      		     <Valor>KY</Valor>
+	      		     <Valor>CC</Valor>
+	      		     <Valor>CK</Valor>
+	      		     <Valor>AX</Valor>
+	      		     <Valor>FO</Valor>
+	      		     <Valor>GS</Valor>
+	      		     <Valor>HM</Valor>
+	      		     <Valor>MV</Valor>
+	      		     <Valor>FK</Valor>
+	      		     <Valor>MP</Valor>
+	      		     <Valor>MH</Valor>
+	      		     <Valor>PN</Valor>
+	      		     <Valor>SB</Valor>
+	      		     <Valor>TC</Valor>
+	      		     <Valor>UM</Valor>
+	      		     <Valor>VG</Valor>
+	      		     <Valor>VI</Valor>
+	      		     <Valor>IL</Valor>
+	      		     <Valor>IT</Valor>
+	      		     <Valor>JM</Valor>
+	      		     <Valor>JP</Valor>
+	      		     <Valor>JE</Valor>
+	      		     <Valor>JO</Valor>
+	      		     <Valor>KZ</Valor>
+	      		     <Valor>KE</Valor>
+	      		     <Valor>KG</Valor>
+	      		     <Valor>KI</Valor>
+	      		     <Valor>KW</Valor>
+	      		     <Valor>LB</Valor>
+	      		     <Valor>LA</Valor>
+	      		     <Valor>LS</Valor>
+	      		     <Valor>LV</Valor>
+	      		     <Valor>LR</Valor>
+	      		     <Valor>LY</Valor>
+	      		     <Valor>LI</Valor>
+	      		     <Valor>LT</Valor>
+	      		     <Valor>LU</Valor>
+	      		     <Valor>MX</Valor>
+	      		     <Valor>MC</Valor>
+	      		     <Valor>MO</Valor>
+	      		     <Valor>MK</Valor>
+	      		     <Valor>MG</Valor>
+	      		     <Valor>MY</Valor>
+	      		     <Valor>MW</Valor>
+	      		     <Valor>ML</Valor>
+	      		     <Valor>MT</Valor>
+	      		     <Valor>MA</Valor>
+	      		     <Valor>MQ</Valor>
+	      		     <Valor>MU</Valor>
+	      		     <Valor>MR</Valor>
+	      		     <Valor>YT</Valor>
+	      		     <Valor>FM</Valor>
+	      		     <Valor>MD</Valor>
+	      		     <Valor>MN</Valor>
+	      		     <Valor>ME</Valor>
+	      		     <Valor>MS</Valor>
+	      		     <Valor>MZ</Valor>
+	      		     <Valor>NA</Valor>
+	      		     <Valor>NR</Valor>
+	      		     <Valor>NP</Valor>
+	      		     <Valor>NI</Valor>
+	      		     <Valor>NE</Valor>
+	      		     <Valor>NG</Valor>
+	      		     <Valor>NU</Valor>
+	      		     <Valor>NO</Valor>
+	      		     <Valor>NC</Valor>
+	      		     <Valor>NZ</Valor>
+	      		     <Valor>OM</Valor>
+	      		     <Valor>NL</Valor>
+	      		     <Valor>PK</Valor>
+	      		     <Valor>PW</Valor>
+	      		     <Valor>PS</Valor>
+	      		     <Valor>PA</Valor>
+	      		     <Valor>PG</Valor>
+	      		     <Valor>PY</Valor>
+	      		     <Valor>PE</Valor>
+	      		     <Valor>PF</Valor>
+	      		     <Valor>PL</Valor>
+	      		     <Valor>PT</Valor>
+	      		     <Valor>PR</Valor>
+	      		     <Valor>QA</Valor>
+	      		     <Valor>GB</Valor>
+	      		     <Valor>CF</Valor>
+	      		     <Valor>CZ</Valor>
+	      		     <Valor>DO</Valor>
+	      		     <Valor>SS</Valor>
+	      		     <Valor>RE</Valor>
+	      		     <Valor>RW</Valor>
+	      		     <Valor>RO</Valor>
+	      		     <Valor>RU</Valor>
+	      		     <Valor>EH</Valor>
+	      		     <Valor>WS</Valor>
+	      		     <Valor>AS</Valor>
+	      		     <Valor>BL</Valor>
+	      		     <Valor>KN</Valor>
+	      		     <Valor>SM</Valor>
+	      		     <Valor>MF</Valor>
+	      		     <Valor>PM</Valor>
+	      		     <Valor>VC</Valor>
+	      		     <Valor>SH</Valor>
+	      		     <Valor>LC</Valor>
+	      		     <Valor>ST</Valor>
+	      		     <Valor>SN</Valor>
+	      		     <Valor>RS</Valor>
+	      		     <Valor>SC</Valor>
+	      		     <Valor>SL</Valor>
+	      		     <Valor>SG</Valor>
+	      		     <Valor>SX</Valor>
+	      		     <Valor>SY</Valor>
+	      		     <Valor>SO</Valor>
+	      		     <Valor>LK</Valor>
+	      		     <Valor>ZA</Valor>
+	      		     <Valor>SD</Valor>
+	      		     <Valor>SE</Valor>
+	      		     <Valor>CH</Valor>
+	      		     <Valor>SR</Valor>
+	      		     <Valor>SJ</Valor>
+	      		     <Valor>SZ</Valor>
+	      		     <Valor>TJ</Valor>
+	      		     <Valor>TH</Valor>
+	      		     <Valor>TW</Valor>
+	      		     <Valor>TZ</Valor>
+	      		     <Valor>IO</Valor>
+	      		     <Valor>TF</Valor>
+	      		     <Valor>TL</Valor>
+	      		     <Valor>TG</Valor>
+	      		     <Valor>TK</Valor>
+	      		     <Valor>TO</Valor>
+	      		     <Valor>TT</Valor>
+	      		     <Valor>TN</Valor>
+	      		     <Valor>TM</Valor>
+	      		     <Valor>TR</Valor>
+	      		     <Valor>TV</Valor>
+	      		     <Valor>UA</Valor>
+	      		     <Valor>UG</Valor>
+	      		     <Valor>UY</Valor>
+	      		     <Valor>UZ</Valor>
+	      		     <Valor>VU</Valor>
+	      		     <Valor>VE</Valor>
+	      		     <Valor>VN</Valor>
+	      		     <Valor>WF</Valor>
+	      		     <Valor>YE</Valor>
+	      		     <Valor>DJ</Valor>
+	      		     <Valor>ZM</Valor>
+	      		     <Valor>ZW</Valor>
+					 <Valor>BQ</Valor>
+					 <Valor>UN</Valor>
+              </Valores>
+         </Campo>
+         <Campo posicion="9" nombre="NombrePaisDespacho" descripcion="Nombre de Pais de Despacho">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>41</LongitudCampo>
+         </Campo>
+                 
+      </Registro>
+
+      <Registro tipo="Consignador" posicion="20" descripcion="Consignadores asociados al Despacho">
+
+         <CondicionOccurs>N</CondicionOccurs>
+         <MaxLineas>5</MaxLineas>
+         <SizeBuffXml>10240</SizeBuffXml>
+
+         <CantidadCampos>3</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+	      <Obligatorio>S</Obligatorio>
+	      <TipoCampo>K</TipoCampo>
+	      <LongitudCampo>20</LongitudCampo>
+	      <ValorDefecto>Consignador</ValorDefecto>
+	 </Campo>
+         <Campo posicion="1" nombre="LineaConsignador" descripcion="Correlativo de Consignador">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+         </Campo>
+         
+         <Campo posicion="2" nombre="NombreConsignador" descripcion="Nombre de Consignador">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>80</LongitudCampo>
+         </Campo>
+        
+      </Registro>
+      
+       <Registro tipo="CampoLibre" posicion="21" descripcion="Campos libres">
+
+         <CondicionOccurs>N</CondicionOccurs>
+         <MaxLineas>25</MaxLineas>
+         <SizeBuffXml>1024</SizeBuffXml>
+
+         <CantidadCampos>5</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+	      <Obligatorio>S</Obligatorio>
+	      <TipoCampo>K</TipoCampo>
+	      <LongitudCampo>20</LongitudCampo>
+	      <ValorDefecto>CampoLibre</ValorDefecto>
+	 </Campo>
+         <Campo posicion="1" nombre="LineaCampoLibre" descripcion="Linea de campo libre">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>2</LongitudCampo>
+         </Campo>
+         
+         <Campo posicion="2" nombre="CategoriaCampoLibre" descripcion="Categoria de campos libres">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>100</LongitudCampo>
+         </Campo>
+         <Campo posicion="3" nombre="NombreCampoLibre" descripcion="Nombre de campos libres">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>500</LongitudCampo>
+         </Campo>
+         <Campo posicion="4" nombre="ValorCampoLibre" descripcion="Valor de campos libres">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>500</LongitudCampo>
+         </Campo>
+
+      </Registro>     
+      
+
+      <Registro tipo="CorreoDespacho" posicion="22" descripcion="Contacto Despacho Correos">
+
+         <CondicionOccurs>N</CondicionOccurs>
+         <MaxLineas>5</MaxLineas>
+         <SizeBuffXml>1024</SizeBuffXml>
+
+         <CantidadCampos>6</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+	      <Obligatorio>S</Obligatorio>
+	      <TipoCampo>K</TipoCampo>
+	      <LongitudCampo>20</LongitudCampo>
+	      <ValorDefecto>CorreoDespacho</ValorDefecto>
+	 </Campo>
+         <Campo posicion="1" nombre="LineaCorreoDespacho" descripcion="Correlativo de Correo de Despacho">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+         </Campo>
+         
+         <Campo posicion="2" nombre="MailPara" descripcion="Correo de Despacho Principal">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>500</LongitudCampo>
+         </Campo>
+         <Campo posicion="3" nombre="MailCopia" descripcion="Correo de Despacho de Copia">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>500</LongitudCampo>
+         </Campo>
+         <Campo posicion="4" nombre="MailOculto" descripcion="Correo de Despacho Oculto">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>500</LongitudCampo>
+         </Campo>
+         <Campo posicion="5" nombre="MailTipo" descripcion="Plantilla Correo de Despacho">
+              <Obligatorio>N</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>30</LongitudCampo>
+         </Campo>
+
+         <SQL nombre="DTEControl">
+             <ArrSize>1</ArrSize>
+             <Stmt>INSERT INTO DTE_DOCU_CNTT (CORR_CONT, MAIL_TO, MAIL_CC, MAIL_BCC, MAIL_TIPO)</Stmt>
+             <Vars nroVar="5">
+                <Var tipo="K" regCons="pkDocu"/>
+
+                <Var tipo="R" regCons="CorreoDespacho" campo="MailPara"/>
+                <Var tipo="R" regCons="CorreoDespacho" campo="MailCopia"/>
+                <Var tipo="R" regCons="CorreoDespacho" campo="MailOculto"/>
+                <Var tipo="R" regCons="CorreoDespacho" campo="MailTipo"/>
+             </Vars>
+         </SQL>
+
+      </Registro>
+
+      <Registro tipo="DocAsociado" posicion="23" descripcion="Archivo atachado al Correo">
+
+         <CondicionOccurs>N</CondicionOccurs>
+         <MaxLineas>5</MaxLineas>
+         <SizeBuffXml>1024</SizeBuffXml>
+
+         <CantidadCampos>6</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+	      <Obligatorio>S</Obligatorio>
+	      <TipoCampo>K</TipoCampo>
+	      <LongitudCampo>20</LongitudCampo>
+	      <ValorDefecto>DocAsociado</ValorDefecto>
+	 </Campo>
+         <Campo posicion="1" nombre="LineaDocAsociado" descripcion="Correlativo de Documento Asociado">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>N</TipoCampo>
+              <SubTipoCampo>P</SubTipoCampo>
+              <LongitudCampo>1</LongitudCampo>
+         </Campo>
+         
+         <Campo posicion="2" nombre="docNombre" descripcion="Nombre del Adjunto">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>100</LongitudCampo>
+         </Campo>
+         <Campo posicion="3" nombre="docDescripcion" descripcion="Descripcion del Adjunto">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>255</LongitudCampo>
+         </Campo>
+         <Campo posicion="4" nombre="docTipo" descripcion="Tipo del Adjunto">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>5</LongitudCampo>
+         </Campo>
+         <Campo posicion="5" nombre="docArchivo" descripcion="Base64 del Adjunto">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>B</TipoCampo>
+              <!-- 3MB En caracteres base64, que equivalen a 2.25MB aproximadamente despues de decodificar.
+              Para calcular la longitud maxima en b64 se debe aplicar la formula siguiente:
+              tamano_b64 = tamano_bytes * 1.33
+              -->
+              <LongitudCampo>3545728</LongitudCampo>
+         </Campo>
+
+         <SQL nombre="Adjuntos">
+             <ArrSize>1</ArrSize>
+             <Stmt>INSERT INTO DTE_DOCU_ADJU (CORR_CONT, ADJU_NAME, ADJU_DESC, ADJU_TIPO, ADJU_ARCH)</Stmt>
+             <Vars nroVar="5">
+                <Var tipo="K" regCons="pkDocu"/>
+
+                <Var tipo="R" regCons="DocAsociado" campo="docNombre"/>
+                <Var tipo="R" regCons="DocAsociado" campo="docDescripcion"/>
+                <Var tipo="R" regCons="DocAsociado" campo="docTipo"/>
+                <Var tipo="R" regCons="DocAsociado" campo="docArchivo"/>
+             </Vars>
+         </SQL>
+      </Registro>
+      <Registro tipo="PropExtra" posicion="24" descripcion="Propiedad extra">
+
+         <CondicionOccurs>N</CondicionOccurs>
+         <MaxLineas>50</MaxLineas>
+         <SizeBuffXml>1024</SizeBuffXml>
+
+         <CantidadCampos>4</CantidadCampos>
+
+         <Campo posicion="0" nombre="Tipo" descripcion="Tipo Registro">
+	      <Obligatorio>S</Obligatorio>
+	      <TipoCampo>K</TipoCampo>
+	      <LongitudCampo>20</LongitudCampo>
+	      <ValorDefecto>PropExtra</ValorDefecto>
+	 </Campo>
+         <Campo posicion="1" nombre="LineaReferencia" descripcion="Nombre del Adjunto">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>100</LongitudCampo>
+         </Campo>
+         <Campo posicion="2" nombre="NombrePropiedad" descripcion="Descripcion del Adjunto">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>250</LongitudCampo>
+         </Campo>
+         <Campo posicion="3" nombre="ValorPropiedad" descripcion="Tipo del Adjunto">
+              <Obligatorio>S</Obligatorio>
+              <TipoCampo>C</TipoCampo>
+              <LongitudCampo>250</LongitudCampo>
+         </Campo>
+
+         <SQL nombre="PropExtra">
+             <ArrSize>1</ArrSize>
+             <Stmt>INSERT INTO dte_docu_extra (CORR_CONT, nume_line, nomb_prop, valo_prop)</Stmt>
+             <Vars nroVar="4">
+                <Var tipo="K" regCons="pkDocu"/>
+                <Var tipo="R" regCons="PropExtra" campo="LineaReferencia"/>
+                <Var tipo="R" regCons="PropExtra" campo="NombrePropiedad"/>
+                <Var tipo="R" regCons="PropExtra" campo="ValorPropiedad"/>
+             </Vars>
+         </SQL>
+      </Registro>
+   </Registros>
+
+</Archivo>
