@@ -2,7 +2,6 @@ name: dotnet package
 
 on: 
   push
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,7 +23,7 @@ jobs:
   commit_check:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ github.ref  != 'refs/heads/master'}}
+    if: ${{ github.ref  != 'refs/heads/master' && github.event.created != true }}
     steps:
       - name: Check for new commits today
         id: check-new-commits
@@ -33,11 +32,11 @@ jobs:
           token: ${{ github.token }}
           seconds: 120 # Two minutes in seconds
           branch: ${{ github.ref_name }}
+      # condicional para saber si existe un pull request
       - name: Print something if new commits are found
         if: ${{ steps.check-new-commits.outputs.has-new-commits == 'True' }}
-        uses: actions/checkout@1.0.0 
-      - name: steps.check-new-commits.outputs.new-commits-number >= 1
-        if: ${{ steps.check-new-commits.outputs.new-commits-number >= 1  }} 
+        run: echo '${{ steps.check-new-commits.outputs.new-commits-number }} new commit' 
+      - name: Create pull request
         uses: thomaseizinger/create-pull-request@master
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -45,9 +44,38 @@ jobs:
           base: master
           title: "An automatically created PR!"
 
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            const commits = ${{ toJSON(github.event.commits) }}
+            for (const commit of commits) {
+              console.log(commit);
+            }
+          run: echo 'github.event.commits'
+
       - name: Print another thing if new commits couldn't be found
         if: ${{ steps.check-new-commits.outputs.has-new-commits != 'true' }}
         run: echo "You don't have new commits 🛑!"
+
+  dump_contexts_to_log:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        id: github_context_step
+        run: echo '${{ toJSON(github) }}'
+      - name: Dump job context
+        run: echo '${{ toJSON(job) }}'
+      - name: Dump steps context
+        run: echo '${{ toJSON(steps) }}'
+      - name: Dump runner context
+        run: echo '${{ toJSON(runner) }}'
+      - name: Dump strategy context
+        run: echo '${{ toJSON(strategy) }}'
+      - name: Dump matrix context
+        run: echo '${{ toJSON(matrix) }}'
+      - name: Print
+        run: echo '${{ github.event.created }}'
+
     
 #  ${{ github.ref }} Variable que entrega la ruta de la rama actual
 
@@ -58,4 +86,3 @@ jobs:
 
 #  ${{ steps.check-new-commits.outputs.new-commits-number }} Variable que contiene la cantidad de pull request
       
-# 
